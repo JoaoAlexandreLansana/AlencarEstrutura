@@ -130,6 +130,13 @@ namespace AlencarEstrutura
                 Session.Add("danger", "Não foi possível Atualizar o cadastro!" + erro);
                 return;
             }
+
+            PessoaDAL dbPessoa = new PessoaDAL();
+
+            if (dbPessoa.ExcluirPessoa(Convert.ToInt32(txtCodigo.Text),ref erro))
+            {
+
+            }
         }
 
         private bool validacoes()

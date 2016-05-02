@@ -513,5 +513,36 @@ namespace AlencarEstrutura.DAL
                 return null;
             }
         }
+
+        public bool ExcluirPessoa(int idPessoa, ref string erro)
+        {
+            bool sucesso = false;
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    conn.Open();
+
+                    using (OracleCommand cmd = new OracleCommand("EXCLUIRPESSOA", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        
+                        cmd.Parameters.Add("pIDPESSOA", OracleDbType.Int32).Value = idPessoa;
+
+                        int result = cmd.ExecuteNonQuery();
+
+                        int IdPessoa = Convert.ToInt32(cmd.Parameters["pIDPESSOA"].Value.ToString());
+                        sucesso = Convert.ToBoolean(result);
+                    }
+                }
+                return sucesso;
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return false;
+            }
+
+        }
     }
 }
