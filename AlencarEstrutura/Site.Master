@@ -64,15 +64,19 @@
                                 <li>
                                     <asp:LinkButton ID="lbCategoria" runat="server" OnClick="lbCategoria_Click">Categoria</asp:LinkButton></li>
                                 <li>
+                                    <asp:LinkButton ID="lbCliente" runat="server" OnClick="lbCliente_Click">Cliente</asp:LinkButton></li>
+                                <li>
                                     <asp:LinkButton ID="lbCadProduto" runat="server" OnClick="lbCadProduto_Click">Produtos</asp:LinkButton></li>
                                 <li>
                                     <asp:LinkButton ID="lbCadUsuario" runat="server" OnClick="lbCadUsuario_Click">Usuários</asp:LinkButton></li>
                                 <li>
                                     <asp:LinkButton ID="lbPedidoCompra" runat="server" OnClick="lbPedidoCompra_Click">Pedido de Compra</asp:LinkButton></li>
                                 <li>
-                                    <asp:LinkButton ID="LinkButton1" runat="server">Orçamentos</asp:LinkButton></li>
+                                    <asp:LinkButton ID="lbOrcamento" runat="server" OnClick="lbOrcamento_Click">Orçamentos</asp:LinkButton></li>
                                 <li>
                                     <asp:LinkButton ID="LinkButton2" runat="server">Notas Fiscais</asp:LinkButton></li>
+                                <li>
+                                    <asp:LinkButton ID="lbControleEstoque" runat="server" OnClick="lbControleEstoque_Click">Controle de Estoque</asp:LinkButton></li>
                                 <li>
                                     <asp:LinkButton ID="lbFornecedor" runat="server" OnClick="lbFornecedor_Click">Fornecedor</asp:LinkButton></li>
                                 <li>

@@ -67,6 +67,15 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.Button btnBuscaPedidoCompra;
         
         /// <summary>
+        /// hfIdPedido control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfIdPedido;
+        
+        /// <summary>
         /// lblProduto control.
         /// </summary>
         /// <remarks>
@@ -166,13 +175,13 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.Button btnAdicionar;
         
         /// <summary>
-        /// btnExcluir control.
+        /// btnRemover control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnExcluir;
+        protected global::System.Web.UI.WebControls.Button btnRemover;
         
         /// <summary>
         /// gvProdutos control.
@@ -191,6 +200,24 @@ namespace AlencarEstrutura {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnConcluir;
+        
+        /// <summary>
+        /// btnCancelar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
+        
+        /// <summary>
+        /// btnExcluir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnExcluir;
         
         /// <summary>
         /// lblBusca control.

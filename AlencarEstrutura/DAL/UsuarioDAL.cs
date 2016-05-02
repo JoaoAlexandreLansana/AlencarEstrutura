@@ -117,7 +117,7 @@ namespace WebApplication2.DAL
 
                         cmd.Parameters.Add(":LOGIN", usuario.Login);
                         cmd.Parameters.Add(":SENHA", usuario.Senha);
-                        cmd.Parameters.Add("EMAIL", usuario.Email);
+                        cmd.Parameters.Add(":EMAIL", usuario.Email);
                         cmd.Parameters.Add(":NOME", usuario.Nome);
                         int reader = cmd.ExecuteNonQuery();
                         sucesso = Convert.ToBoolean(reader);

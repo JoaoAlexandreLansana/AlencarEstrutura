@@ -14,5 +14,7 @@ namespace AlencarEstrutura.DTO
         public decimal Valor { get; set; }
         public Decimal Peso { get; set; }
         public decimal Litros { get; set; }
+
+        public Decimal ValorPorMetro { get; set; }
     }
 }

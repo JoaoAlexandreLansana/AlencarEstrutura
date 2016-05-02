@@ -16,5 +16,10 @@ namespace AlencarEstrutura
             lblboasVindas.Text = "Bem vindo " + cookie.Value + ", hoje temos 10 Orçamentos pendentes e 8 Notas Fiscais à vencer.";
 
         }
+
+        protected void btnControleEstoque_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LSN019_CONTROLE_ESTOQUE.aspx");
+        }
     }
 }

@@ -145,6 +145,9 @@
     <Content Include="LSN006_PEDIDOCOMPRA.aspx" />
     <Content Include="LSN007_FORNECEDOR.aspx" />
     <Content Include="LSN011_CATEGORIA.aspx" />
+    <Content Include="LSN014_CLIENTE.aspx" />
+    <Content Include="LSN019_CONTROLE_ESTOQUE.aspx" />
+    <Content Include="LSN020_ORCAMENTO.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -298,6 +301,27 @@
     </Compile>
     <Compile Include="LSN011_CATEGORIA.aspx.designer.cs">
       <DependentUpon>LSN011_CATEGORIA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LSN014_CLIENTE.aspx.cs">
+      <DependentUpon>LSN014_CLIENTE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LSN014_CLIENTE.aspx.designer.cs">
+      <DependentUpon>LSN014_CLIENTE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LSN019_CONTROLE_ESTOQUE.aspx.cs">
+      <DependentUpon>LSN019_CONTROLE_ESTOQUE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LSN019_CONTROLE_ESTOQUE.aspx.designer.cs">
+      <DependentUpon>LSN019_CONTROLE_ESTOQUE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LSN020_ORCAMENTO.aspx.cs">
+      <DependentUpon>LSN020_ORCAMENTO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LSN020_ORCAMENTO.aspx.designer.cs">
+      <DependentUpon>LSN020_ORCAMENTO.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

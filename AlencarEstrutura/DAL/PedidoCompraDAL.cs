@@ -40,6 +40,33 @@ namespace AlencarEstrutura.DAL
             }
         }
 
+        public bool ExcluirPedidoCompra(int idPedidoCompra, ref string erro)
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    string query = @"DELETE
+                                    FROM ALC006T_PEDIDOCOMPRA
+                                    WHERE PKNI006_IDPEDIDOCOMPRA = :IDPEDIDOCOMPRA";
+                    conn.Open();
+
+                    using (OracleCommand cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = query;
+                        cmd.Parameters.Add(":IDPEDIDOCOMPRA", idPedidoCompra);
+
+                        return Convert.ToBoolean(cmd.ExecuteNonQuery());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return false;
+            }
+        }
+
         public bool AdicionarProdutos(PedidoCompra pedidoCompra, ref string erro, int IdPedidoCompra)
         {
             try
@@ -221,45 +248,104 @@ namespace AlencarEstrutura.DAL
             }
         }
 
-        //public PedidoCompra CarregaPedidoCompra(int idPedido, ref string erro)
-        //{
-        //    try
-        //    {
-        //        using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
-        //        {
-        //            string query = @"SELECT PKNI018_IDPRODUTO_PEDIDO,
-        //                                    ATSD018_DATAPEDIDO,
-        //                                    ATSF018_OBSERVACAO,
-        //                                    ATDC018_QUANTIDADE,
-        //                                    ATDC018_VALORPREVISTO,
-        //                                    FKNI018_IDPRODUTO,
-        //                                    TB2.ATSF003_DESCRICAO,
-        //                                    FKNI018_IDPEDIDOCOMPRA
-        //                                FROM ALC018T_PRODUTO_PEDIDO TB1
-        //                                INNER JOIN ALC003T_PRODUTO TB2
-        //                                ON TB1.FKNI018_IDPRODUTO = TB2.PKNI003_IDPRODUTO
-        //                                WHERE FKNI018_IDPEDIDOCOMPRA = :IDPEDIDOCOMPRA";
+        public bool AtualizaProduto(PedidoCompra produto, ref string erro, int IdPedidoCompra)
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    string query = @"UPDATE ALC018T_PRODUTO_PEDIDO SET
+                                        ATSD018_DATAPEDIDO         = :DATAPEDIDO,
+                                        ATSF018_OBSERVACAO         = :OBSERVACAO,
+                                        ATDC018_QUANTIDADE         = :QUANTIDADE,
+                                        ATDC018_VALORPREVISTO      = :VALORPREVISTO,
+                                        FKNI018_IDPRODUTO          = :IDPRODUTO,
+                                        FKNI018_IDPEDIDOCOMPRA     = :IDPEDIDOCOMPRA,
+                                        FKNI018_IDFORNECEDOR       = :IDFORNECEDOR
+                                        WHERE PKNI018_IDPRODUTO_PEDIDO = :IDPRODUTO_PEDIDO";
 
-        //            conn.Open();
+                    conn.Open();
 
-        //            using (OracleCommand cmd = conn.CreateCommand())
-        //            {
-        //                cmd.CommandText = query;
-        //                cmd.Parameters.Add(":IDPEDIDOCOMPRA", idPedidoCompra);
+                    using (OracleCommand cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = query;
 
-        //                DataTable dt = new DataTable();
-        //                OracleDataAdapter da = new OracleDataAdapter();
-        //                da.SelectCommand = cmd;
-        //                da.Fill(dt);
-        //                return dt;
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        erro = ex.Message;
-        //        return null;
-        //    }
-        //}
+                        cmd.Parameters.Add(":DATAPEDIDO", produto.DataPedido);
+                        cmd.Parameters.Add(":OBSERVACAO", produto.Observacao);
+                        cmd.Parameters.Add(":QUANTIDADE", produto.Quantidade);
+                        cmd.Parameters.Add(":VALORPREVISTO", produto.ValorPrevisto);
+                        cmd.Parameters.Add(":FKNI018_IDPRODUTO", produto.IdProduto);
+                        cmd.Parameters.Add(":FKNI018_IDPEDIDOCOMPRA", IdPedidoCompra);
+                        cmd.Parameters.Add(":FKNI018_IDFORNECEDOR", produto.IdFornecedor);
+                        cmd.Parameters.Add("IDPRODUTO_PEDIDO", produto.IdProdutoPedido);
+
+                        return Convert.ToBoolean(cmd.ExecuteNonQuery());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return false;
+            }
+        }
+
+        public bool ExcluirProdutoPorID(int idProdutoPedido, ref string erro)
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    string query = @"DELETE
+                                    FROM ALC018T_PRODUTO_PEDIDO
+                                    WHERE PKNI018_IDPRODUTO_PEDIDO = :IDPRODUTO_PEDIDO";
+
+                    conn.Open();
+
+                    using (OracleCommand cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = query;
+
+                        cmd.Parameters.Add("IDPRODUTO_PEDIDO", idProdutoPedido);
+
+                        return Convert.ToBoolean(cmd.ExecuteNonQuery());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return false;
+            }
+        }
+
+        public bool ExcluirProdutoPorIdPedido(int idPedido, ref string erro)
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    string query = @"DELETE
+                                    FROM ALC006T_PEDIDOCOMPRA
+                                    WHERE PKNI006_IDPEDIDOCOMPRA = :IDPEDIDOCOMPRA";
+
+                    conn.Open();
+
+                    using (OracleCommand cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = query;
+
+                        cmd.Parameters.Add(":IDPEDIDOCOMPRA", idPedido);
+
+                        return Convert.ToBoolean(cmd.ExecuteNonQuery());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return false;
+            }
+        }
     }
 }

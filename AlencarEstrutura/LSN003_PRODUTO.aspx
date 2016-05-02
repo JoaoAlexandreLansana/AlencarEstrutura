@@ -40,7 +40,8 @@
                     <td>
                         <asp:DropDownList ID="ddlCategoria" runat="server"></asp:DropDownList>
                         &nbsp;<asp:Label ID="Label5" runat="server" Text="Valor Unit."></asp:Label>
-                        <asp:TextBox ID="txtValor" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtValor" runat="server" MaxLength="8" Columns="8"></asp:TextBox>
+                        &nbsp;Valor Metro²<asp:TextBox ID="txtValorMetro" runat="server" MaxLength="8" Columns="8"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -48,9 +49,9 @@
                         <asp:Label ID="Label6" runat="server" Text="Peso"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtPeso" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtPeso" runat="server" MaxLength="8" Columns="8"></asp:TextBox>
                         <asp:Label ID="Label7" runat="server" Text="Litros"></asp:Label>
-                        <asp:TextBox ID="txtLitros" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtLitros" runat="server" MaxLength="8" Columns="8"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -65,6 +66,7 @@
                     <td>&nbsp;</td>
                     <td>
                         <asp:Button ID="btnSalvar" runat="server" Text="Salvar" CssClass="btn btn-primary" OnClick="btnSalvar_Click" Width="80"/>
+                        <asp:Button ID="btnCancelar" runat="server" CssClass="btn tbn-info" Text="Cancelar" OnClick="btnCancelar_Click" />
                         <asp:Button ID="btnExcluir" runat="server" CssClass="btn btn-warning" Text="Excluir" Width="80" OnClick="btnExcluir_Click"/>
                     </td>
                 </tr>

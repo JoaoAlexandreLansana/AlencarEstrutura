@@ -161,37 +161,20 @@ namespace AlencarEstrutura.DAL
                 using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
                 {
                     string query = @"UPDATE ALC004T_ESTOQUE
-                                    SET";
-                    if (!string.IsNullOrEmpty(estoque.Descricao))
-                    {
-                        query += " ATSF004_DESCRICAO = :DESCRICAO";
-                    }
-                    if (!string.IsNullOrEmpty(estoque.Observacao))
-                    {
-                        query += " ,FKNI004_IDPRODUTO = :IDPRODUTO ";
-                    }   
-                    if (estoque.Validade != null)
-                    {
-                        query += " ,ATDT004_VALIDADE = :VALIDADE ";
-                    }
-                    if(estoque.Quantidade > 0)
-                    {
-                        query += " ,ATSF004_QUANTIDADE = :QUANTIDADE ";
-                    }
-
-                    if (!string.IsNullOrEmpty(estoque.Observacao))
-                    {
-                        query += " ,ATSF004_OBSERVACAO = :OBSERVACAO ";
-                    }
-
-                    query += " WHERE PKNI004_IDESTOQUE = :IDESTOQUE";
+                                      SET 
+                                      ATSF004_DESCRICAO = :DESCRICAO 
+                                      ,FKNI004_IDPRODUTO = :IDPRODUTO  
+                                      ,ATDT004_VALIDADE = :VALIDADE  
+                                      ,ATSF004_QUANTIDADE = :QUANTIDADE
+                                      ,ATSF004_OBSERVACAO = :OBSERVACAO
+                                      WHERE PKNI004_IDESTOQUE = :IDESTOQUE";
 
                     conn.Open();
 
                     using (OracleCommand cmd = conn.CreateCommand())
                     {
                         cmd.CommandText = query;
-                        
+
                         cmd.Parameters.Add(":DESCRICAO", estoque.Descricao);
                         cmd.Parameters.Add(":IDPRODUTO", estoque.IdProduto);
                         cmd.Parameters.Add(":VALIDADE", estoque.Validade);

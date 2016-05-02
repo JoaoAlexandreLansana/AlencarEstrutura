@@ -34,6 +34,7 @@ namespace AlencarEstrutura
             objProduto.Valor = (string.IsNullOrEmpty(txtValor.Text)) ? 0 : Convert.ToDecimal(txtValor.Text);
             objProduto.Peso = (string.IsNullOrEmpty(txtPeso.Text)) ? 0 : Convert.ToDecimal(txtPeso.Text);
             objProduto.Litros = (string.IsNullOrEmpty(txtLitros.Text)) ? 0 : Convert.ToDecimal(txtLitros.Text);
+            objProduto.ValorPorMetro = (string.IsNullOrEmpty(txtValorMetro.Text)) ? 0 : Convert.ToDecimal(txtValorMetro.Text);
 
             if (objProduto.IdProduto == 0)
             {
@@ -113,6 +114,7 @@ namespace AlencarEstrutura
             txtValor.Text = objProduto.Valor.ToString();
             txtPeso.Text = objProduto.Peso.ToString();
             txtLitros.Text = objProduto.Litros.ToString();
+            txtValorMetro.Text = objProduto.ValorPorMetro.ToString();
             ddlCategoria.SelectedIndex = objProduto.IdCategoria;
         }
 
@@ -153,6 +155,16 @@ namespace AlencarEstrutura
                 Session.Add("danger", "Preencha os campos obrigatórios! ");
                 return;
             }
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void limpa()
+        {
+            txtCodigo.Text = string.Empty;
         }
     }
 }

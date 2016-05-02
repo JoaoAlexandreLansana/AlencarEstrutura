@@ -61,5 +61,20 @@ namespace AlencarEstrutura
         {
             Response.Redirect("LSN007_FORNECEDOR.aspx");
         }
+
+        protected void lbControleEstoque_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LSN019_CONTROLE_ESTOQUE.aspx");
+        }
+
+        protected void lbCliente_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LSN014_CLIENTE.aspx");
+        }
+
+        protected void lbOrcamento_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LSN020_ORCAMENTO.aspx");
+        }
     }
 }

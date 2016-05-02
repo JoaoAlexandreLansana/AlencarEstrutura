@@ -24,9 +24,18 @@ namespace AlencarEstrutura
             }
         }
 
-        protected void btnExcluir_Click(object sender, EventArgs e)
+        protected void btnRemover_Click(object sender, EventArgs e)
         {
+            PedidoCompraDAL dbPedido = new PedidoCompraDAL();
 
+            if (!dbPedido.ExcluirProdutoPorIdPedido(Convert.ToInt32(hfIdPedido.Value), ref erro))
+            {
+                Session.Add("danger", "Não foi possível Excluir o produto " + erro);
+            }
+            else
+            {
+                Session.Add("success", "Produto Removido ");
+            }
         }
 
         protected void gvPedidos_SelectedIndexChanged(object sender, EventArgs e)
@@ -49,7 +58,7 @@ namespace AlencarEstrutura
             objPedidoCompra.Status = 1;
             objPedidoCompra.Quantidade = Convert.ToDecimal(txtQuantidade.Text);
             objPedidoCompra.ValorPrevisto = Convert.ToDecimal(txtValorPrevisto.Text);
-            objPedidoCompra.IdFornecedor = Convert.ToInt32(ddlFornecedor.SelectedValue);
+            objPedidoCompra.IdFornecedor = (ddlFornecedor.SelectedValue == "Selecione") ? 0 : Convert.ToInt32(ddlFornecedor.SelectedValue);
             objPedidoCompra.IdUsuario = Convert.ToInt32(cookie.Value);
 
             int IdPedido = 0;
@@ -68,12 +77,23 @@ namespace AlencarEstrutura
                 txtCodigo.Text = IdPedido.ToString();
             }
 
-            if (!dbPedidoCompra.AdicionarProdutos(objPedidoCompra, ref erro, Convert.ToInt32(txtCodigo.Text)))
+            if (string.IsNullOrEmpty(hfIdPedido.Value))
             {
-                Session.Add("danger", "Não foi possível Adicionar o produto ao pedido de compra numero " + IdPedido + "! " + erro);
-                return;
+                if (!dbPedidoCompra.AdicionarProdutos(objPedidoCompra, ref erro, Convert.ToInt32(txtCodigo.Text)))
+                {
+                    Session.Add("danger", "Não foi possível Adicionar o produto ao pedido de compra numero " + IdPedido + "! " + erro);
+                    return;
+                }
             }
-
+            else
+            {
+                objPedidoCompra.IdProdutoPedido = Convert.ToInt32(hfIdPedido.Value);
+                if (!dbPedidoCompra.AtualizaProduto(objPedidoCompra, ref erro, Convert.ToInt32(txtCodigo.Text)))
+                {
+                    Session.Add("danger", "Não foi possível atualizar o produto! " + erro);
+                    return;
+                }
+            }
             CarregaGVProdutos(Convert.ToInt32(txtCodigo.Text));
             carregaGvPedido();
         }
@@ -151,10 +171,11 @@ namespace AlencarEstrutura
             txtObservacao.Text = string.Empty;
             txtQuantidade.Text = string.Empty;
             txtValorPrevisto.Text = string.Empty;
-            ddlProduto.Items.Clear();
-            CarregaDdlFornecedor();
+            ddlProduto.SelectedValue = "Selecione";
+            ddlFornecedor.SelectedValue = "Selecione";
             gvProdutos.DataSource = null;
             gvProdutos.DataBind();
+            hfIdPedido.Value = string.Empty;
         }
 
         private void carregaGvPedido()
@@ -182,12 +203,52 @@ namespace AlencarEstrutura
                 txtQuantidade.Text = objPedidoCompra.Quantidade.ToString();
                 txtValorPrevisto.Text = objPedidoCompra.ValorPrevisto.ToString();
                 txtObservacao.Text = objPedidoCompra.Observacao;
+                hfIdPedido.Value = objPedidoCompra.IdProdutoPedido.ToString();
             }
 
             if (erro != "")
             {
                 Session.Add("danger", "Erro. " + erro);
             }
+        }
+
+        protected void btnExcluir_Click(object sender, EventArgs e)
+        {
+            PedidoCompraDAL dbPedidoCompra = new PedidoCompraDAL();
+            PedidoCompra objPedidoCompra = new PedidoCompra();
+
+            if (dbPedidoCompra.ExcluirProdutoPorIdPedido(Convert.ToInt32(txtCodigo.Text), ref erro) || erro == "")
+            {
+                if(dbPedidoCompra.ExcluirPedidoCompra(Convert.ToInt32(txtCodigo.Text), ref erro) || erro == "")
+                {
+                    Session.Add("success", "Pedido de Compra excluído com sucesso! ");
+                    limpa();
+                }
+                else
+                {
+                    Session.Add("danger", "Não foi possível deletar o produto! " + erro);
+                }
+            }
+            else
+            {
+                Session.Add("danger", "Não foi possível excluir o Pedido de Compra! " + erro);
+            }
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            limpa();
+        }
+
+        protected void ddlProduto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Produto objProduto = new Produto();
+            ProdutoDAL dbProduto = new ProdutoDAL();
+
+            objProduto = dbProduto.ObterProdutoPorID(Convert.ToInt32(ddlProduto.SelectedValue), ref erro);
+
+            txtValorPrevisto.Text = objProduto.Valor.ToString();
+
         }
     }
 }

@@ -40,7 +40,7 @@
             <p>
                 Efetue pedidos compras.</p>
             <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301950">Acessar &raquo;</a>
+                <asp:Button ID="btnControleEstoque" runat="server" Text="Acessar >>" CssClass="btn btn-default" OnClick="btnControleEstoque_Click"/>
             </p>
         </div>
     </div>

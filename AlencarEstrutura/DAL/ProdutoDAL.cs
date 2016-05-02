@@ -23,7 +23,8 @@ namespace AlencarEstrutura.DAL
                                       ATSF003_OBSERVACAO,
                                       ATDC003_VALOR,
                                       ATDC003_PESO,
-                                      ATDC003_LITROS
+                                      ATDC003_LITROS,
+                                      ATDC003_VALOR_METRO
                                     FROM ALC003T_PRODUTO
                                     WHERE PKNI003_IDPRODUTO=:IDPRODUTO";
 
@@ -47,7 +48,7 @@ namespace AlencarEstrutura.DAL
                                 objProduto.Valor = Convert.ToDecimal(reader[4]);
                                 objProduto.Peso = Convert.ToDecimal(reader[5]);
                                 objProduto.Litros = Convert.ToDecimal(reader[6]);
-
+                                objProduto.ValorPorMetro = Convert.ToDecimal(reader[7]);
                                 return objProduto;
                             }
                             return objProduto;
@@ -74,7 +75,8 @@ namespace AlencarEstrutura.DAL
                                       ATSF003_OBSERVACAO,
                                       ATDC003_VALOR,
                                       ATDC003_PESO,
-                                      ATDC003_LITROS
+                                      ATDC003_LITROS,
+                                      ATDC003_VALOR_METRO
                                     FROM ALC003T_PRODUTO";
 
                     conn.Open();
@@ -98,6 +100,7 @@ namespace AlencarEstrutura.DAL
                                 objProduto.Valor = Convert.ToDecimal(reader[4]);
                                 objProduto.Peso = Convert.ToDecimal(reader[5]);
                                 objProduto.Litros = Convert.ToDecimal(reader[6]);
+                                objProduto.Litros = Convert.ToDecimal(reader[7]);
 
                                 lstProduto.Add(objProduto);
                             }
@@ -128,7 +131,8 @@ namespace AlencarEstrutura.DAL
                                             ATSF003_OBSERVACAO,
                                             ATDC003_VALOR,
                                             ATDC003_PESO,
-                                            ATDC003_LITROS
+                                            ATDC003_LITROS,
+                                            ATDC003_VALOR_METRO
                                           )
                                           VALUES
                                           (
@@ -137,7 +141,8 @@ namespace AlencarEstrutura.DAL
                                             :OBSERVACAO,
                                             :VALOR,
                                             :PESO,
-                                            :LITROS
+                                            :LITROS,
+                                            :VALORMETRO
                                           )";
                     conn.Open();
 
@@ -151,6 +156,7 @@ namespace AlencarEstrutura.DAL
                         cmd.Parameters.Add(":VALOR", produto.Valor);
                         cmd.Parameters.Add(":PESO", produto.Peso);
                         cmd.Parameters.Add(":LITROS", produto.Litros);
+                        cmd.Parameters.Add(":VALORMETRO", produto.ValorPorMetro);
                         int reader = cmd.ExecuteNonQuery();
                         sucesso = Convert.ToBoolean(reader);
                     }
@@ -183,7 +189,8 @@ namespace AlencarEstrutura.DAL
                     query += (produto.Valor == 0) ? "" : ",ATDC003_VALOR = :VALOR ";
                     query += (produto.Peso == 0) ? "" : ",ATDC003_PESO = :PESO ";
                     query += (produto.Peso == 0) ? "" : ",ATDC003_LITROS = :LITROS ";
-                    
+                    query += (produto.Peso == 0) ? "" : ",ATDC003_VALOR_METRO = :VALORMETRO ";
+
                     query += "WHERE PKNI003_IDPRODUTO = :IDPRODUTO";
                     conn.Open();
 
@@ -197,6 +204,7 @@ namespace AlencarEstrutura.DAL
                         cmd.Parameters.Add(":VALOR", produto.Valor);
                         cmd.Parameters.Add(":PESO", produto.Peso);
                         cmd.Parameters.Add(":LITROS", produto.Litros);
+                        cmd.Parameters.Add(":VALORMETRO", produto.Litros);
                         cmd.Parameters.Add(":IDPRODUTO", produto.IdProduto);
                         int reader = cmd.ExecuteNonQuery();
                         sucesso = Convert.ToBoolean(reader);
