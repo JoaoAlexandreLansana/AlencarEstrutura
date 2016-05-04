@@ -531,7 +531,6 @@ namespace AlencarEstrutura.DAL
 
                         int result = cmd.ExecuteNonQuery();
 
-                        int IdPessoa = Convert.ToInt32(cmd.Parameters["pIDPESSOA"].Value.ToString());
                         sucesso = Convert.ToBoolean(result);
                     }
                 }

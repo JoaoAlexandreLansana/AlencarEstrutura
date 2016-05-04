@@ -217,6 +217,7 @@
     <Compile Include="DAL\EstoqueDAL.cs" />
     <Compile Include="DAL\FornecedorDAL.cs" />
     <Compile Include="DAL\MunicipioDAL.cs" />
+    <Compile Include="DAL\OrcamentoDAL.cs" />
     <Compile Include="DAL\PedidoCompraDAL.cs" />
     <Compile Include="DAL\PessoaDAL.cs" />
     <Compile Include="DAL\ProdutoDAL.cs" />
@@ -235,6 +236,7 @@
     <Compile Include="DTO\Estado.cs" />
     <Compile Include="DTO\Estoque.cs" />
     <Compile Include="DTO\Municipio.cs" />
+    <Compile Include="DTO\Orcamento.cs" />
     <Compile Include="DTO\PedidoCompra.cs" />
     <Compile Include="DTO\Pessoa.cs" />
     <Compile Include="DTO\PessoaFisica.cs" />

@@ -127,16 +127,23 @@ namespace AlencarEstrutura
         {
             if (!validacoes())
             {
-                Session.Add("danger", "Não foi possível Atualizar o cadastro!" + erro);
+                Session.Add("danger", "Preencha os campos obrigatórios! " + erro);
                 return;
             }
 
             PessoaDAL dbPessoa = new PessoaDAL();
 
-            if (dbPessoa.ExcluirPessoa(Convert.ToInt32(txtCodigo.Text),ref erro))
+            if (!dbPessoa.ExcluirPessoa(Convert.ToInt32(txtCodigo.Text),ref erro))
             {
-
+                Session.Add("danger", "Não foi possível Excluir o cadastro!" + erro);
+                return;
             }
+            else
+            {
+                Session.Add("success", "Cliente excluído com sucesso! ");
+                limpa();
+            }
+            carregaGvCliente();
         }
 
         private bool validacoes()
@@ -206,11 +213,10 @@ namespace AlencarEstrutura
         public void carregaGvCliente()
         {
             Pessoa objPessoa = new Pessoa();
-            PessoaDAL dbFornecedor = new PessoaDAL();
-            DataTable dtProduto = dbFornecedor.ObterListaPessoa(ref erro);
+            PessoaDAL dbCliente = new PessoaDAL();
+            DataTable dtCliente = dbCliente.ObterListaPessoa(ref erro);
 
-
-            gvCliente.DataSource = dtProduto;
+            gvCliente.DataSource = dtCliente;
             gvCliente.AutoGenerateSelectButton = true;
             gvCliente.DataBind();
         }
@@ -243,7 +249,7 @@ namespace AlencarEstrutura
                 }
             }
 
-            bindCliente(objPessoaPorTipo);
+            if(objPessoaPorTipo != null)bindCliente(objPessoaPorTipo);
         }
 
         private void bindCliente(Pessoa cliente)

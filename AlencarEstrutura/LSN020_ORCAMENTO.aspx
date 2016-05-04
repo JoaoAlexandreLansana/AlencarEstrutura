@@ -30,6 +30,14 @@
                 </tr>
                 <tr>
                     <td style="width: 137px">
+                        <asp:Label ID="Label5" runat="server" Text="Descrição"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtDescricao" runat="server" Columns="50" MaxLength="50"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 137px">
                         <asp:Label ID="Label2" runat="server" Text="Cliente"></asp:Label>
                     </td>
                     <td>
@@ -43,15 +51,19 @@
                         <asp:Label ID="lblProduto" runat="server" Text="Produto"></asp:Label>
                     </td>
                     <td style="height: 28px">
-                        <asp:DropDownList ID="ddlProduto" runat="server">
+                        <asp:DropDownList ID="ddlProduto" runat="server" OnSelectedIndexChanged="ddlProduto_SelectedIndexChanged">
                             <asp:ListItem>Selecione</asp:ListItem>
                         </asp:DropDownList>
                         <asp:Label ID="lblQuantidade" runat="server" Text="Quantidade"></asp:Label>
                         <asp:TextBox ID="txtQuantidade" runat="server" Columns="8" MaxLength="8"></asp:TextBox>
+                        <asp:Label ID="Label6" runat="server" Text="Metros²"></asp:Label>
+                        <asp:TextBox ID="TextBox2" runat="server" Columns="8" MaxLength="8"></asp:TextBox>
                         <asp:Label ID="lblValor" runat="server" Text="Valor Unit."></asp:Label>
-                        <asp:TextBox ID="txtValorPrevisto" runat="server" Columns="6"></asp:TextBox>
+                        <asp:CheckBox ID="cbValorUnitario" runat="server" OnCheckedChanged="cbValorUnitario_CheckedChanged" AutoPostBack="true"/>
+                        <asp:TextBox ID="txtValorPrevisto" runat="server" Columns="6" Enabled="False"></asp:TextBox>
                         <asp:Label ID="Label3" runat="server" Text="Valor por Metro²"></asp:Label>
-                        <asp:TextBox ID="TextBox1" runat="server" Columns="6" MaxLength="6"></asp:TextBox>
+                        <asp:CheckBox ID="cbValorPorMetro" runat="server" OnCheckedChanged="cbValorPorMetro_CheckedChanged" AutoPostBack="true"/>
+                        <asp:TextBox ID="txtValorPorMetro" runat="server" Columns="6" MaxLength="6" Enabled="False"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -65,7 +77,7 @@
                 <tr>
                     <td style="width: 137px; height: 28px;">&nbsp;</td>
                     <td style="margin-left: 40px; height: 28px;">
-                        <asp:Button ID="btnAdicionar" runat="server" CssClass="btn btn-info"  Text="Listar" />
+                        <asp:Button ID="btnAdicionar" runat="server" CssClass="btn btn-info"  Text="Listar" OnClick="btnAdicionar_Click" />
                         <asp:Button ID="btnRemover" runat="server" CssClass="btn btn-warning" Text="Remover" Width="80px" />
                     </td>
                 </tr>
@@ -113,10 +125,10 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:GridView ID="gvOrcamento" runat="server" Width="100%" DataKeyNames="PKNI006_IDPEDIDOCOMPRA" AutoGenerateColumns="false" >
+                                    <asp:GridView ID="gvOrcamento" runat="server" Width="100%" DataKeyNames="PKNI020_IDORCAMENTO" AutoGenerateColumns="false" OnSelectedIndexChanged="gvOrcamento_SelectedIndexChanged">
                                         <Columns>
-                                            <asp:BoundField HeaderText="Codigo Pedido Compra" DataField="PKNI006_IDPEDIDOCOMPRA" />
-                                            <asp:BoundField HeaderText="Data" DataField="ATDT006_DATAPEDIDO" />
+                                            <asp:BoundField HeaderText="Codigo" DataField="PKNI020_IDORCAMENTO" />
+                                            <asp:BoundField HeaderText="Descrição" DataField="ATSF020_DESCRICAO" />
                                         </Columns>
                                     </asp:GridView>
                                 </td>
@@ -151,10 +163,11 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:GridView ID="gvCliente" runat="server" Width="100%" DataKeyNames="IdCliente" AutoGenerateColumns="false" >
+                                    <asp:GridView ID="gvCliente" runat="server" Width="100%" DataKeyNames="CODIGO" AutoGenerateColumns="false" OnSelectedIndexChanged="gvCliente_SelectedIndexChanged">
                                         <Columns>
-                                            <asp:BoundField HeaderText="CPF" DataField="" />
-                                            <asp:BoundField HeaderText="Nome" DataField="" />
+                                            <asp:BoundField HeaderText="Código" DataField="CODIGO" />
+                                            <asp:BoundField HeaderText="Nome" DataField="NOME" />
+                                            <asp:BoundField HeaderText="Tipo Pessoa" DataField="TIPOPESSOA" />
                                         </Columns>
                                     </asp:GridView>
                                 </td>
