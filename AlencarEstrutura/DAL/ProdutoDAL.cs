@@ -21,10 +21,10 @@ namespace AlencarEstrutura.DAL
                                       ATSF003_DESCRICAO,
                                       FKNI003_IDCATEGORIA,
                                       ATSF003_OBSERVACAO,
-                                      ATDC003_VALOR,
+                                      to_char(ATDC003_VALOR,'999G999G999G999D99') as ATDC003_VALOR,
                                       ATDC003_PESO,
                                       ATDC003_LITROS,
-                                      ATDC003_VALOR_METRO
+                                      to_char(ATDC003_VALOR_METRO,'999G999G999G999D99') as ATDC003_VALOR_METRO
                                     FROM ALC003T_PRODUTO
                                     WHERE PKNI003_IDPRODUTO=:IDPRODUTO";
 
@@ -45,10 +45,11 @@ namespace AlencarEstrutura.DAL
                                 objProduto.Descricao = reader[1].ToString();
                                 objProduto.IdCategoria = Convert.ToInt32(reader[2]);
                                 objProduto.Observacao = reader[3].ToString();
-                                objProduto.Valor = Convert.ToDecimal(reader[4]);
-                                objProduto.Peso = Convert.ToDecimal(reader[5]);
-                                objProduto.Litros = Convert.ToDecimal(reader[6]);
-                                objProduto.ValorPorMetro = Convert.ToDecimal(reader[7]);
+                                objProduto.Valor = (reader[4] == DBNull.Value) ? 0 : Convert.ToDecimal(reader[4]);
+                                objProduto.Peso = (reader[5] == DBNull.Value) ? 0 : Convert.ToDecimal(reader[5]);
+                                objProduto.Litros = (reader[6] == DBNull.Value) ? 0 : Convert.ToDecimal(reader[6]);
+                                objProduto.ValorPorMetro = (reader[7] == DBNull.Value) ? 0 : Convert.ToDecimal(reader[7]);
+
                                 return objProduto;
                             }
                             return objProduto;
@@ -73,10 +74,10 @@ namespace AlencarEstrutura.DAL
                                       ATSF003_DESCRICAO,
                                       FKNI003_IDCATEGORIA,
                                       ATSF003_OBSERVACAO,
-                                      ATDC003_VALOR,
+                                      to_char(ATDC003_VALOR,'999G999G999G999D99') as ATDC003_VALOR,
                                       ATDC003_PESO,
                                       ATDC003_LITROS,
-                                      ATDC003_VALOR_METRO
+                                      to_char(ATDC003_VALOR_METRO,'999G999G999G999D99') as ATDC003_VALOR_METRO
                                     FROM ALC003T_PRODUTO";
 
                     conn.Open();
@@ -95,12 +96,12 @@ namespace AlencarEstrutura.DAL
 
                                 objProduto.IdProduto = Convert.ToInt32(reader[0]);
                                 objProduto.Descricao = reader[1].ToString();
-                                objProduto.IdCategoria = Convert.ToInt32(reader[2]);
+                                objProduto.IdCategoria = (reader[2] == DBNull.Value) ? 0 : Convert.ToInt32(reader[2]);
                                 objProduto.Observacao = reader[3].ToString();
-                                objProduto.Valor = Convert.ToDecimal(reader[4]);
-                                objProduto.Peso = Convert.ToDecimal(reader[5]);
-                                objProduto.Litros = Convert.ToDecimal(reader[6]);
-                                objProduto.Litros = Convert.ToDecimal(reader[7]);
+                                objProduto.Valor = (reader[4] == DBNull.Value) ? 0 : Convert.ToDecimal(reader[4]);
+                                objProduto.Peso = (reader[5] == DBNull.Value) ? 0 : Convert.ToDecimal(reader[5]);
+                                objProduto.Litros = (reader[6] == DBNull.Value) ? 0 : Convert.ToDecimal(reader[6]);
+                                objProduto.ValorPorMetro = (reader[7] == DBNull.Value) ? 0 : Convert.ToDecimal(reader[7]);
 
                                 lstProduto.Add(objProduto);
                             }
@@ -173,7 +174,7 @@ namespace AlencarEstrutura.DAL
 
         }
 
-        public bool AtualizarProdutoPorId( Produto produto, ref string erro)
+        public bool AtualizarProdutoPorId(Produto produto, ref string erro)
         {
             bool sucesso = false;
             try

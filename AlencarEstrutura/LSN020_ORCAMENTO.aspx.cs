@@ -1,8 +1,10 @@
 ﻿using AlencarEstrutura.DAL;
 using AlencarEstrutura.DTO;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace AlencarEstrutura
 {
@@ -15,6 +17,7 @@ namespace AlencarEstrutura
             {
                 carregaGvCliente();
                 carregaGvOrcamento();
+                CarregaddlProduto();
             }
         }
 
@@ -24,6 +27,11 @@ namespace AlencarEstrutura
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            limpa();
+        }
+
+        private void limpa()
         {
 
         }
@@ -94,10 +102,22 @@ namespace AlencarEstrutura
             Orcamento objOrcamento = new Orcamento();
             OrcamentoDAL dbOrcamento = new OrcamentoDAL();
             DataTable dtOrcamento = dbOrcamento.ObterListaOrcamento(ref erro);
-            
+
             gvOrcamento.DataSource = dtOrcamento;
             gvOrcamento.AutoGenerateSelectButton = true;
             gvOrcamento.DataBind();
+        }
+
+        public void carregaGvProduto()
+        {
+            Orcamento objOrcamento = new Orcamento();
+            OrcamentoDAL dbOrcamento = new OrcamentoDAL();
+            DataTable dtOrcamento = dbOrcamento.ObterListaProdutoOrcamentoPorID(Convert.ToInt32(txtCodigo.Text), ref erro);
+
+            gvProdutos.DataSource = dtOrcamento;
+            gvProdutos.AutoGenerateSelectButton = true;
+            gvProdutos.DataBind();
+            lblTotal.Text = "TOTAL: " + dtOrcamento.Rows[0].ItemArray[6].ToString();
         }
 
         protected void gvOrcamento_SelectedIndexChanged(object sender, EventArgs e)
@@ -113,6 +133,7 @@ namespace AlencarEstrutura
         private void bindOrcamento(Orcamento orcamento)
         {
             txtCodigo.Text = orcamento.IdOrcamento.ToString();
+            carregaGvProduto();
         }
 
         protected void btnAdicionar_Click(object sender, EventArgs e)
@@ -126,8 +147,48 @@ namespace AlencarEstrutura
             objOrcamento.IdPessoa = Convert.ToInt32(txtCodCliente.Text);
             objOrcamento.IdProduto = Convert.ToInt32(ddlProduto.SelectedValue);
             objOrcamento.Quantidade = Convert.ToDecimal(txtQuantidade.Text);
-            objOrcamento.Valor = Convert.ToDecimal(txtValorPrevisto.Text) * Convert.ToDecimal(txtQuantidade.Text);
+            if (cbValorUnitario.Checked)
+            {
+                objOrcamento.Valor = Convert.ToDecimal(txtValorPrevisto.Text) * Convert.ToDecimal(txtQuantidade.Text);
+            }
+            else
+            {
+                objOrcamento.Valor = (Convert.ToDecimal(txtValorPorMetro.Text) * (Convert.ToDecimal(txtQtdeMetroQuadrado.Text))) * Convert.ToDecimal(txtQuantidade.Text);
+            }
 
+            int idOrcamento = 0;
+
+            if (string.IsNullOrEmpty(txtCodigo.Text))
+            {
+                idOrcamento = dbOrcamento.InserirOrcamento(objOrcamento, ref erro);
+                if (erro != "")
+                {
+                    Session.Add("danger", "Não foi possível criar o Orçamento " + erro);
+                    return;
+                }
+
+                txtCodigo.Text = idOrcamento.ToString();
+            }
+
+            if (string.IsNullOrEmpty(hfCodigoProdutoOrcamento.Value))
+            {
+                if (!dbOrcamento.AdicionarProduto(objOrcamento, ref erro, Convert.ToInt32(txtCodigo.Text)))
+                {
+                    Session.Add("danger", "Não foi possível Adicionar o produto ao Orcamento numero " + idOrcamento + "! " + erro);
+                    return;
+                }
+            }
+            else
+            {
+                objOrcamento.IdProdutoOrcamento = Convert.ToInt32(hfCodigoProdutoOrcamento.Value);
+                if (!dbOrcamento.AtualizarProduto(objOrcamento, ref erro, Convert.ToInt32(txtCodigo.Text)))
+                {
+                    Session.Add("danger", "Não foi possível atualizar o produto! " + erro);
+                    return;
+                }
+            }
+            carregaGvProduto();
+            carregaGvOrcamento();
         }
 
         protected void cbValorUnitario_CheckedChanged(object sender, EventArgs e)
@@ -146,7 +207,78 @@ namespace AlencarEstrutura
 
         protected void ddlProduto_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Produto objProduto = new Produto();
+            ProdutoDAL dbProduto = new ProdutoDAL();
 
+            objProduto = dbProduto.ObterProdutoPorID(Convert.ToInt32(ddlProduto.SelectedValue), ref erro);
+
+            txtValorPrevisto.Text = objProduto.Valor.ToString();
+            txtValorPorMetro.Text = objProduto.ValorPorMetro.ToString();
+
+        }
+
+        private void CarregaddlProduto()
+        {
+            Produto objProduto = new Produto();
+            ProdutoDAL dbProduto = new ProdutoDAL();
+            List<Produto> lstProduto = dbProduto.ObterListadeProduto(ref erro);
+
+            if (lstProduto != null)
+            {
+                foreach (Produto Produto in lstProduto)
+                {
+                    ListItem lst = new ListItem();
+
+                    lst.Value = Produto.IdProduto.ToString();
+                    lst.Text = Produto.Descricao;
+
+                    ddlProduto.Items.Add(lst);
+                }
+                ddlProduto.DataBind();
+            }
+            else
+            {
+                Session.Add("danger", "Não foi possível carregar a lista de produto " + erro);
+            }
+        }
+
+        protected void gvProdutos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Orcamento objOrcamento = new Orcamento();
+            OrcamentoDAL dbOrcamento = new OrcamentoDAL();
+
+            objOrcamento = dbOrcamento.ObertProdutoPorID(Convert.ToInt32(gvProdutos.SelectedDataKey.Value), ref erro);
+
+            Produto objProduto = new Produto();
+            ProdutoDAL dbProduto = new ProdutoDAL();
+
+            Pessoa objPessoa = new Pessoa();
+            PessoaDAL dbPessia = new PessoaDAL();
+
+            objPessoa = dbPessia.ObterPessoaID(objOrcamento.IdPessoa, ref erro);
+
+            objProduto = dbProduto.ObterProdutoPorID(objOrcamento.IdProduto,ref erro);
+
+            if (objOrcamento != null && objProduto != null && objPessoa != null)
+            {
+                bindProduto(objOrcamento, objProduto, objPessoa);
+            }
+            else
+            {
+                Session.Add("danger", "Erro " + erro);
+            }
+        }
+
+        public void bindProduto(Orcamento orcamento, Produto produto, Pessoa pessoa)
+        {
+            txtCodCliente.Text = orcamento.IdPessoa.ToString();
+            txtDescricao.Text = orcamento.Descricao;
+            txtQuantidade.Text = orcamento.Quantidade.ToString();
+            txtQtdeMetroQuadrado.Text = orcamento.Qdte_metro_quadrado.ToString();
+            ddlProduto.SelectedValue = orcamento.IdProduto.ToString();
+            txtNomeCliente.Text = pessoa.NomePessoa;
+            txtValorPrevisto.Text = produto.Valor.ToString();
+            txtValorPorMetro.Text = produto.ValorPorMetro.ToString();
         }
     }
 }

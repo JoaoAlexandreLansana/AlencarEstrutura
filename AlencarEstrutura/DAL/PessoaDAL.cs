@@ -501,6 +501,7 @@ namespace AlencarEstrutura.DAL
                                 objPessoa.Email = reader["ATSF014_EMAIL"].ToString();
                                 objPessoa.TipoPessoa = reader["ATSF014_TIPOPESSOA"].ToString();
                                 objPessoa.Senha = reader["ATSF014_SENHA"].ToString();
+                                objPessoa.NomePessoa = reader["ATSF014_NOME"].ToString();
                             }
                             return objPessoa;
                         }

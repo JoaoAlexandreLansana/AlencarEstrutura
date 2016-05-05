@@ -17,6 +17,7 @@ namespace AlencarEstrutura.DTO
         public int IdProdutoOrcamento { get; set; }
         public int IdProduto { get; set; }
         public decimal Quantidade { get; set; }
-        
+        public decimal ValorMetro { get; set; }
+        public decimal Qdte_metro_quadrado { get; set; }
     }
 }

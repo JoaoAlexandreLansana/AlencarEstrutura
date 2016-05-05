@@ -13,9 +13,6 @@
             </table>
         </asp:Panel>
     </div>
-
-
-
     <div>
         <asp:Panel ID="pnlManutencao" runat="server" GroupingText="Dados">
             <table style="width: 100%">
@@ -26,6 +23,7 @@
                     <td>
                         <asp:TextBox ID="txtCodigo" runat="server" Columns="8" MaxLength="10" Enabled="false"></asp:TextBox>
                         <asp:Button ID="btnBuscaPedidoCompra" runat="server" Text="..." CssClass="btn btn-secundary" data-target="#myModal" data-toggle="modal" />
+                        <asp:HiddenField ID="hfCodigoProdutoOrcamento" runat="server" />
                     </td>
                 </tr>
                 <tr>
@@ -51,55 +49,53 @@
                         <asp:Label ID="lblProduto" runat="server" Text="Produto"></asp:Label>
                     </td>
                     <td style="height: 28px">
-                        <asp:DropDownList ID="ddlProduto" runat="server" OnSelectedIndexChanged="ddlProduto_SelectedIndexChanged">
-                            <asp:ListItem>Selecione</asp:ListItem>
+                        <asp:DropDownList ID="ddlProduto" runat="server" OnSelectedIndexChanged="ddlProduto_SelectedIndexChanged" AutoPostBack="true">
+                            <asp:ListItem Value="0">Selecione</asp:ListItem>
                         </asp:DropDownList>
                         <asp:Label ID="lblQuantidade" runat="server" Text="Quantidade"></asp:Label>
                         <asp:TextBox ID="txtQuantidade" runat="server" Columns="8" MaxLength="8"></asp:TextBox>
                         <asp:Label ID="Label6" runat="server" Text="Metros²"></asp:Label>
-                        <asp:TextBox ID="TextBox2" runat="server" Columns="8" MaxLength="8"></asp:TextBox>
+                        <asp:TextBox ID="txtQtdeMetroQuadrado" runat="server" Columns="8" MaxLength="8"></asp:TextBox>
                         <asp:Label ID="lblValor" runat="server" Text="Valor Unit."></asp:Label>
-                        <asp:CheckBox ID="cbValorUnitario" runat="server" OnCheckedChanged="cbValorUnitario_CheckedChanged" AutoPostBack="true"/>
+                        <asp:CheckBox ID="cbValorUnitario" runat="server" OnCheckedChanged="cbValorUnitario_CheckedChanged" AutoPostBack="true" />
                         <asp:TextBox ID="txtValorPrevisto" runat="server" Columns="6" Enabled="False"></asp:TextBox>
                         <asp:Label ID="Label3" runat="server" Text="Valor por Metro²"></asp:Label>
-                        <asp:CheckBox ID="cbValorPorMetro" runat="server" OnCheckedChanged="cbValorPorMetro_CheckedChanged" AutoPostBack="true"/>
+                        <asp:CheckBox ID="cbValorPorMetro" runat="server" OnCheckedChanged="cbValorPorMetro_CheckedChanged" AutoPostBack="true" />
                         <asp:TextBox ID="txtValorPorMetro" runat="server" Columns="6" MaxLength="6" Enabled="False"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="width: 137px; height: 28px;">
-                        <asp:Label ID="lblObservacao" runat="server" required="required" Text="Observação"></asp:Label>
-                    </td>
-                    <td style="margin-left: 40px; height: 28px;">
-                        <asp:TextBox ID="txtObservacao" runat="server" Columns="60"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td style="width: 137px; height: 28px;">&nbsp;</td>
                     <td style="margin-left: 40px; height: 28px;">
-                        <asp:Button ID="btnAdicionar" runat="server" CssClass="btn btn-info"  Text="Listar" OnClick="btnAdicionar_Click" />
+                        <asp:Button ID="btnAdicionar" runat="server" CssClass="btn btn-info" Text="Listar" OnClick="btnAdicionar_Click" />
                         <asp:Button ID="btnRemover" runat="server" CssClass="btn btn-warning" Text="Remover" Width="80px" />
                     </td>
                 </tr>
                 <tr>
                     <td style="width: 137px">&nbsp;</td>
                     <td>
-                        <asp:GridView ID="gvProdutos" runat="server" AutoGenerateColumns="false" Width="100%" DataKeyNames="PKNI018_IDPRODUTO_PEDIDO">
+                        <asp:GridView ID="gvProdutos" runat="server" AutoGenerateColumns="false" Width="100%" DataKeyNames="FKNI022_IDPRODUTO" OnSelectedIndexChanged="gvProdutos_SelectedIndexChanged">
                             <Columns>
-                                <asp:BoundField HeaderText="Cod. Produto" DataField="FKNI018_IDPRODUTO" />
+                                <asp:BoundField HeaderText="Cod. Produto" DataField="FKNI022_IDPRODUTO" />
                                 <asp:BoundField HeaderText="Descrição" DataField="ATSF003_DESCRICAO" />
-                                <asp:BoundField HeaderText="Quantidade" DataField="ATDC018_QUANTIDADE" />
-                                <asp:BoundField HeaderText="Valor Previsto" DataField="ATDC018_VALORPREVISTO" />
+                                <asp:BoundField HeaderText="Quantidade" DataField="ATNI022_QUANTIDADE" />
+                                <asp:BoundField HeaderText="Valor" DataField="ATDC022_VALOR" />
                             </Columns>
                         </asp:GridView>
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 137px; height: 39px;"></td>
+                    <td style="width: 137px; height: 39px;">&nbsp;</td>
                     <td style="height: 39px" align="right">
-                        <asp:Button ID="btnSalvar" runat="server" CssClass="btn btn-primary" Text="Salvar" Width="80px" OnClick="btnSalvar_Click" />
-                        <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-info" Text="Cancelar" Width="80px" OnClick="btnCancelar_Click" />
-                        <asp:Button ID="btnExcluir" runat="server" CssClass="btn btn-warning" Text="Excluir" Width="80px" OnClick="btnExcluir_Click" />
+                        <asp:Label ID="lblTotal" runat="server"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 137px; height: 39px;"></td>
+                    <td align="right" style="height: 39px">
+                        <asp:Button ID="btnSalvar" runat="server" CssClass="btn btn-primary" OnClick="btnSalvar_Click" Text="Salvar" Width="80px" />
+                        <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-info" OnClick="btnCancelar_Click" Text="Cancelar" Width="80px" />
+                        <asp:Button ID="btnExcluir" runat="server" CssClass="btn btn-warning" OnClick="btnExcluir_Click" Text="Excluir" Width="80px" />
                     </td>
                 </tr>
             </table>

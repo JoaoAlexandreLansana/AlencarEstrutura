@@ -67,6 +67,15 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.Button btnBuscaPedidoCompra;
         
         /// <summary>
+        /// hfCodigoProdutoOrcamento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfCodigoProdutoOrcamento;
+        
+        /// <summary>
         /// Label5 control.
         /// </summary>
         /// <remarks>
@@ -166,13 +175,13 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
-        /// TextBox2 control.
+        /// txtQtdeMetroQuadrado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox txtQtdeMetroQuadrado;
         
         /// <summary>
         /// lblValor control.
@@ -229,24 +238,6 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.TextBox txtValorPorMetro;
         
         /// <summary>
-        /// lblObservacao control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblObservacao;
-        
-        /// <summary>
-        /// txtObservacao control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtObservacao;
-        
-        /// <summary>
         /// btnAdicionar control.
         /// </summary>
         /// <remarks>
@@ -272,6 +263,15 @@ namespace AlencarEstrutura {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvProdutos;
+        
+        /// <summary>
+        /// lblTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotal;
         
         /// <summary>
         /// btnSalvar control.
