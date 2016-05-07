@@ -13,7 +13,13 @@ namespace AlencarEstrutura
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CarregaDDLEstado();
+            if (!IsPostBack)
+            {
+                BindEmpresa();
+                CarregaDDLEstado();
+                
+
+            }
         }
 
         private void CarregaDDLEstado()
@@ -89,6 +95,11 @@ namespace AlencarEstrutura
         protected void ddlEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
             CarregaDDLMunicipioPorID();
+        }
+
+        private void BindEmpresa()
+        {
+            
         }
     }
 }

@@ -57,7 +57,7 @@
                         <asp:Label ID="Label6" runat="server" Text="Metros²"></asp:Label>
                         <asp:TextBox ID="txtQtdeMetroQuadrado" runat="server" Columns="8" MaxLength="8"></asp:TextBox>
                         <asp:Label ID="lblValor" runat="server" Text="Valor Unit."></asp:Label>
-                        <asp:CheckBox ID="cbValorUnitario" runat="server" OnCheckedChanged="cbValorUnitario_CheckedChanged" AutoPostBack="true" />
+                        <asp:CheckBox ID="cbValorUnitario" runat="server" OnCheckedChanged="cbValorUnitario_CheckedChanged" AutoPostBack="true" Checked="true"/>
                         <asp:TextBox ID="txtValorPrevisto" runat="server" Columns="6" Enabled="False"></asp:TextBox>
                         <asp:Label ID="Label3" runat="server" Text="Valor por Metro²"></asp:Label>
                         <asp:CheckBox ID="cbValorPorMetro" runat="server" OnCheckedChanged="cbValorPorMetro_CheckedChanged" AutoPostBack="true" />
@@ -68,13 +68,13 @@
                     <td style="width: 137px; height: 28px;">&nbsp;</td>
                     <td style="margin-left: 40px; height: 28px;">
                         <asp:Button ID="btnAdicionar" runat="server" CssClass="btn btn-info" Text="Listar" OnClick="btnAdicionar_Click" />
-                        <asp:Button ID="btnRemover" runat="server" CssClass="btn btn-warning" Text="Remover" Width="80px" />
+                        <asp:Button ID="btnRemover" runat="server" CssClass="btn btn-warning" Text="Remover" Width="80px" OnClick="btnRemover_Click" />
                     </td>
                 </tr>
                 <tr>
                     <td style="width: 137px">&nbsp;</td>
                     <td>
-                        <asp:GridView ID="gvProdutos" runat="server" AutoGenerateColumns="false" Width="100%" DataKeyNames="FKNI022_IDPRODUTO" OnSelectedIndexChanged="gvProdutos_SelectedIndexChanged">
+                        <asp:GridView ID="gvProdutos" runat="server" AutoGenerateColumns="false" Width="100%" DataKeyNames="PKNI022_IDPRODUTO_ORCAMENTO" OnSelectedIndexChanged="gvProdutos_SelectedIndexChanged">
                             <Columns>
                                 <asp:BoundField HeaderText="Cod. Produto" DataField="FKNI022_IDPRODUTO" />
                                 <asp:BoundField HeaderText="Descrição" DataField="ATSF003_DESCRICAO" />

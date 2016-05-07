@@ -1,6 +1,7 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Configuration;
+using System.Data;
 using WebApplication2.DTO;
 
 namespace WebApplication2.DAL
@@ -117,7 +118,7 @@ namespace WebApplication2.DAL
 
                         cmd.Parameters.Add(":LOGIN", usuario.Login);
                         cmd.Parameters.Add(":SENHA", usuario.Senha);
-                        cmd.Parameters.Add(":EMAIL", usuario.Email);
+                        cmd.Parameters.Add("EMAIL", usuario.Email);
                         cmd.Parameters.Add(":NOME", usuario.Nome);
                         int reader = cmd.ExecuteNonQuery();
                         sucesso = Convert.ToBoolean(reader);
@@ -134,5 +135,170 @@ namespace WebApplication2.DAL
             }
 
         }
+
+        public Usuario ObterUsuarioPorID(int IdUsuario, ref string erro)
+        {
+            try
+            {
+
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    string query = @"SELECT
+                                      PKNI001_IDUSUARIO,
+                                      ATSF001_NOME,
+                                      ATSF001_LOGIN,
+                                      ATSF001_EMAIL,
+                                      ATSF001_SENHA
+                                        FROM
+                                      ALC001T_USUARIO WHERE PKNI001_IDUSUARIO = :IDUSUARIO";
+
+                    conn.Open();
+
+                    using (OracleCommand cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = query;
+                        cmd.Parameters.Add(":IDUSUARIO", IdUsuario);
+
+                        using (OracleDataReader reader = cmd.ExecuteReader())
+                        {
+                            Usuario objUsuario = new Usuario();
+
+                            if (reader.Read())
+                            {
+                                objUsuario.idUsuario = Convert.ToInt32(reader[0]);
+                                objUsuario.Nome = reader[1].ToString();
+                                objUsuario.Login = reader[2].ToString();
+                                objUsuario.Email = reader[3].ToString();
+                                objUsuario.Senha = reader[4].ToString();
+                                
+
+                                return objUsuario;
+                            }
+                            return objUsuario;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return null;
+            }
+        }
+
+        public DataTable ObterListadeUsuario(ref string erro)
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    string query = @"SELECT
+                                      PKNI001_IDUSUARIO,
+                                      ATSF001_NOME,
+                                      ATSF001_LOGIN,
+                                      ATSF001_EMAIL,
+                                      ATSF001_SENHA
+                                        FROM
+                                      ALC001T_USUARIO ";
+
+                    conn.Open();
+
+                    using (OracleCommand cmd = conn.CreateCommand())
+                    {
+                       
+
+                        cmd.CommandText = query;
+
+                        DataTable dt = new DataTable();
+                        OracleDataAdapter da = new OracleDataAdapter();
+                        da.SelectCommand = cmd;
+                        da.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return null;
+            }
+        }
+
+        public bool AtualizarUsuario(Usuario usuario, ref string erro)
+        {
+            bool sucesso = false;
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    string query = @"UPDATE
+                                      ALC001T_USUARIO
+                                    SET
+                                     ATSF001_LOGIN   = :LOGIN,
+                                     ATSF001_SENHA   = :SENHA,
+                                     ATSF001_EMAIL   = :EMAIL,
+                                     ATSF001_NOME    = :NOME 
+                                     WHERE PKNI001_IDUSUARIO= :IDUSUARIO";
+                    conn.Open();                       
+
+                    using (OracleCommand cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = query;
+
+                        cmd.Parameters.Add(":LOGIN", usuario.Login);
+                        cmd.Parameters.Add(":SENHA", usuario.Senha);
+                        cmd.Parameters.Add(":EMAIL", usuario.Email);
+                        cmd.Parameters.Add(":NOME", usuario.Nome);
+                        cmd.Parameters.Add(":IDUSUARIO", usuario.idUsuario);
+                        int reader = cmd.ExecuteNonQuery();
+                        sucesso = Convert.ToBoolean(reader);
+                    }
+                }
+
+                return sucesso;
+
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return false;
+            }
+
+        }
+
+        public bool DeleteUsuario(int IdUsuario, ref string erro)
+        {
+            bool sucesso = false;
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    string query = @"DELETE
+                                        FROM
+                                        ALC001T_USUARIO
+                                     WHERE PKNI001_IDUSUARIO= :IDUSUARIO";
+                    conn.Open();
+
+                    using (OracleCommand cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = query;
+
+                        cmd.Parameters.Add(":IDUSUARIO",IdUsuario);
+                        int reader = cmd.ExecuteNonQuery();
+                        sucesso = Convert.ToBoolean(reader);
+                    }
+                }
+
+                return sucesso;
+
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return false;
+            }
+
+        }
+
     }
 }

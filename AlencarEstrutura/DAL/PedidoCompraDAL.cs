@@ -1,4 +1,5 @@
-﻿using AlencarEstrutura.DTO;
+﻿using AlencarEstrutura.DataSets;
+using AlencarEstrutura.DTO;
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
@@ -37,6 +38,47 @@ namespace AlencarEstrutura.DAL
             {
                 erro = ex.Message;
                 return 0;
+            }
+        }
+
+        public PedidoCompra ObterPedidoPorID(int idPedido, ref string erro)
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    string query = @"SELECT PKNI006_IDPEDIDOCOMPRA,
+                                      FKNI006_IDUSUARIO,
+                                      ATDT006_DATAPEDIDO,
+                                      ATNI006_STATUS
+                                    FROM ALC006T_PEDIDOCOMPRA WHERE PKNI006_IDPEDIDOCOMPRA = :IDPEDIDO";
+
+                    conn.Open();
+
+                    using (OracleCommand cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = query;
+                        cmd.Parameters.Add(":IDPEDIDO", idPedido);
+
+                        using (OracleDataReader reader = cmd.ExecuteReader())
+                        {
+                            PedidoCompra objPedido = new PedidoCompra();
+                            if (reader.Read())
+                            {
+                                objPedido.IdPedidoCompra = Convert.ToInt32(reader["PKNI006_IDPEDIDOCOMPRA"]);
+                                objPedido.IdUsuario = Convert.ToInt32(reader["FKNI006_IDUSUARIO"]);
+                                objPedido.DataPedido = Convert.ToDateTime(reader["ATDT006_DATAPEDIDO"]);
+                                objPedido.Status = Convert.ToInt32(reader["ATNI006_STATUS"]);
+                            }
+                            return objPedido;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return null;
             }
         }
 
@@ -171,7 +213,8 @@ namespace AlencarEstrutura.DAL
                                       FKNI006_IDUSUARIO,
                                       ATDT006_DATAPEDIDO,
                                       ATNI006_STATUS
-                                    FROM ALC006T_PEDIDOCOMPRA";
+                                    FROM ALC006T_PEDIDOCOMPRA
+                                    ORDER BY PKNI006_IDPEDIDOCOMPRA DESC";
 
                     conn.Open();
 
@@ -231,8 +274,8 @@ namespace AlencarEstrutura.DAL
                                 objProduto.IdProduto = Convert.ToInt32(reader["FKNI018_IDPRODUTO"]);
                                 objProduto.IdFornecedor = (reader["FKNI018_IDFORNECEDOR"] == DBNull.Value) ? 0 : Convert.ToInt32(reader["FKNI018_IDFORNECEDOR"]);
                                 objProduto.Observacao = reader["ATSF018_OBSERVACAO"].ToString();
-                                objProduto.ValorPrevisto = (reader["ATDC018_VALORPREVISTO"] == DBNull.Value)? 0 : Convert.ToDecimal(reader["ATDC018_VALORPREVISTO"]);
-                                objProduto.Quantidade = (reader["ATDC018_QUANTIDADE"] == DBNull.Value)? 0 : Convert.ToDecimal(reader["ATDC018_QUANTIDADE"]);
+                                objProduto.ValorPrevisto = (reader["ATDC018_VALORPREVISTO"] == DBNull.Value) ? 0 : Convert.ToDecimal(reader["ATDC018_VALORPREVISTO"]);
+                                objProduto.Quantidade = (reader["ATDC018_QUANTIDADE"] == DBNull.Value) ? 0 : Convert.ToDecimal(reader["ATDC018_QUANTIDADE"]);
 
                                 return objProduto;
                             }
@@ -326,8 +369,8 @@ namespace AlencarEstrutura.DAL
                 using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
                 {
                     string query = @"DELETE
-                                    FROM ALC006T_PEDIDOCOMPRA
-                                    WHERE PKNI006_IDPEDIDOCOMPRA = :IDPEDIDOCOMPRA";
+                                        FROM ALC006T_PEDIDOCOMPRA
+                                        WHERE PKNI006_IDPEDIDOCOMPRA = :IDPEDIDOCOMPRA";
 
                     conn.Open();
 
@@ -346,6 +389,52 @@ namespace AlencarEstrutura.DAL
                 erro = ex.Message;
                 return false;
             }
+        }
+
+        public DataSet1 GetData(int idPedido, ref string erro)
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    string query = @"SELECT PKNI018_IDPRODUTO_PEDIDO,
+                                  ATSD018_DATAPEDIDO,
+                                  ATSF018_OBSERVACAO,
+                                  ATDC018_QUANTIDADE,
+                                  ATDC018_VALORPREVISTO,
+                                  FKNI018_IDPRODUTO,
+                                  FKNI018_IDPEDIDOCOMPRA,
+                                  FKNI018_IDFORNECEDOR,
+                                  ATSF003_DESCRICAO,
+                                  ATSF007_NOMEFANTASIA
+                                FROM BUSCA_PEDIDO_COMPRA
+                                WHERE FKNI018_IDPEDIDOCOMPRA = :IDPEDIDOCOMPRA
+                                    ";
+
+                    conn.Open();
+
+                    using (OracleCommand cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = query;
+                        cmd.Parameters.Add(":IDPEDIDOCOMPRA", idPedido);
+
+                        OracleDataAdapter da = new OracleDataAdapter();
+                        da.SelectCommand = cmd;
+
+                        using (DataSet1 dataSet = new DataSet1())
+                        {
+                            da.Fill(dataSet, "BUSCA_PEDIDO_COMPRA");
+                            return dataSet;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return null;
+            }
+            
         }
     }
 }

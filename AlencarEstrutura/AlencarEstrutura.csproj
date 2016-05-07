@@ -47,6 +47,10 @@
       <HintPath>..\packages\AjaxControlToolkit.16.1.0.0\lib\net40\AjaxControlToolkit.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -123,7 +127,6 @@
       <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Contact.aspx" />
@@ -134,6 +137,17 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="DataSets\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSets\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSets\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="image\loading.gif" />
     <Content Include="image\login_button.png" />
@@ -148,6 +162,7 @@
     <Content Include="LSN014_CLIENTE.aspx" />
     <Content Include="LSN019_CONTROLE_ESTOQUE.aspx" />
     <Content Include="LSN020_ORCAMENTO.aspx" />
+    <Content Include="LSN021_IMPRIMIRPEDIDOCOMPRA.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -212,6 +227,7 @@
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="DAL\CategoriaDAL.cs" />
+    <Compile Include="DAL\EmpresaDAL.cs" />
     <Compile Include="DAL\EnderecoDAL.cs" />
     <Compile Include="DAL\EstadoDAL.cs" />
     <Compile Include="DAL\EstoqueDAL.cs" />
@@ -223,6 +239,11 @@
     <Compile Include="DAL\ProdutoDAL.cs" />
     <Compile Include="DAL\UsuarioDAL.cs" />
     <Compile Include="DAL\TelefoneDAL.cs" />
+    <Compile Include="DataSets\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -290,6 +311,12 @@
     <Compile Include="LSN006_PEDIDOCOMPRA.aspx.designer.cs">
       <DependentUpon>LSN006_PEDIDOCOMPRA.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LSN006_PEDIDOCOMPRA_.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LSN006_PEDIDOCOMPRA_.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="LSN007_FORNECEDOR.aspx.cs">
       <DependentUpon>LSN007_FORNECEDOR.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -325,6 +352,13 @@
     <Compile Include="LSN020_ORCAMENTO.aspx.designer.cs">
       <DependentUpon>LSN020_ORCAMENTO.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LSN021_IMPRIMIRPEDIDOCOMPRA.aspx.cs">
+      <DependentUpon>LSN021_IMPRIMIRPEDIDOCOMPRA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LSN021_IMPRIMIRPEDIDOCOMPRA.aspx.designer.cs">
+      <DependentUpon>LSN021_IMPRIMIRPEDIDOCOMPRA.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -341,7 +375,18 @@
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LSN006_PEDIDOCOMPRA_.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LSN006_PEDIDOCOMPRA_.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="crystalreportviewers13\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

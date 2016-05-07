@@ -21,8 +21,7 @@
                         <asp:Label ID="lblNome" Text="Nome Fantasia" runat="server"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtNomeFantasia" runat="server" required="required"></asp:TextBox>
-                        <asp:Button ID="btnBuscaEmpresa" runat="server" Text="..." CssClass="btn btn-secundary"/>
+                        <asp:TextBox ID="txtNomeFantasia" runat="server" ></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -30,7 +29,7 @@
                         <asp:Label ID="lblRazao" Text="Razão Social" runat="server"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtRazao" runat="server" required="required"></asp:TextBox>
+                        <asp:TextBox ID="txtRazao" runat="server" ></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -38,7 +37,7 @@
                         <asp:Label ID="lblCNPJ" Text="CNPJ" runat="server" required="required"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtCNPJ" runat="server" required="required"></asp:TextBox>
+                        <asp:TextBox ID="txtCNPJ" runat="server" ></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -59,7 +58,7 @@
                         <asp:Label ID="lblEndereco" Text="Endereço" runat="server" required="required"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtEndereco" runat="server" required="required" Columns="50" MaxLength="30"></asp:TextBox>
+                        <asp:TextBox ID="txtEndereco" runat="server"  Columns="50" MaxLength="30"></asp:TextBox>
                         <asp:Label ID="Label1" runat="server" Text="No."></asp:Label>
                         <asp:TextBox ID="txtNumero" runat="server" Columns="4"></asp:TextBox>
                         &nbsp;<asp:Label ID="lblComplemento" runat="server" Text="Complemento"></asp:Label>

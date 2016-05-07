@@ -212,7 +212,8 @@ namespace AlencarEstrutura.DAL
                                             FKNI022_IDORCAMENTO,
                                             ATNI022_QUANTIDADE,
                                             ATDC022_VALOR,
-                                            ATDC022_QTDE_METRO_QUADRADO
+                                            ATDC022_QTDE_METRO_QUADRADO,
+                                            ATNI022_VALOR_UNITARIO
                                           )
                                           VALUES
                                           (
@@ -220,7 +221,8 @@ namespace AlencarEstrutura.DAL
                                             :IDORCAMENTO,
                                             :QUANTIDADE,
                                             :VALOR,
-                                            :QTDE_METRO_QUADRADO
+                                            :QTDE_METRO_QUADRADO,
+                                            :VALOR_UNITARIO
                                           )";
 
                     conn.Open();
@@ -234,7 +236,8 @@ namespace AlencarEstrutura.DAL
                         cmd.Parameters.Add(":QUANTIDADE", orcamento.Quantidade);
                         cmd.Parameters.Add(":VALOR", orcamento.Valor);
                         cmd.Parameters.Add(":QTDE_METRO_QUADRADO", orcamento.Qdte_metro_quadrado);
-                        
+                        cmd.Parameters.Add(":VALOR_UNITARIO", orcamento.ValorUnitario);
+
                         return Convert.ToBoolean(cmd.ExecuteNonQuery());
                     }
                 }
@@ -259,7 +262,8 @@ namespace AlencarEstrutura.DAL
                                             FKNI022_IDORCAMENTO           = :IDORCAMENTO,
                                             ATNI022_QUANTIDADE            = :QUANTIDADE,
                                             ATDC022_VALOR                 = :VALOR,
-                                            ATDC022_QTDE_METRO_QUADRADO   = :QTDE_METRO_QUADRADO
+                                            ATDC022_QTDE_METRO_QUADRADO   = :QTDE_METRO_QUADRADO,
+                                            ATNI022_VALOR_UNITARIO        = :VALOR_UNITARIO
                                             WHERE PKNI022_IDPRODUTO_ORCAMENTO = :IDPRODUTO_ORCAMENTO";
 
                     conn.Open();
@@ -272,9 +276,9 @@ namespace AlencarEstrutura.DAL
                         cmd.Parameters.Add(":IDORCAMENTO", idOrcamento);
                         cmd.Parameters.Add(":QUANTIDADE", orcamento.Quantidade);
                         cmd.Parameters.Add(":VALOR", orcamento.Valor);
-                        cmd.Parameters.Add(":IDPRODUTO_ORCAMENTO", orcamento.IdProdutoOrcamento);
                         cmd.Parameters.Add(":QTDE_METRO_QUADRADO", orcamento.Qdte_metro_quadrado);
-                        
+                        cmd.Parameters.Add(":VALOR_UNITARIO", orcamento.ValorUnitario);
+                        cmd.Parameters.Add(":IDPRODUTO_ORCAMENTO", orcamento.IdProdutoOrcamento);
                         return Convert.ToBoolean(cmd.ExecuteNonQuery());
                     }
                 }
@@ -301,7 +305,8 @@ namespace AlencarEstrutura.DAL
                                         to_char(ATDC022_VALOR,'999G999G999G999D99') as ATDC022_VALOR,
                                         to_char((SELECT SUM(ATDC022_VALOR)
                                           FROM ALC022T_PRODUTO_ORCAMENTO where FKNI022_IDORCAMENTO = :IDORCAMENTO),'999G999G999G999D99') as TOTAL,
-                                        ATDC022_QTDE_METRO_QUADRADO
+                                        ATDC022_QTDE_METRO_QUADRADO,
+                                        ATNI022_VALOR_UNITARIO
                                       FROM ALC022T_PRODUTO_ORCAMENTO TB1
                                       INNER JOIN ALC003T_PRODUTO TB2
                                       ON TB1.FKNI022_IDPRODUTO = TB2.PKNI003_IDPRODUTO
@@ -349,7 +354,8 @@ namespace AlencarEstrutura.DAL
                                         to_char(TB2.ATDC003_VALOR_METRO,'999G999G999G999D99') AS ATDC003_VALOR_METRO,
                                         to_char(TB2.ATDC003_VALOR,'999G999G999G999D99') AS ATDC003_VALOR,
                                         ATDC022_QTDE_METRO_QUADRADO,
-                                        TB3.FKNI020_IDPESSOA
+                                        TB3.FKNI020_IDPESSOA,
+                                        ATNI022_VALOR_UNITARIO
                                       FROM ALC022T_PRODUTO_ORCAMENTO TB1
                                       INNER JOIN ALC003T_PRODUTO TB2
                                       ON TB1.FKNI022_IDPRODUTO = TB2.PKNI003_IDPRODUTO
@@ -372,14 +378,15 @@ namespace AlencarEstrutura.DAL
                                 Orcamento objOrcamento = new Orcamento();
 
                                 objOrcamento.IdProdutoOrcamento = Convert.ToInt32(reader[0]);
-                                objOrcamento.IdProduto = (reader[1] == DBNull.Value)? 0 : Convert.ToInt32(reader[1]);
+                                objOrcamento.IdProduto = (reader[1] == DBNull.Value) ? 0 : Convert.ToInt32(reader[1]);
                                 objOrcamento.Descricao = reader[2].ToString();
                                 objOrcamento.IdOrcamento = (reader[3] == DBNull.Value) ? 0 : Convert.ToInt32(reader[3]);
-                                objOrcamento.Quantidade = (reader[4] == DBNull.Value) ? 0 : Convert.ToDecimal(reader[4]);
+                                objOrcamento.Quantidade = (reader["ATNI022_QUANTIDADE"] == DBNull.Value) ? 0 : Convert.ToDecimal(reader["ATNI022_QUANTIDADE"]);
                                 objOrcamento.Valor = (reader["ATDC003_VALOR"] == DBNull.Value) ? 0 : Convert.ToDecimal(reader["ATDC003_VALOR"]);
-                                objOrcamento.ValorMetro = (reader["ATDC003_VALOR_METRO"] == DBNull.Value) ? 0 : Convert.ToDecimal(reader["ATDC003_VALOR_METRO"]); 
+                                objOrcamento.ValorMetro = (reader["ATDC003_VALOR_METRO"] == DBNull.Value) ? 0 : Convert.ToDecimal(reader["ATDC003_VALOR_METRO"]);
                                 objOrcamento.Qdte_metro_quadrado = (reader["ATDC022_QTDE_METRO_QUADRADO"] == DBNull.Value) ? 0 : Convert.ToDecimal(reader["ATDC022_QTDE_METRO_QUADRADO"]);
-                                objOrcamento.IdPessoa = (reader["FKNI020_IDPESSOA"] == DBNull.Value)? 0 : Convert.ToInt32(reader["FKNI020_IDPESSOA"]);
+                                objOrcamento.IdPessoa = (reader["FKNI020_IDPESSOA"] == DBNull.Value) ? 0 : Convert.ToInt32(reader["FKNI020_IDPESSOA"]);
+                                objOrcamento.ValorUnitario = (reader["ATNI022_VALOR_UNITARIO"] == DBNull.Value) ? 0 : Convert.ToInt32(reader["ATNI022_VALOR_UNITARIO"]);
 
                                 return objOrcamento;
                             }
@@ -394,5 +401,62 @@ namespace AlencarEstrutura.DAL
                 return null;
             }
         }
+
+        public bool ExcluirProtudoPorID(int idProduto, ref string erro)
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    string query = @"DELETE FROM ALC022T_PRODUTO_ORCAMENTO
+                                          WHERE PKNI022_IDPRODUTO_ORCAMENTO = :IDORCAMENTO_PRODUTO";
+
+                    conn.Open();
+
+                    using (OracleCommand cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = query;
+
+                        cmd.Parameters.Add(":IDORCAMENTO_PRODUTO", idProduto);
+
+                        return Convert.ToBoolean(cmd.ExecuteNonQuery());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return false;
+            }
+        }
+
+        public bool ExcluirProdutoPorIdOrcamento(int idOrcamento, ref string erro)
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    string query = @"DELETE FROM ALC022T_PRODUTO_ORCAMENTO
+                                          WHERE FKNI022_IDORCAMENTO = :IDORCAMENTO";
+
+                    conn.Open();
+
+                    using (OracleCommand cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = query;
+
+                        cmd.Parameters.Add(":IDORCAMENTO", idOrcamento);
+
+                        return Convert.ToBoolean(cmd.ExecuteNonQuery());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return false;
+            }
+        }
+
     }
 }

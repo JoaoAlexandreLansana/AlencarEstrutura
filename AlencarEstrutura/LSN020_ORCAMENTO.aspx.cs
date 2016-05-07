@@ -38,7 +38,28 @@ namespace AlencarEstrutura
 
         protected void btnExcluir_Click(object sender, EventArgs e)
         {
+            Orcamento objOrcamento = new Orcamento();
+            OrcamentoDAL dbOrcamento = new OrcamentoDAL();
 
+            if (!string.IsNullOrEmpty(txtCodigo.Text))
+            {
+                if (dbOrcamento.ExcluirProdutoPorIdOrcamento(Convert.ToInt32(txtCodigo.Text), ref erro))
+                {
+                    if (dbOrcamento.ExcluirOrcamento(Convert.ToInt32(txtCodigo.Text), ref erro))
+                    {
+                        Session.Add("success", "Orçamento Excluído com Sucesso! ");
+                        limpa();
+                    }
+                    else
+                    {
+                        Session.Add("danger", "Não foi possível excluído o Orçamento " + erro);
+                    }
+                }
+                else
+                {
+                    Session.Add("danger", "Não foi possível excluído o Orçamento " + erro);
+                }
+            }
         }
 
         private bool validacoes()
@@ -117,7 +138,10 @@ namespace AlencarEstrutura
             gvProdutos.DataSource = dtOrcamento;
             gvProdutos.AutoGenerateSelectButton = true;
             gvProdutos.DataBind();
-            lblTotal.Text = "TOTAL: " + dtOrcamento.Rows[0].ItemArray[6].ToString();
+            if (dtOrcamento != null)
+            {
+                lblTotal.Text = "TOTAL: " + dtOrcamento.Rows[0].ItemArray[6].ToString();
+            }
         }
 
         protected void gvOrcamento_SelectedIndexChanged(object sender, EventArgs e)
@@ -133,6 +157,7 @@ namespace AlencarEstrutura
         private void bindOrcamento(Orcamento orcamento)
         {
             txtCodigo.Text = orcamento.IdOrcamento.ToString();
+            txtDescricao.Text = orcamento.Descricao;
             carregaGvProduto();
         }
 
@@ -147,6 +172,8 @@ namespace AlencarEstrutura
             objOrcamento.IdPessoa = Convert.ToInt32(txtCodCliente.Text);
             objOrcamento.IdProduto = Convert.ToInt32(ddlProduto.SelectedValue);
             objOrcamento.Quantidade = Convert.ToDecimal(txtQuantidade.Text);
+            objOrcamento.Qdte_metro_quadrado = Convert.ToDecimal(txtQtdeMetroQuadrado.Text);
+
             if (cbValorUnitario.Checked)
             {
                 objOrcamento.Valor = Convert.ToDecimal(txtValorPrevisto.Text) * Convert.ToDecimal(txtQuantidade.Text);
@@ -169,6 +196,9 @@ namespace AlencarEstrutura
 
                 txtCodigo.Text = idOrcamento.ToString();
             }
+
+            //objOrcamento.ValorUnitario =  (cbValorUnitario.Checked) ? 1 : 0 ;
+            objOrcamento.ValorUnitario = Convert.ToInt16(cbValorUnitario.Checked);
 
             if (string.IsNullOrEmpty(hfCodigoProdutoOrcamento.Value))
             {
@@ -247,17 +277,17 @@ namespace AlencarEstrutura
             Orcamento objOrcamento = new Orcamento();
             OrcamentoDAL dbOrcamento = new OrcamentoDAL();
 
-            objOrcamento = dbOrcamento.ObertProdutoPorID(Convert.ToInt32(gvProdutos.SelectedDataKey.Value), ref erro);
-
             Produto objProduto = new Produto();
             ProdutoDAL dbProduto = new ProdutoDAL();
 
             Pessoa objPessoa = new Pessoa();
             PessoaDAL dbPessia = new PessoaDAL();
 
+            objOrcamento = dbOrcamento.ObertProdutoPorID(Convert.ToInt32(gvProdutos.SelectedDataKey.Value), ref erro);
+
             objPessoa = dbPessia.ObterPessoaID(objOrcamento.IdPessoa, ref erro);
 
-            objProduto = dbProduto.ObterProdutoPorID(objOrcamento.IdProduto,ref erro);
+            objProduto = dbProduto.ObterProdutoPorID(objOrcamento.IdProduto, ref erro);
 
             if (objOrcamento != null && objProduto != null && objPessoa != null)
             {
@@ -279,6 +309,37 @@ namespace AlencarEstrutura
             txtNomeCliente.Text = pessoa.NomePessoa;
             txtValorPrevisto.Text = produto.Valor.ToString();
             txtValorPorMetro.Text = produto.ValorPorMetro.ToString();
+            hfCodigoProdutoOrcamento.Value = orcamento.IdProdutoOrcamento.ToString();
+
+            if (orcamento.ValorUnitario == 1)
+            {
+                cbValorUnitario.Checked = true;
+                cbValorPorMetro.Checked = false;
+            }
+            else
+            {
+                cbValorPorMetro.Checked = true;
+                cbValorUnitario.Checked = false;
+            }
+        }
+
+        protected void btnRemover_Click(object sender, EventArgs e)
+        {
+            Orcamento objOrcamento = new Orcamento();
+            OrcamentoDAL dbOrcamento = new OrcamentoDAL();
+
+            if (!string.IsNullOrEmpty(hfCodigoProdutoOrcamento.Value))
+            {
+                if (dbOrcamento.ExcluirProdutoPorIdOrcamento(Convert.ToInt32(txtCodigo.Text), ref erro))
+                {
+                    Session.Add("success", "Produto Excluído com Sucesso! ");
+                    carregaGvProduto();
+                }
+                else
+                {
+                    Session.Add("danger", "Não foi possível excluído o Produto " + erro);
+                }
+            }
         }
     }
 }

@@ -94,6 +94,8 @@
                                     <asp:LinkButton ID="LinkButton5" runat="server">Lista de Notas Fiscais</asp:LinkButton></li>
                                 <li>
                                     <asp:LinkButton ID="LinkButton6" runat="server">Produtos em Estoque</asp:LinkButton></li>
+                                <li>
+                                    <asp:LinkButton ID="lbImprimirPedidoCompra" runat="server" OnClick="lbImprimirPedidoCompra_Click">Pedido de Compra</asp:LinkButton></li>
                             </ul>
                         </li>
                         <li><a runat="server" href="~/Contact">Contato</a></li>

@@ -76,5 +76,11 @@ namespace AlencarEstrutura
         {
             Response.Redirect("LSN020_ORCAMENTO.aspx");
         }
+
+        protected void lbImprimirPedidoCompra_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LSN021_IMPRIMIRPEDIDOCOMPRA.aspx");
+        }
+        
     }
 }

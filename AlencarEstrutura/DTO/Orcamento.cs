@@ -19,5 +19,6 @@ namespace AlencarEstrutura.DTO
         public decimal Quantidade { get; set; }
         public decimal ValorMetro { get; set; }
         public decimal Qdte_metro_quadrado { get; set; }
+        public int ValorUnitario { get; set; }
     }
 }

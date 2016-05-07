@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Web.config)" ParameterPrefix=":" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ConnectionString.ConnectionString" Provider="Oracle.ManagedDataAccess.Client" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BUSCA_PEDIDO_COMPRATableAdapter" GeneratorDataComponentClassName="BUSCA_PEDIDO_COMPRATableAdapter" Name="BUSCA_PEDIDO_COMPRA" UserDataComponentName="BUSCA_PEDIDO_COMPRATableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="ALCDBDEV.BUSCA_PEDIDO_COMPRA" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT PKNI018_IDPRODUTO_PEDIDO, ATSD018_DATAPEDIDO, ATSF018_OBSERVACAO, ATDC018_QUANTIDADE, ATDC018_VALORPREVISTO, FKNI018_IDPRODUTO, FKNI018_IDPEDIDOCOMPRA, FKNI018_IDFORNECEDOR, ATSF003_DESCRICAO, ATSF007_NOMEFANTASIA FROM ALCDBDEV.BUSCA_PEDIDO_COMPRA</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PKNI018_IDPRODUTO_PEDIDO" DataSetColumn="PKNI018_IDPRODUTO_PEDIDO" />
+              <Mapping SourceColumn="ATSD018_DATAPEDIDO" DataSetColumn="ATSD018_DATAPEDIDO" />
+              <Mapping SourceColumn="ATSF018_OBSERVACAO" DataSetColumn="ATSF018_OBSERVACAO" />
+              <Mapping SourceColumn="ATDC018_QUANTIDADE" DataSetColumn="ATDC018_QUANTIDADE" />
+              <Mapping SourceColumn="ATDC018_VALORPREVISTO" DataSetColumn="ATDC018_VALORPREVISTO" />
+              <Mapping SourceColumn="FKNI018_IDPRODUTO" DataSetColumn="FKNI018_IDPRODUTO" />
+              <Mapping SourceColumn="FKNI018_IDPEDIDOCOMPRA" DataSetColumn="FKNI018_IDPEDIDOCOMPRA" />
+              <Mapping SourceColumn="FKNI018_IDFORNECEDOR" DataSetColumn="FKNI018_IDFORNECEDOR" />
+              <Mapping SourceColumn="ATSF003_DESCRICAO" DataSetColumn="ATSF003_DESCRICAO" />
+              <Mapping SourceColumn="ATSF007_NOMEFANTASIA" DataSetColumn="ATSF007_NOMEFANTASIA" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="BUSCA_PEDIDO_COMPRA" msprop:Generator_TableClassName="BUSCA_PEDIDO_COMPRADataTable" msprop:Generator_TableVarName="tableBUSCA_PEDIDO_COMPRA" msprop:Generator_TablePropName="BUSCA_PEDIDO_COMPRA" msprop:Generator_RowDeletingName="BUSCA_PEDIDO_COMPRARowDeleting" msprop:Generator_RowChangingName="BUSCA_PEDIDO_COMPRARowChanging" msprop:Generator_RowEvHandlerName="BUSCA_PEDIDO_COMPRARowChangeEventHandler" msprop:Generator_RowDeletedName="BUSCA_PEDIDO_COMPRARowDeleted" msprop:Generator_UserTableName="BUSCA_PEDIDO_COMPRA" msprop:Generator_RowChangedName="BUSCA_PEDIDO_COMPRARowChanged" msprop:Generator_RowEvArgName="BUSCA_PEDIDO_COMPRARowChangeEvent" msprop:Generator_RowClassName="BUSCA_PEDIDO_COMPRARow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PKNI018_IDPRODUTO_PEDIDO" msprop:Generator_ColumnVarNameInTable="columnPKNI018_IDPRODUTO_PEDIDO" msprop:Generator_ColumnPropNameInRow="PKNI018_IDPRODUTO_PEDIDO" msprop:Generator_ColumnPropNameInTable="PKNI018_IDPRODUTO_PEDIDOColumn" msprop:Generator_UserColumnName="PKNI018_IDPRODUTO_PEDIDO" type="xs:decimal" />
+              <xs:element name="ATSD018_DATAPEDIDO" msprop:Generator_ColumnVarNameInTable="columnATSD018_DATAPEDIDO" msprop:Generator_ColumnPropNameInRow="ATSD018_DATAPEDIDO" msprop:Generator_ColumnPropNameInTable="ATSD018_DATAPEDIDOColumn" msprop:Generator_UserColumnName="ATSD018_DATAPEDIDO" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ATSF018_OBSERVACAO" msprop:Generator_ColumnVarNameInTable="columnATSF018_OBSERVACAO" msprop:Generator_ColumnPropNameInRow="ATSF018_OBSERVACAO" msprop:Generator_ColumnPropNameInTable="ATSF018_OBSERVACAOColumn" msprop:Generator_UserColumnName="ATSF018_OBSERVACAO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ATDC018_QUANTIDADE" msprop:Generator_ColumnVarNameInTable="columnATDC018_QUANTIDADE" msprop:Generator_ColumnPropNameInRow="ATDC018_QUANTIDADE" msprop:Generator_ColumnPropNameInTable="ATDC018_QUANTIDADEColumn" msprop:Generator_UserColumnName="ATDC018_QUANTIDADE" type="xs:decimal" />
+              <xs:element name="ATDC018_VALORPREVISTO" msprop:Generator_ColumnVarNameInTable="columnATDC018_VALORPREVISTO" msprop:Generator_ColumnPropNameInRow="ATDC018_VALORPREVISTO" msprop:Generator_ColumnPropNameInTable="ATDC018_VALORPREVISTOColumn" msprop:Generator_UserColumnName="ATDC018_VALORPREVISTO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FKNI018_IDPRODUTO" msprop:Generator_ColumnVarNameInTable="columnFKNI018_IDPRODUTO" msprop:Generator_ColumnPropNameInRow="FKNI018_IDPRODUTO" msprop:Generator_ColumnPropNameInTable="FKNI018_IDPRODUTOColumn" msprop:Generator_UserColumnName="FKNI018_IDPRODUTO" type="xs:decimal" />
+              <xs:element name="FKNI018_IDPEDIDOCOMPRA" msprop:Generator_ColumnVarNameInTable="columnFKNI018_IDPEDIDOCOMPRA" msprop:Generator_ColumnPropNameInRow="FKNI018_IDPEDIDOCOMPRA" msprop:Generator_ColumnPropNameInTable="FKNI018_IDPEDIDOCOMPRAColumn" msprop:Generator_UserColumnName="FKNI018_IDPEDIDOCOMPRA" type="xs:decimal" />
+              <xs:element name="FKNI018_IDFORNECEDOR" msprop:Generator_ColumnVarNameInTable="columnFKNI018_IDFORNECEDOR" msprop:Generator_ColumnPropNameInRow="FKNI018_IDFORNECEDOR" msprop:Generator_ColumnPropNameInTable="FKNI018_IDFORNECEDORColumn" msprop:Generator_UserColumnName="FKNI018_IDFORNECEDOR" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ATSF003_DESCRICAO" msprop:Generator_ColumnVarNameInTable="columnATSF003_DESCRICAO" msprop:Generator_ColumnPropNameInRow="ATSF003_DESCRICAO" msprop:Generator_ColumnPropNameInTable="ATSF003_DESCRICAOColumn" msprop:Generator_UserColumnName="ATSF003_DESCRICAO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ATSF007_NOMEFANTASIA" msprop:Generator_ColumnVarNameInTable="columnATSF007_NOMEFANTASIA" msprop:Generator_ColumnPropNameInRow="ATSF007_NOMEFANTASIA" msprop:Generator_ColumnPropNameInTable="ATSF007_NOMEFANTASIAColumn" msprop:Generator_UserColumnName="ATSF007_NOMEFANTASIA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

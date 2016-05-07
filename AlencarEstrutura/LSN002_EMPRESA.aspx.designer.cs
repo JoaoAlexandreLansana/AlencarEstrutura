@@ -58,15 +58,6 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.TextBox txtNomeFantasia;
         
         /// <summary>
-        /// btnBuscaEmpresa control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscaEmpresa;
-        
-        /// <summary>
         /// lblRazao control.
         /// </summary>
         /// <remarks>
