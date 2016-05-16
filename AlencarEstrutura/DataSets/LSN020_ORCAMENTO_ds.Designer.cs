@@ -20,17 +20,17 @@ namespace AlencarEstrutura.DataSets {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DataSet1")]
+    [global::System.Xml.Serialization.XmlRootAttribute("LSN020_ORCAMENTO_ds")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DataSet1 : global::System.Data.DataSet {
+    public partial class LSN020_ORCAMENTO_ds : global::System.Data.DataSet {
         
-        private BUSCA_PEDIDO_COMPRADataTable tableBUSCA_PEDIDO_COMPRA;
+        private BUSCA_ORCAMENTODataTable tableBUSCA_ORCAMENTO;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public DataSet1() {
+        public LSN020_ORCAMENTO_ds() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace AlencarEstrutura.DataSets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected DataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected LSN020_ORCAMENTO_ds(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace AlencarEstrutura.DataSets {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["BUSCA_PEDIDO_COMPRA"] != null)) {
-                    base.Tables.Add(new BUSCA_PEDIDO_COMPRADataTable(ds.Tables["BUSCA_PEDIDO_COMPRA"]));
+                if ((ds.Tables["BUSCA_ORCAMENTO"] != null)) {
+                    base.Tables.Add(new BUSCA_ORCAMENTODataTable(ds.Tables["BUSCA_ORCAMENTO"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace AlencarEstrutura.DataSets {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public BUSCA_PEDIDO_COMPRADataTable BUSCA_PEDIDO_COMPRA {
+        public BUSCA_ORCAMENTODataTable BUSCA_ORCAMENTO {
             get {
-                return this.tableBUSCA_PEDIDO_COMPRA;
+                return this.tableBUSCA_ORCAMENTO;
             }
         }
         
@@ -127,7 +127,7 @@ namespace AlencarEstrutura.DataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DataSet1 cln = ((DataSet1)(base.Clone()));
+            LSN020_ORCAMENTO_ds cln = ((LSN020_ORCAMENTO_ds)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace AlencarEstrutura.DataSets {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["BUSCA_PEDIDO_COMPRA"] != null)) {
-                    base.Tables.Add(new BUSCA_PEDIDO_COMPRADataTable(ds.Tables["BUSCA_PEDIDO_COMPRA"]));
+                if ((ds.Tables["BUSCA_ORCAMENTO"] != null)) {
+                    base.Tables.Add(new BUSCA_ORCAMENTODataTable(ds.Tables["BUSCA_ORCAMENTO"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace AlencarEstrutura.DataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableBUSCA_PEDIDO_COMPRA = ((BUSCA_PEDIDO_COMPRADataTable)(base.Tables["BUSCA_PEDIDO_COMPRA"]));
+            this.tableBUSCA_ORCAMENTO = ((BUSCA_ORCAMENTODataTable)(base.Tables["BUSCA_ORCAMENTO"]));
             if ((initTable == true)) {
-                if ((this.tableBUSCA_PEDIDO_COMPRA != null)) {
-                    this.tableBUSCA_PEDIDO_COMPRA.InitVars();
+                if ((this.tableBUSCA_ORCAMENTO != null)) {
+                    this.tableBUSCA_ORCAMENTO.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace AlencarEstrutura.DataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DataSet1";
+            this.DataSetName = "LSN020_ORCAMENTO_ds";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DataSet1.xsd";
+            this.Namespace = "http://tempuri.org/LSN020_ORCAMENTO_ds.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableBUSCA_PEDIDO_COMPRA = new BUSCA_PEDIDO_COMPRADataTable();
-            base.Tables.Add(this.tableBUSCA_PEDIDO_COMPRA);
+            this.tableBUSCA_ORCAMENTO = new BUSCA_ORCAMENTODataTable();
+            base.Tables.Add(this.tableBUSCA_ORCAMENTO);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeBUSCA_PEDIDO_COMPRA() {
+        private bool ShouldSerializeBUSCA_ORCAMENTO() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace AlencarEstrutura.DataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DataSet1 ds = new DataSet1();
+            LSN020_ORCAMENTO_ds ds = new LSN020_ORCAMENTO_ds();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,36 +270,40 @@ namespace AlencarEstrutura.DataSets {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void BUSCA_PEDIDO_COMPRARowChangeEventHandler(object sender, BUSCA_PEDIDO_COMPRARowChangeEvent e);
+        public delegate void BUSCA_ORCAMENTORowChangeEventHandler(object sender, BUSCA_ORCAMENTORowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class BUSCA_PEDIDO_COMPRADataTable : global::System.Data.TypedTableBase<BUSCA_PEDIDO_COMPRARow> {
+        public partial class BUSCA_ORCAMENTODataTable : global::System.Data.TypedTableBase<BUSCA_ORCAMENTORow> {
             
-            private global::System.Data.DataColumn columnPKNI018_IDPRODUTO_PEDIDO;
+            private global::System.Data.DataColumn columnPKNI020_IDORCAMENTO;
             
-            private global::System.Data.DataColumn columnATSD018_DATAPEDIDO;
+            private global::System.Data.DataColumn columnATSF020_DESCRICAO;
             
-            private global::System.Data.DataColumn columnATSF018_OBSERVACAO;
+            private global::System.Data.DataColumn columnATDT020_DATA;
             
-            private global::System.Data.DataColumn columnATDC018_QUANTIDADE;
+            private global::System.Data.DataColumn columnATDT020_VENCIMENTO;
             
-            private global::System.Data.DataColumn columnATDC018_VALORPREVISTO;
+            private global::System.Data.DataColumn columnFKNI020_IDPESSOA;
             
-            private global::System.Data.DataColumn columnFKNI018_IDPRODUTO;
+            private global::System.Data.DataColumn columnATDC020_VALOR;
             
-            private global::System.Data.DataColumn columnFKNI018_IDPEDIDOCOMPRA;
+            private global::System.Data.DataColumn columnATSF020_STATUS;
             
-            private global::System.Data.DataColumn columnFKNI018_IDFORNECEDOR;
+            private global::System.Data.DataColumn columnFKNI020_IDEMPRESA;
             
-            private global::System.Data.DataColumn columnPKNI003_IDEMPRESA;
+            private global::System.Data.DataColumn columnFKNI022_IDPRODUTO;
             
             private global::System.Data.DataColumn columnATSF003_DESCRICAO;
             
-            private global::System.Data.DataColumn columnATSF007_NOMEFANTASIA;
+            private global::System.Data.DataColumn columnATDC022_VALOR;
+            
+            private global::System.Data.DataColumn columnATNI022_QUANTIDADE;
+            
+            private global::System.Data.DataColumn columnATDC022_QTDE_METRO_QUADRADO;
             
             private global::System.Data.DataColumn columnATNI002_CNPJ;
             
@@ -309,10 +313,26 @@ namespace AlencarEstrutura.DataSets {
             
             private global::System.Data.DataColumn columnATSF002_EMAIL;
             
+            private global::System.Data.DataColumn columnATSF008_LOGRADOURO;
+            
+            private global::System.Data.DataColumn columnATNI008_NUMERO;
+            
+            private global::System.Data.DataColumn columnATSF008_BAIRRO;
+            
+            private global::System.Data.DataColumn columnATSF008_CEP;
+            
+            private global::System.Data.DataColumn columnNOME_CIDADE;
+            
+            private global::System.Data.DataColumn columnATSF013_SIGLA;
+            
+            private global::System.Data.DataColumn columnATNI009_DDD;
+            
+            private global::System.Data.DataColumn columnTELEFONE;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BUSCA_PEDIDO_COMPRADataTable() {
-                this.TableName = "BUSCA_PEDIDO_COMPRA";
+            public BUSCA_ORCAMENTODataTable() {
+                this.TableName = "BUSCA_ORCAMENTO";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -320,7 +340,7 @@ namespace AlencarEstrutura.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal BUSCA_PEDIDO_COMPRADataTable(global::System.Data.DataTable table) {
+            internal BUSCA_ORCAMENTODataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -337,80 +357,80 @@ namespace AlencarEstrutura.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected BUSCA_PEDIDO_COMPRADataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected BUSCA_ORCAMENTODataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PKNI018_IDPRODUTO_PEDIDOColumn {
+            public global::System.Data.DataColumn PKNI020_IDORCAMENTOColumn {
                 get {
-                    return this.columnPKNI018_IDPRODUTO_PEDIDO;
+                    return this.columnPKNI020_IDORCAMENTO;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ATSD018_DATAPEDIDOColumn {
+            public global::System.Data.DataColumn ATSF020_DESCRICAOColumn {
                 get {
-                    return this.columnATSD018_DATAPEDIDO;
+                    return this.columnATSF020_DESCRICAO;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ATSF018_OBSERVACAOColumn {
+            public global::System.Data.DataColumn ATDT020_DATAColumn {
                 get {
-                    return this.columnATSF018_OBSERVACAO;
+                    return this.columnATDT020_DATA;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ATDC018_QUANTIDADEColumn {
+            public global::System.Data.DataColumn ATDT020_VENCIMENTOColumn {
                 get {
-                    return this.columnATDC018_QUANTIDADE;
+                    return this.columnATDT020_VENCIMENTO;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ATDC018_VALORPREVISTOColumn {
+            public global::System.Data.DataColumn FKNI020_IDPESSOAColumn {
                 get {
-                    return this.columnATDC018_VALORPREVISTO;
+                    return this.columnFKNI020_IDPESSOA;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FKNI018_IDPRODUTOColumn {
+            public global::System.Data.DataColumn ATDC020_VALORColumn {
                 get {
-                    return this.columnFKNI018_IDPRODUTO;
+                    return this.columnATDC020_VALOR;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FKNI018_IDPEDIDOCOMPRAColumn {
+            public global::System.Data.DataColumn ATSF020_STATUSColumn {
                 get {
-                    return this.columnFKNI018_IDPEDIDOCOMPRA;
+                    return this.columnATSF020_STATUS;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FKNI018_IDFORNECEDORColumn {
+            public global::System.Data.DataColumn FKNI020_IDEMPRESAColumn {
                 get {
-                    return this.columnFKNI018_IDFORNECEDOR;
+                    return this.columnFKNI020_IDEMPRESA;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PKNI003_IDEMPRESAColumn {
+            public global::System.Data.DataColumn FKNI022_IDPRODUTOColumn {
                 get {
-                    return this.columnPKNI003_IDEMPRESA;
+                    return this.columnFKNI022_IDPRODUTO;
                 }
             }
             
@@ -424,9 +444,25 @@ namespace AlencarEstrutura.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ATSF007_NOMEFANTASIAColumn {
+            public global::System.Data.DataColumn ATDC022_VALORColumn {
                 get {
-                    return this.columnATSF007_NOMEFANTASIA;
+                    return this.columnATDC022_VALOR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ATNI022_QUANTIDADEColumn {
+                get {
+                    return this.columnATNI022_QUANTIDADE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ATDC022_QTDE_METRO_QUADRADOColumn {
+                get {
+                    return this.columnATDC022_QTDE_METRO_QUADRADO;
                 }
             }
             
@@ -464,6 +500,70 @@ namespace AlencarEstrutura.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ATSF008_LOGRADOUROColumn {
+                get {
+                    return this.columnATSF008_LOGRADOURO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ATNI008_NUMEROColumn {
+                get {
+                    return this.columnATNI008_NUMERO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ATSF008_BAIRROColumn {
+                get {
+                    return this.columnATSF008_BAIRRO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ATSF008_CEPColumn {
+                get {
+                    return this.columnATSF008_CEP;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NOME_CIDADEColumn {
+                get {
+                    return this.columnNOME_CIDADE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ATSF013_SIGLAColumn {
+                get {
+                    return this.columnATSF013_SIGLA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ATNI009_DDDColumn {
+                get {
+                    return this.columnATNI009_DDD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TELEFONEColumn {
+                get {
+                    return this.columnTELEFONE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -473,59 +573,94 @@ namespace AlencarEstrutura.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BUSCA_PEDIDO_COMPRARow this[int index] {
+            public BUSCA_ORCAMENTORow this[int index] {
                 get {
-                    return ((BUSCA_PEDIDO_COMPRARow)(this.Rows[index]));
+                    return ((BUSCA_ORCAMENTORow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event BUSCA_PEDIDO_COMPRARowChangeEventHandler BUSCA_PEDIDO_COMPRARowChanging;
+            public event BUSCA_ORCAMENTORowChangeEventHandler BUSCA_ORCAMENTORowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event BUSCA_PEDIDO_COMPRARowChangeEventHandler BUSCA_PEDIDO_COMPRARowChanged;
+            public event BUSCA_ORCAMENTORowChangeEventHandler BUSCA_ORCAMENTORowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event BUSCA_PEDIDO_COMPRARowChangeEventHandler BUSCA_PEDIDO_COMPRARowDeleting;
+            public event BUSCA_ORCAMENTORowChangeEventHandler BUSCA_ORCAMENTORowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event BUSCA_PEDIDO_COMPRARowChangeEventHandler BUSCA_PEDIDO_COMPRARowDeleted;
+            public event BUSCA_ORCAMENTORowChangeEventHandler BUSCA_ORCAMENTORowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddBUSCA_PEDIDO_COMPRARow(BUSCA_PEDIDO_COMPRARow row) {
+            public void AddBUSCA_ORCAMENTORow(BUSCA_ORCAMENTORow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BUSCA_PEDIDO_COMPRARow AddBUSCA_PEDIDO_COMPRARow(decimal PKNI018_IDPRODUTO_PEDIDO, System.DateTime ATSD018_DATAPEDIDO, string ATSF018_OBSERVACAO, decimal ATDC018_QUANTIDADE, decimal ATDC018_VALORPREVISTO, decimal FKNI018_IDPRODUTO, decimal FKNI018_IDPEDIDOCOMPRA, decimal FKNI018_IDFORNECEDOR, decimal PKNI003_IDEMPRESA, string ATSF003_DESCRICAO, string ATSF007_NOMEFANTASIA, decimal ATNI002_CNPJ, string ATSF002_NOMEFANTASIA, string ATSF002_RAZAOSOCIAL, string ATSF002_EMAIL) {
-                BUSCA_PEDIDO_COMPRARow rowBUSCA_PEDIDO_COMPRARow = ((BUSCA_PEDIDO_COMPRARow)(this.NewRow()));
+            public BUSCA_ORCAMENTORow AddBUSCA_ORCAMENTORow(
+                        decimal PKNI020_IDORCAMENTO, 
+                        string ATSF020_DESCRICAO, 
+                        System.DateTime ATDT020_DATA, 
+                        System.DateTime ATDT020_VENCIMENTO, 
+                        decimal FKNI020_IDPESSOA, 
+                        decimal ATDC020_VALOR, 
+                        decimal ATSF020_STATUS, 
+                        decimal FKNI020_IDEMPRESA, 
+                        decimal FKNI022_IDPRODUTO, 
+                        string ATSF003_DESCRICAO, 
+                        decimal ATDC022_VALOR, 
+                        decimal ATNI022_QUANTIDADE, 
+                        decimal ATDC022_QTDE_METRO_QUADRADO, 
+                        decimal ATNI002_CNPJ, 
+                        string ATSF002_NOMEFANTASIA, 
+                        string ATSF002_RAZAOSOCIAL, 
+                        string ATSF002_EMAIL, 
+                        string ATSF008_LOGRADOURO, 
+                        string ATNI008_NUMERO, 
+                        string ATSF008_BAIRRO, 
+                        string ATSF008_CEP, 
+                        string NOME_CIDADE, 
+                        string ATSF013_SIGLA, 
+                        decimal ATNI009_DDD, 
+                        string TELEFONE) {
+                BUSCA_ORCAMENTORow rowBUSCA_ORCAMENTORow = ((BUSCA_ORCAMENTORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        PKNI018_IDPRODUTO_PEDIDO,
-                        ATSD018_DATAPEDIDO,
-                        ATSF018_OBSERVACAO,
-                        ATDC018_QUANTIDADE,
-                        ATDC018_VALORPREVISTO,
-                        FKNI018_IDPRODUTO,
-                        FKNI018_IDPEDIDOCOMPRA,
-                        FKNI018_IDFORNECEDOR,
-                        PKNI003_IDEMPRESA,
+                        PKNI020_IDORCAMENTO,
+                        ATSF020_DESCRICAO,
+                        ATDT020_DATA,
+                        ATDT020_VENCIMENTO,
+                        FKNI020_IDPESSOA,
+                        ATDC020_VALOR,
+                        ATSF020_STATUS,
+                        FKNI020_IDEMPRESA,
+                        FKNI022_IDPRODUTO,
                         ATSF003_DESCRICAO,
-                        ATSF007_NOMEFANTASIA,
+                        ATDC022_VALOR,
+                        ATNI022_QUANTIDADE,
+                        ATDC022_QTDE_METRO_QUADRADO,
                         ATNI002_CNPJ,
                         ATSF002_NOMEFANTASIA,
                         ATSF002_RAZAOSOCIAL,
-                        ATSF002_EMAIL};
-                rowBUSCA_PEDIDO_COMPRARow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowBUSCA_PEDIDO_COMPRARow);
-                return rowBUSCA_PEDIDO_COMPRARow;
+                        ATSF002_EMAIL,
+                        ATSF008_LOGRADOURO,
+                        ATNI008_NUMERO,
+                        ATSF008_BAIRRO,
+                        ATSF008_CEP,
+                        NOME_CIDADE,
+                        ATSF013_SIGLA,
+                        ATNI009_DDD,
+                        TELEFONE};
+                rowBUSCA_ORCAMENTORow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowBUSCA_ORCAMENTORow);
+                return rowBUSCA_ORCAMENTORow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                BUSCA_PEDIDO_COMPRADataTable cln = ((BUSCA_PEDIDO_COMPRADataTable)(base.Clone()));
+                BUSCA_ORCAMENTODataTable cln = ((BUSCA_ORCAMENTODataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -533,54 +668,68 @@ namespace AlencarEstrutura.DataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new BUSCA_PEDIDO_COMPRADataTable();
+                return new BUSCA_ORCAMENTODataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnPKNI018_IDPRODUTO_PEDIDO = base.Columns["PKNI018_IDPRODUTO_PEDIDO"];
-                this.columnATSD018_DATAPEDIDO = base.Columns["ATSD018_DATAPEDIDO"];
-                this.columnATSF018_OBSERVACAO = base.Columns["ATSF018_OBSERVACAO"];
-                this.columnATDC018_QUANTIDADE = base.Columns["ATDC018_QUANTIDADE"];
-                this.columnATDC018_VALORPREVISTO = base.Columns["ATDC018_VALORPREVISTO"];
-                this.columnFKNI018_IDPRODUTO = base.Columns["FKNI018_IDPRODUTO"];
-                this.columnFKNI018_IDPEDIDOCOMPRA = base.Columns["FKNI018_IDPEDIDOCOMPRA"];
-                this.columnFKNI018_IDFORNECEDOR = base.Columns["FKNI018_IDFORNECEDOR"];
-                this.columnPKNI003_IDEMPRESA = base.Columns["PKNI003_IDEMPRESA"];
+                this.columnPKNI020_IDORCAMENTO = base.Columns["PKNI020_IDORCAMENTO"];
+                this.columnATSF020_DESCRICAO = base.Columns["ATSF020_DESCRICAO"];
+                this.columnATDT020_DATA = base.Columns["ATDT020_DATA"];
+                this.columnATDT020_VENCIMENTO = base.Columns["ATDT020_VENCIMENTO"];
+                this.columnFKNI020_IDPESSOA = base.Columns["FKNI020_IDPESSOA"];
+                this.columnATDC020_VALOR = base.Columns["ATDC020_VALOR"];
+                this.columnATSF020_STATUS = base.Columns["ATSF020_STATUS"];
+                this.columnFKNI020_IDEMPRESA = base.Columns["FKNI020_IDEMPRESA"];
+                this.columnFKNI022_IDPRODUTO = base.Columns["FKNI022_IDPRODUTO"];
                 this.columnATSF003_DESCRICAO = base.Columns["ATSF003_DESCRICAO"];
-                this.columnATSF007_NOMEFANTASIA = base.Columns["ATSF007_NOMEFANTASIA"];
+                this.columnATDC022_VALOR = base.Columns["ATDC022_VALOR"];
+                this.columnATNI022_QUANTIDADE = base.Columns["ATNI022_QUANTIDADE"];
+                this.columnATDC022_QTDE_METRO_QUADRADO = base.Columns["ATDC022_QTDE_METRO_QUADRADO"];
                 this.columnATNI002_CNPJ = base.Columns["ATNI002_CNPJ"];
                 this.columnATSF002_NOMEFANTASIA = base.Columns["ATSF002_NOMEFANTASIA"];
                 this.columnATSF002_RAZAOSOCIAL = base.Columns["ATSF002_RAZAOSOCIAL"];
                 this.columnATSF002_EMAIL = base.Columns["ATSF002_EMAIL"];
+                this.columnATSF008_LOGRADOURO = base.Columns["ATSF008_LOGRADOURO"];
+                this.columnATNI008_NUMERO = base.Columns["ATNI008_NUMERO"];
+                this.columnATSF008_BAIRRO = base.Columns["ATSF008_BAIRRO"];
+                this.columnATSF008_CEP = base.Columns["ATSF008_CEP"];
+                this.columnNOME_CIDADE = base.Columns["NOME_CIDADE"];
+                this.columnATSF013_SIGLA = base.Columns["ATSF013_SIGLA"];
+                this.columnATNI009_DDD = base.Columns["ATNI009_DDD"];
+                this.columnTELEFONE = base.Columns["TELEFONE"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnPKNI018_IDPRODUTO_PEDIDO = new global::System.Data.DataColumn("PKNI018_IDPRODUTO_PEDIDO", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPKNI018_IDPRODUTO_PEDIDO);
-                this.columnATSD018_DATAPEDIDO = new global::System.Data.DataColumn("ATSD018_DATAPEDIDO", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnATSD018_DATAPEDIDO);
-                this.columnATSF018_OBSERVACAO = new global::System.Data.DataColumn("ATSF018_OBSERVACAO", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnATSF018_OBSERVACAO);
-                this.columnATDC018_QUANTIDADE = new global::System.Data.DataColumn("ATDC018_QUANTIDADE", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnATDC018_QUANTIDADE);
-                this.columnATDC018_VALORPREVISTO = new global::System.Data.DataColumn("ATDC018_VALORPREVISTO", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnATDC018_VALORPREVISTO);
-                this.columnFKNI018_IDPRODUTO = new global::System.Data.DataColumn("FKNI018_IDPRODUTO", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFKNI018_IDPRODUTO);
-                this.columnFKNI018_IDPEDIDOCOMPRA = new global::System.Data.DataColumn("FKNI018_IDPEDIDOCOMPRA", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFKNI018_IDPEDIDOCOMPRA);
-                this.columnFKNI018_IDFORNECEDOR = new global::System.Data.DataColumn("FKNI018_IDFORNECEDOR", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFKNI018_IDFORNECEDOR);
-                this.columnPKNI003_IDEMPRESA = new global::System.Data.DataColumn("PKNI003_IDEMPRESA", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPKNI003_IDEMPRESA);
+                this.columnPKNI020_IDORCAMENTO = new global::System.Data.DataColumn("PKNI020_IDORCAMENTO", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPKNI020_IDORCAMENTO);
+                this.columnATSF020_DESCRICAO = new global::System.Data.DataColumn("ATSF020_DESCRICAO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnATSF020_DESCRICAO);
+                this.columnATDT020_DATA = new global::System.Data.DataColumn("ATDT020_DATA", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnATDT020_DATA);
+                this.columnATDT020_VENCIMENTO = new global::System.Data.DataColumn("ATDT020_VENCIMENTO", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnATDT020_VENCIMENTO);
+                this.columnFKNI020_IDPESSOA = new global::System.Data.DataColumn("FKNI020_IDPESSOA", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFKNI020_IDPESSOA);
+                this.columnATDC020_VALOR = new global::System.Data.DataColumn("ATDC020_VALOR", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnATDC020_VALOR);
+                this.columnATSF020_STATUS = new global::System.Data.DataColumn("ATSF020_STATUS", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnATSF020_STATUS);
+                this.columnFKNI020_IDEMPRESA = new global::System.Data.DataColumn("FKNI020_IDEMPRESA", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFKNI020_IDEMPRESA);
+                this.columnFKNI022_IDPRODUTO = new global::System.Data.DataColumn("FKNI022_IDPRODUTO", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFKNI022_IDPRODUTO);
                 this.columnATSF003_DESCRICAO = new global::System.Data.DataColumn("ATSF003_DESCRICAO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnATSF003_DESCRICAO);
-                this.columnATSF007_NOMEFANTASIA = new global::System.Data.DataColumn("ATSF007_NOMEFANTASIA", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnATSF007_NOMEFANTASIA);
+                this.columnATDC022_VALOR = new global::System.Data.DataColumn("ATDC022_VALOR", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnATDC022_VALOR);
+                this.columnATNI022_QUANTIDADE = new global::System.Data.DataColumn("ATNI022_QUANTIDADE", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnATNI022_QUANTIDADE);
+                this.columnATDC022_QTDE_METRO_QUADRADO = new global::System.Data.DataColumn("ATDC022_QTDE_METRO_QUADRADO", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnATDC022_QTDE_METRO_QUADRADO);
                 this.columnATNI002_CNPJ = new global::System.Data.DataColumn("ATNI002_CNPJ", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnATNI002_CNPJ);
                 this.columnATSF002_NOMEFANTASIA = new global::System.Data.DataColumn("ATSF002_NOMEFANTASIA", typeof(string), null, global::System.Data.MappingType.Element);
@@ -589,43 +738,62 @@ namespace AlencarEstrutura.DataSets {
                 base.Columns.Add(this.columnATSF002_RAZAOSOCIAL);
                 this.columnATSF002_EMAIL = new global::System.Data.DataColumn("ATSF002_EMAIL", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnATSF002_EMAIL);
-                this.columnPKNI018_IDPRODUTO_PEDIDO.AllowDBNull = false;
-                this.columnATSF018_OBSERVACAO.MaxLength = 20;
-                this.columnATDC018_QUANTIDADE.AllowDBNull = false;
-                this.columnFKNI018_IDPRODUTO.AllowDBNull = false;
-                this.columnFKNI018_IDPEDIDOCOMPRA.AllowDBNull = false;
+                this.columnATSF008_LOGRADOURO = new global::System.Data.DataColumn("ATSF008_LOGRADOURO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnATSF008_LOGRADOURO);
+                this.columnATNI008_NUMERO = new global::System.Data.DataColumn("ATNI008_NUMERO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnATNI008_NUMERO);
+                this.columnATSF008_BAIRRO = new global::System.Data.DataColumn("ATSF008_BAIRRO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnATSF008_BAIRRO);
+                this.columnATSF008_CEP = new global::System.Data.DataColumn("ATSF008_CEP", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnATSF008_CEP);
+                this.columnNOME_CIDADE = new global::System.Data.DataColumn("NOME_CIDADE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOME_CIDADE);
+                this.columnATSF013_SIGLA = new global::System.Data.DataColumn("ATSF013_SIGLA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnATSF013_SIGLA);
+                this.columnATNI009_DDD = new global::System.Data.DataColumn("ATNI009_DDD", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnATNI009_DDD);
+                this.columnTELEFONE = new global::System.Data.DataColumn("TELEFONE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTELEFONE);
+                this.columnPKNI020_IDORCAMENTO.AllowDBNull = false;
+                this.columnATSF020_DESCRICAO.MaxLength = 50;
                 this.columnATSF003_DESCRICAO.MaxLength = 20;
-                this.columnATSF007_NOMEFANTASIA.MaxLength = 40;
                 this.columnATNI002_CNPJ.AllowDBNull = false;
                 this.columnATSF002_NOMEFANTASIA.MaxLength = 40;
                 this.columnATSF002_RAZAOSOCIAL.MaxLength = 40;
                 this.columnATSF002_EMAIL.MaxLength = 100;
+                this.columnATSF008_LOGRADOURO.MaxLength = 20;
+                this.columnATNI008_NUMERO.MaxLength = 6;
+                this.columnATSF008_BAIRRO.MaxLength = 20;
+                this.columnATSF008_CEP.MaxLength = 20;
+                this.columnNOME_CIDADE.MaxLength = 60;
+                this.columnATSF013_SIGLA.MaxLength = 2;
+                this.columnTELEFONE.MaxLength = 9;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BUSCA_PEDIDO_COMPRARow NewBUSCA_PEDIDO_COMPRARow() {
-                return ((BUSCA_PEDIDO_COMPRARow)(this.NewRow()));
+            public BUSCA_ORCAMENTORow NewBUSCA_ORCAMENTORow() {
+                return ((BUSCA_ORCAMENTORow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new BUSCA_PEDIDO_COMPRARow(builder);
+                return new BUSCA_ORCAMENTORow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(BUSCA_PEDIDO_COMPRARow);
+                return typeof(BUSCA_ORCAMENTORow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.BUSCA_PEDIDO_COMPRARowChanged != null)) {
-                    this.BUSCA_PEDIDO_COMPRARowChanged(this, new BUSCA_PEDIDO_COMPRARowChangeEvent(((BUSCA_PEDIDO_COMPRARow)(e.Row)), e.Action));
+                if ((this.BUSCA_ORCAMENTORowChanged != null)) {
+                    this.BUSCA_ORCAMENTORowChanged(this, new BUSCA_ORCAMENTORowChangeEvent(((BUSCA_ORCAMENTORow)(e.Row)), e.Action));
                 }
             }
             
@@ -633,8 +801,8 @@ namespace AlencarEstrutura.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.BUSCA_PEDIDO_COMPRARowChanging != null)) {
-                    this.BUSCA_PEDIDO_COMPRARowChanging(this, new BUSCA_PEDIDO_COMPRARowChangeEvent(((BUSCA_PEDIDO_COMPRARow)(e.Row)), e.Action));
+                if ((this.BUSCA_ORCAMENTORowChanging != null)) {
+                    this.BUSCA_ORCAMENTORowChanging(this, new BUSCA_ORCAMENTORowChangeEvent(((BUSCA_ORCAMENTORow)(e.Row)), e.Action));
                 }
             }
             
@@ -642,8 +810,8 @@ namespace AlencarEstrutura.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.BUSCA_PEDIDO_COMPRARowDeleted != null)) {
-                    this.BUSCA_PEDIDO_COMPRARowDeleted(this, new BUSCA_PEDIDO_COMPRARowChangeEvent(((BUSCA_PEDIDO_COMPRARow)(e.Row)), e.Action));
+                if ((this.BUSCA_ORCAMENTORowDeleted != null)) {
+                    this.BUSCA_ORCAMENTORowDeleted(this, new BUSCA_ORCAMENTORowChangeEvent(((BUSCA_ORCAMENTORow)(e.Row)), e.Action));
                 }
             }
             
@@ -651,14 +819,14 @@ namespace AlencarEstrutura.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.BUSCA_PEDIDO_COMPRARowDeleting != null)) {
-                    this.BUSCA_PEDIDO_COMPRARowDeleting(this, new BUSCA_PEDIDO_COMPRARowChangeEvent(((BUSCA_PEDIDO_COMPRARow)(e.Row)), e.Action));
+                if ((this.BUSCA_ORCAMENTORowDeleting != null)) {
+                    this.BUSCA_ORCAMENTORowDeleting(this, new BUSCA_ORCAMENTORowChangeEvent(((BUSCA_ORCAMENTORow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveBUSCA_PEDIDO_COMPRARow(BUSCA_PEDIDO_COMPRARow row) {
+            public void RemoveBUSCA_ORCAMENTORow(BUSCA_ORCAMENTORow row) {
                 this.Rows.Remove(row);
             }
             
@@ -667,7 +835,7 @@ namespace AlencarEstrutura.DataSets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet1 ds = new DataSet1();
+                LSN020_ORCAMENTO_ds ds = new LSN020_ORCAMENTO_ds();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -685,7 +853,7 @@ namespace AlencarEstrutura.DataSets {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "BUSCA_PEDIDO_COMPRADataTable";
+                attribute2.FixedValue = "BUSCA_ORCAMENTODataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -729,143 +897,153 @@ namespace AlencarEstrutura.DataSets {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class BUSCA_PEDIDO_COMPRARow : global::System.Data.DataRow {
+        public partial class BUSCA_ORCAMENTORow : global::System.Data.DataRow {
             
-            private BUSCA_PEDIDO_COMPRADataTable tableBUSCA_PEDIDO_COMPRA;
+            private BUSCA_ORCAMENTODataTable tableBUSCA_ORCAMENTO;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal BUSCA_PEDIDO_COMPRARow(global::System.Data.DataRowBuilder rb) : 
+            internal BUSCA_ORCAMENTORow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableBUSCA_PEDIDO_COMPRA = ((BUSCA_PEDIDO_COMPRADataTable)(this.Table));
+                this.tableBUSCA_ORCAMENTO = ((BUSCA_ORCAMENTODataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal PKNI018_IDPRODUTO_PEDIDO {
+            public decimal PKNI020_IDORCAMENTO {
                 get {
-                    return ((decimal)(this[this.tableBUSCA_PEDIDO_COMPRA.PKNI018_IDPRODUTO_PEDIDOColumn]));
+                    return ((decimal)(this[this.tableBUSCA_ORCAMENTO.PKNI020_IDORCAMENTOColumn]));
                 }
                 set {
-                    this[this.tableBUSCA_PEDIDO_COMPRA.PKNI018_IDPRODUTO_PEDIDOColumn] = value;
+                    this[this.tableBUSCA_ORCAMENTO.PKNI020_IDORCAMENTOColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime ATSD018_DATAPEDIDO {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableBUSCA_PEDIDO_COMPRA.ATSD018_DATAPEDIDOColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ATSD018_DATAPEDIDO\' in table \'BUSCA_PEDIDO_COMPRA\' is DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tableBUSCA_PEDIDO_COMPRA.ATSD018_DATAPEDIDOColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ATSF018_OBSERVACAO {
+            public string ATSF020_DESCRICAO {
                 get {
                     try {
-                        return ((string)(this[this.tableBUSCA_PEDIDO_COMPRA.ATSF018_OBSERVACAOColumn]));
+                        return ((string)(this[this.tableBUSCA_ORCAMENTO.ATSF020_DESCRICAOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ATSF018_OBSERVACAO\' in table \'BUSCA_PEDIDO_COMPRA\' is DBNul" +
-                                "l.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ATSF020_DESCRICAO\' in table \'BUSCA_ORCAMENTO\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBUSCA_PEDIDO_COMPRA.ATSF018_OBSERVACAOColumn] = value;
+                    this[this.tableBUSCA_ORCAMENTO.ATSF020_DESCRICAOColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal ATDC018_QUANTIDADE {
-                get {
-                    return ((decimal)(this[this.tableBUSCA_PEDIDO_COMPRA.ATDC018_QUANTIDADEColumn]));
-                }
-                set {
-                    this[this.tableBUSCA_PEDIDO_COMPRA.ATDC018_QUANTIDADEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal ATDC018_VALORPREVISTO {
+            public System.DateTime ATDT020_DATA {
                 get {
                     try {
-                        return ((decimal)(this[this.tableBUSCA_PEDIDO_COMPRA.ATDC018_VALORPREVISTOColumn]));
+                        return ((global::System.DateTime)(this[this.tableBUSCA_ORCAMENTO.ATDT020_DATAColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ATDC018_VALORPREVISTO\' in table \'BUSCA_PEDIDO_COMPRA\' is DB" +
-                                "Null.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ATDT020_DATA\' in table \'BUSCA_ORCAMENTO\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBUSCA_PEDIDO_COMPRA.ATDC018_VALORPREVISTOColumn] = value;
+                    this[this.tableBUSCA_ORCAMENTO.ATDT020_DATAColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal FKNI018_IDPRODUTO {
-                get {
-                    return ((decimal)(this[this.tableBUSCA_PEDIDO_COMPRA.FKNI018_IDPRODUTOColumn]));
-                }
-                set {
-                    this[this.tableBUSCA_PEDIDO_COMPRA.FKNI018_IDPRODUTOColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal FKNI018_IDPEDIDOCOMPRA {
-                get {
-                    return ((decimal)(this[this.tableBUSCA_PEDIDO_COMPRA.FKNI018_IDPEDIDOCOMPRAColumn]));
-                }
-                set {
-                    this[this.tableBUSCA_PEDIDO_COMPRA.FKNI018_IDPEDIDOCOMPRAColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal FKNI018_IDFORNECEDOR {
+            public System.DateTime ATDT020_VENCIMENTO {
                 get {
                     try {
-                        return ((decimal)(this[this.tableBUSCA_PEDIDO_COMPRA.FKNI018_IDFORNECEDORColumn]));
+                        return ((global::System.DateTime)(this[this.tableBUSCA_ORCAMENTO.ATDT020_VENCIMENTOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FKNI018_IDFORNECEDOR\' in table \'BUSCA_PEDIDO_COMPRA\' is DBN" +
-                                "ull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ATDT020_VENCIMENTO\' in table \'BUSCA_ORCAMENTO\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBUSCA_PEDIDO_COMPRA.FKNI018_IDFORNECEDORColumn] = value;
+                    this[this.tableBUSCA_ORCAMENTO.ATDT020_VENCIMENTOColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal PKNI003_IDEMPRESA {
+            public decimal FKNI020_IDPESSOA {
                 get {
                     try {
-                        return ((decimal)(this[this.tableBUSCA_PEDIDO_COMPRA.PKNI003_IDEMPRESAColumn]));
+                        return ((decimal)(this[this.tableBUSCA_ORCAMENTO.FKNI020_IDPESSOAColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PKNI003_IDEMPRESA\' in table \'BUSCA_PEDIDO_COMPRA\' is DBNull" +
-                                ".", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'FKNI020_IDPESSOA\' in table \'BUSCA_ORCAMENTO\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBUSCA_PEDIDO_COMPRA.PKNI003_IDEMPRESAColumn] = value;
+                    this[this.tableBUSCA_ORCAMENTO.FKNI020_IDPESSOAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ATDC020_VALOR {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableBUSCA_ORCAMENTO.ATDC020_VALORColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ATDC020_VALOR\' in table \'BUSCA_ORCAMENTO\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBUSCA_ORCAMENTO.ATDC020_VALORColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ATSF020_STATUS {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableBUSCA_ORCAMENTO.ATSF020_STATUSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ATSF020_STATUS\' in table \'BUSCA_ORCAMENTO\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBUSCA_ORCAMENTO.ATSF020_STATUSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal FKNI020_IDEMPRESA {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableBUSCA_ORCAMENTO.FKNI020_IDEMPRESAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FKNI020_IDEMPRESA\' in table \'BUSCA_ORCAMENTO\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBUSCA_ORCAMENTO.FKNI020_IDEMPRESAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal FKNI022_IDPRODUTO {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableBUSCA_ORCAMENTO.FKNI022_IDPRODUTOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FKNI022_IDPRODUTO\' in table \'BUSCA_ORCAMENTO\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBUSCA_ORCAMENTO.FKNI022_IDPRODUTOColumn] = value;
                 }
             }
             
@@ -874,32 +1052,63 @@ namespace AlencarEstrutura.DataSets {
             public string ATSF003_DESCRICAO {
                 get {
                     try {
-                        return ((string)(this[this.tableBUSCA_PEDIDO_COMPRA.ATSF003_DESCRICAOColumn]));
+                        return ((string)(this[this.tableBUSCA_ORCAMENTO.ATSF003_DESCRICAOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ATSF003_DESCRICAO\' in table \'BUSCA_PEDIDO_COMPRA\' is DBNull" +
-                                ".", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ATSF003_DESCRICAO\' in table \'BUSCA_ORCAMENTO\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBUSCA_PEDIDO_COMPRA.ATSF003_DESCRICAOColumn] = value;
+                    this[this.tableBUSCA_ORCAMENTO.ATSF003_DESCRICAOColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ATSF007_NOMEFANTASIA {
+            public decimal ATDC022_VALOR {
                 get {
                     try {
-                        return ((string)(this[this.tableBUSCA_PEDIDO_COMPRA.ATSF007_NOMEFANTASIAColumn]));
+                        return ((decimal)(this[this.tableBUSCA_ORCAMENTO.ATDC022_VALORColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ATSF007_NOMEFANTASIA\' in table \'BUSCA_PEDIDO_COMPRA\' is DBN" +
-                                "ull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ATDC022_VALOR\' in table \'BUSCA_ORCAMENTO\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBUSCA_PEDIDO_COMPRA.ATSF007_NOMEFANTASIAColumn] = value;
+                    this[this.tableBUSCA_ORCAMENTO.ATDC022_VALORColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ATNI022_QUANTIDADE {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableBUSCA_ORCAMENTO.ATNI022_QUANTIDADEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ATNI022_QUANTIDADE\' in table \'BUSCA_ORCAMENTO\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBUSCA_ORCAMENTO.ATNI022_QUANTIDADEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ATDC022_QTDE_METRO_QUADRADO {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableBUSCA_ORCAMENTO.ATDC022_QTDE_METRO_QUADRADOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ATDC022_QTDE_METRO_QUADRADO\' in table \'BUSCA_ORCAMENTO\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBUSCA_ORCAMENTO.ATDC022_QTDE_METRO_QUADRADOColumn] = value;
                 }
             }
             
@@ -907,10 +1116,10 @@ namespace AlencarEstrutura.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal ATNI002_CNPJ {
                 get {
-                    return ((decimal)(this[this.tableBUSCA_PEDIDO_COMPRA.ATNI002_CNPJColumn]));
+                    return ((decimal)(this[this.tableBUSCA_ORCAMENTO.ATNI002_CNPJColumn]));
                 }
                 set {
-                    this[this.tableBUSCA_PEDIDO_COMPRA.ATNI002_CNPJColumn] = value;
+                    this[this.tableBUSCA_ORCAMENTO.ATNI002_CNPJColumn] = value;
                 }
             }
             
@@ -919,15 +1128,15 @@ namespace AlencarEstrutura.DataSets {
             public string ATSF002_NOMEFANTASIA {
                 get {
                     try {
-                        return ((string)(this[this.tableBUSCA_PEDIDO_COMPRA.ATSF002_NOMEFANTASIAColumn]));
+                        return ((string)(this[this.tableBUSCA_ORCAMENTO.ATSF002_NOMEFANTASIAColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ATSF002_NOMEFANTASIA\' in table \'BUSCA_PEDIDO_COMPRA\' is DBN" +
-                                "ull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ATSF002_NOMEFANTASIA\' in table \'BUSCA_ORCAMENTO\' is DBNull." +
+                                "", e);
                     }
                 }
                 set {
-                    this[this.tableBUSCA_PEDIDO_COMPRA.ATSF002_NOMEFANTASIAColumn] = value;
+                    this[this.tableBUSCA_ORCAMENTO.ATSF002_NOMEFANTASIAColumn] = value;
                 }
             }
             
@@ -936,15 +1145,14 @@ namespace AlencarEstrutura.DataSets {
             public string ATSF002_RAZAOSOCIAL {
                 get {
                     try {
-                        return ((string)(this[this.tableBUSCA_PEDIDO_COMPRA.ATSF002_RAZAOSOCIALColumn]));
+                        return ((string)(this[this.tableBUSCA_ORCAMENTO.ATSF002_RAZAOSOCIALColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ATSF002_RAZAOSOCIAL\' in table \'BUSCA_PEDIDO_COMPRA\' is DBNu" +
-                                "ll.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ATSF002_RAZAOSOCIAL\' in table \'BUSCA_ORCAMENTO\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBUSCA_PEDIDO_COMPRA.ATSF002_RAZAOSOCIALColumn] = value;
+                    this[this.tableBUSCA_ORCAMENTO.ATSF002_RAZAOSOCIALColumn] = value;
                 }
             }
             
@@ -953,135 +1161,419 @@ namespace AlencarEstrutura.DataSets {
             public string ATSF002_EMAIL {
                 get {
                     try {
-                        return ((string)(this[this.tableBUSCA_PEDIDO_COMPRA.ATSF002_EMAILColumn]));
+                        return ((string)(this[this.tableBUSCA_ORCAMENTO.ATSF002_EMAILColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ATSF002_EMAIL\' in table \'BUSCA_PEDIDO_COMPRA\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ATSF002_EMAIL\' in table \'BUSCA_ORCAMENTO\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableBUSCA_PEDIDO_COMPRA.ATSF002_EMAILColumn] = value;
+                    this[this.tableBUSCA_ORCAMENTO.ATSF002_EMAILColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsATSD018_DATAPEDIDONull() {
-                return this.IsNull(this.tableBUSCA_PEDIDO_COMPRA.ATSD018_DATAPEDIDOColumn);
+            public string ATSF008_LOGRADOURO {
+                get {
+                    try {
+                        return ((string)(this[this.tableBUSCA_ORCAMENTO.ATSF008_LOGRADOUROColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ATSF008_LOGRADOURO\' in table \'BUSCA_ORCAMENTO\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBUSCA_ORCAMENTO.ATSF008_LOGRADOUROColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetATSD018_DATAPEDIDONull() {
-                this[this.tableBUSCA_PEDIDO_COMPRA.ATSD018_DATAPEDIDOColumn] = global::System.Convert.DBNull;
+            public string ATNI008_NUMERO {
+                get {
+                    try {
+                        return ((string)(this[this.tableBUSCA_ORCAMENTO.ATNI008_NUMEROColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ATNI008_NUMERO\' in table \'BUSCA_ORCAMENTO\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBUSCA_ORCAMENTO.ATNI008_NUMEROColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsATSF018_OBSERVACAONull() {
-                return this.IsNull(this.tableBUSCA_PEDIDO_COMPRA.ATSF018_OBSERVACAOColumn);
+            public string ATSF008_BAIRRO {
+                get {
+                    try {
+                        return ((string)(this[this.tableBUSCA_ORCAMENTO.ATSF008_BAIRROColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ATSF008_BAIRRO\' in table \'BUSCA_ORCAMENTO\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBUSCA_ORCAMENTO.ATSF008_BAIRROColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetATSF018_OBSERVACAONull() {
-                this[this.tableBUSCA_PEDIDO_COMPRA.ATSF018_OBSERVACAOColumn] = global::System.Convert.DBNull;
+            public string ATSF008_CEP {
+                get {
+                    try {
+                        return ((string)(this[this.tableBUSCA_ORCAMENTO.ATSF008_CEPColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ATSF008_CEP\' in table \'BUSCA_ORCAMENTO\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBUSCA_ORCAMENTO.ATSF008_CEPColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsATDC018_VALORPREVISTONull() {
-                return this.IsNull(this.tableBUSCA_PEDIDO_COMPRA.ATDC018_VALORPREVISTOColumn);
+            public string NOME_CIDADE {
+                get {
+                    try {
+                        return ((string)(this[this.tableBUSCA_ORCAMENTO.NOME_CIDADEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOME_CIDADE\' in table \'BUSCA_ORCAMENTO\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBUSCA_ORCAMENTO.NOME_CIDADEColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetATDC018_VALORPREVISTONull() {
-                this[this.tableBUSCA_PEDIDO_COMPRA.ATDC018_VALORPREVISTOColumn] = global::System.Convert.DBNull;
+            public string ATSF013_SIGLA {
+                get {
+                    try {
+                        return ((string)(this[this.tableBUSCA_ORCAMENTO.ATSF013_SIGLAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ATSF013_SIGLA\' in table \'BUSCA_ORCAMENTO\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBUSCA_ORCAMENTO.ATSF013_SIGLAColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsFKNI018_IDFORNECEDORNull() {
-                return this.IsNull(this.tableBUSCA_PEDIDO_COMPRA.FKNI018_IDFORNECEDORColumn);
+            public decimal ATNI009_DDD {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableBUSCA_ORCAMENTO.ATNI009_DDDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ATNI009_DDD\' in table \'BUSCA_ORCAMENTO\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBUSCA_ORCAMENTO.ATNI009_DDDColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetFKNI018_IDFORNECEDORNull() {
-                this[this.tableBUSCA_PEDIDO_COMPRA.FKNI018_IDFORNECEDORColumn] = global::System.Convert.DBNull;
+            public string TELEFONE {
+                get {
+                    try {
+                        return ((string)(this[this.tableBUSCA_ORCAMENTO.TELEFONEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TELEFONE\' in table \'BUSCA_ORCAMENTO\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBUSCA_ORCAMENTO.TELEFONEColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPKNI003_IDEMPRESANull() {
-                return this.IsNull(this.tableBUSCA_PEDIDO_COMPRA.PKNI003_IDEMPRESAColumn);
+            public bool IsATSF020_DESCRICAONull() {
+                return this.IsNull(this.tableBUSCA_ORCAMENTO.ATSF020_DESCRICAOColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPKNI003_IDEMPRESANull() {
-                this[this.tableBUSCA_PEDIDO_COMPRA.PKNI003_IDEMPRESAColumn] = global::System.Convert.DBNull;
+            public void SetATSF020_DESCRICAONull() {
+                this[this.tableBUSCA_ORCAMENTO.ATSF020_DESCRICAOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsATDT020_DATANull() {
+                return this.IsNull(this.tableBUSCA_ORCAMENTO.ATDT020_DATAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetATDT020_DATANull() {
+                this[this.tableBUSCA_ORCAMENTO.ATDT020_DATAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsATDT020_VENCIMENTONull() {
+                return this.IsNull(this.tableBUSCA_ORCAMENTO.ATDT020_VENCIMENTOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetATDT020_VENCIMENTONull() {
+                this[this.tableBUSCA_ORCAMENTO.ATDT020_VENCIMENTOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFKNI020_IDPESSOANull() {
+                return this.IsNull(this.tableBUSCA_ORCAMENTO.FKNI020_IDPESSOAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFKNI020_IDPESSOANull() {
+                this[this.tableBUSCA_ORCAMENTO.FKNI020_IDPESSOAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsATDC020_VALORNull() {
+                return this.IsNull(this.tableBUSCA_ORCAMENTO.ATDC020_VALORColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetATDC020_VALORNull() {
+                this[this.tableBUSCA_ORCAMENTO.ATDC020_VALORColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsATSF020_STATUSNull() {
+                return this.IsNull(this.tableBUSCA_ORCAMENTO.ATSF020_STATUSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetATSF020_STATUSNull() {
+                this[this.tableBUSCA_ORCAMENTO.ATSF020_STATUSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFKNI020_IDEMPRESANull() {
+                return this.IsNull(this.tableBUSCA_ORCAMENTO.FKNI020_IDEMPRESAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFKNI020_IDEMPRESANull() {
+                this[this.tableBUSCA_ORCAMENTO.FKNI020_IDEMPRESAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFKNI022_IDPRODUTONull() {
+                return this.IsNull(this.tableBUSCA_ORCAMENTO.FKNI022_IDPRODUTOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFKNI022_IDPRODUTONull() {
+                this[this.tableBUSCA_ORCAMENTO.FKNI022_IDPRODUTOColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsATSF003_DESCRICAONull() {
-                return this.IsNull(this.tableBUSCA_PEDIDO_COMPRA.ATSF003_DESCRICAOColumn);
+                return this.IsNull(this.tableBUSCA_ORCAMENTO.ATSF003_DESCRICAOColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetATSF003_DESCRICAONull() {
-                this[this.tableBUSCA_PEDIDO_COMPRA.ATSF003_DESCRICAOColumn] = global::System.Convert.DBNull;
+                this[this.tableBUSCA_ORCAMENTO.ATSF003_DESCRICAOColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsATSF007_NOMEFANTASIANull() {
-                return this.IsNull(this.tableBUSCA_PEDIDO_COMPRA.ATSF007_NOMEFANTASIAColumn);
+            public bool IsATDC022_VALORNull() {
+                return this.IsNull(this.tableBUSCA_ORCAMENTO.ATDC022_VALORColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetATSF007_NOMEFANTASIANull() {
-                this[this.tableBUSCA_PEDIDO_COMPRA.ATSF007_NOMEFANTASIAColumn] = global::System.Convert.DBNull;
+            public void SetATDC022_VALORNull() {
+                this[this.tableBUSCA_ORCAMENTO.ATDC022_VALORColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsATNI022_QUANTIDADENull() {
+                return this.IsNull(this.tableBUSCA_ORCAMENTO.ATNI022_QUANTIDADEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetATNI022_QUANTIDADENull() {
+                this[this.tableBUSCA_ORCAMENTO.ATNI022_QUANTIDADEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsATDC022_QTDE_METRO_QUADRADONull() {
+                return this.IsNull(this.tableBUSCA_ORCAMENTO.ATDC022_QTDE_METRO_QUADRADOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetATDC022_QTDE_METRO_QUADRADONull() {
+                this[this.tableBUSCA_ORCAMENTO.ATDC022_QTDE_METRO_QUADRADOColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsATSF002_NOMEFANTASIANull() {
-                return this.IsNull(this.tableBUSCA_PEDIDO_COMPRA.ATSF002_NOMEFANTASIAColumn);
+                return this.IsNull(this.tableBUSCA_ORCAMENTO.ATSF002_NOMEFANTASIAColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetATSF002_NOMEFANTASIANull() {
-                this[this.tableBUSCA_PEDIDO_COMPRA.ATSF002_NOMEFANTASIAColumn] = global::System.Convert.DBNull;
+                this[this.tableBUSCA_ORCAMENTO.ATSF002_NOMEFANTASIAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsATSF002_RAZAOSOCIALNull() {
-                return this.IsNull(this.tableBUSCA_PEDIDO_COMPRA.ATSF002_RAZAOSOCIALColumn);
+                return this.IsNull(this.tableBUSCA_ORCAMENTO.ATSF002_RAZAOSOCIALColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetATSF002_RAZAOSOCIALNull() {
-                this[this.tableBUSCA_PEDIDO_COMPRA.ATSF002_RAZAOSOCIALColumn] = global::System.Convert.DBNull;
+                this[this.tableBUSCA_ORCAMENTO.ATSF002_RAZAOSOCIALColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsATSF002_EMAILNull() {
-                return this.IsNull(this.tableBUSCA_PEDIDO_COMPRA.ATSF002_EMAILColumn);
+                return this.IsNull(this.tableBUSCA_ORCAMENTO.ATSF002_EMAILColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetATSF002_EMAILNull() {
-                this[this.tableBUSCA_PEDIDO_COMPRA.ATSF002_EMAILColumn] = global::System.Convert.DBNull;
+                this[this.tableBUSCA_ORCAMENTO.ATSF002_EMAILColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsATSF008_LOGRADOURONull() {
+                return this.IsNull(this.tableBUSCA_ORCAMENTO.ATSF008_LOGRADOUROColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetATSF008_LOGRADOURONull() {
+                this[this.tableBUSCA_ORCAMENTO.ATSF008_LOGRADOUROColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsATNI008_NUMERONull() {
+                return this.IsNull(this.tableBUSCA_ORCAMENTO.ATNI008_NUMEROColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetATNI008_NUMERONull() {
+                this[this.tableBUSCA_ORCAMENTO.ATNI008_NUMEROColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsATSF008_BAIRRONull() {
+                return this.IsNull(this.tableBUSCA_ORCAMENTO.ATSF008_BAIRROColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetATSF008_BAIRRONull() {
+                this[this.tableBUSCA_ORCAMENTO.ATSF008_BAIRROColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsATSF008_CEPNull() {
+                return this.IsNull(this.tableBUSCA_ORCAMENTO.ATSF008_CEPColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetATSF008_CEPNull() {
+                this[this.tableBUSCA_ORCAMENTO.ATSF008_CEPColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNOME_CIDADENull() {
+                return this.IsNull(this.tableBUSCA_ORCAMENTO.NOME_CIDADEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNOME_CIDADENull() {
+                this[this.tableBUSCA_ORCAMENTO.NOME_CIDADEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsATSF013_SIGLANull() {
+                return this.IsNull(this.tableBUSCA_ORCAMENTO.ATSF013_SIGLAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetATSF013_SIGLANull() {
+                this[this.tableBUSCA_ORCAMENTO.ATSF013_SIGLAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsATNI009_DDDNull() {
+                return this.IsNull(this.tableBUSCA_ORCAMENTO.ATNI009_DDDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetATNI009_DDDNull() {
+                this[this.tableBUSCA_ORCAMENTO.ATNI009_DDDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTELEFONENull() {
+                return this.IsNull(this.tableBUSCA_ORCAMENTO.TELEFONEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTELEFONENull() {
+                this[this.tableBUSCA_ORCAMENTO.TELEFONEColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1089,22 +1581,22 @@ namespace AlencarEstrutura.DataSets {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class BUSCA_PEDIDO_COMPRARowChangeEvent : global::System.EventArgs {
+        public class BUSCA_ORCAMENTORowChangeEvent : global::System.EventArgs {
             
-            private BUSCA_PEDIDO_COMPRARow eventRow;
+            private BUSCA_ORCAMENTORow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BUSCA_PEDIDO_COMPRARowChangeEvent(BUSCA_PEDIDO_COMPRARow row, global::System.Data.DataRowAction action) {
+            public BUSCA_ORCAMENTORowChangeEvent(BUSCA_ORCAMENTORow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BUSCA_PEDIDO_COMPRARow Row {
+            public BUSCA_ORCAMENTORow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1120,7 +1612,7 @@ namespace AlencarEstrutura.DataSets {
         }
     }
 }
-namespace AlencarEstrutura.DataSets.DataSet1TableAdapters {
+namespace AlencarEstrutura.DataSets.LSN020_ORCAMENTO_dsTableAdapters {
     
     
     /// <summary>
@@ -1132,7 +1624,7 @@ namespace AlencarEstrutura.DataSets.DataSet1TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class BUSCA_PEDIDO_COMPRATableAdapter : global::System.ComponentModel.Component {
+    public partial class BUSCA_ORCAMENTOTableAdapter : global::System.ComponentModel.Component {
         
         private global::Oracle.ManagedDataAccess.Client.OracleDataAdapter _adapter;
         
@@ -1146,7 +1638,7 @@ namespace AlencarEstrutura.DataSets.DataSet1TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public BUSCA_PEDIDO_COMPRATableAdapter() {
+        public BUSCA_ORCAMENTOTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1243,22 +1735,32 @@ namespace AlencarEstrutura.DataSets.DataSet1TableAdapters {
             this._adapter = new global::Oracle.ManagedDataAccess.Client.OracleDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "BUSCA_PEDIDO_COMPRA";
-            tableMapping.ColumnMappings.Add("PKNI018_IDPRODUTO_PEDIDO", "PKNI018_IDPRODUTO_PEDIDO");
-            tableMapping.ColumnMappings.Add("ATSD018_DATAPEDIDO", "ATSD018_DATAPEDIDO");
-            tableMapping.ColumnMappings.Add("ATSF018_OBSERVACAO", "ATSF018_OBSERVACAO");
-            tableMapping.ColumnMappings.Add("ATDC018_QUANTIDADE", "ATDC018_QUANTIDADE");
-            tableMapping.ColumnMappings.Add("ATDC018_VALORPREVISTO", "ATDC018_VALORPREVISTO");
-            tableMapping.ColumnMappings.Add("FKNI018_IDPRODUTO", "FKNI018_IDPRODUTO");
-            tableMapping.ColumnMappings.Add("FKNI018_IDPEDIDOCOMPRA", "FKNI018_IDPEDIDOCOMPRA");
-            tableMapping.ColumnMappings.Add("FKNI018_IDFORNECEDOR", "FKNI018_IDFORNECEDOR");
-            tableMapping.ColumnMappings.Add("PKNI003_IDEMPRESA", "PKNI003_IDEMPRESA");
+            tableMapping.DataSetTable = "BUSCA_ORCAMENTO";
+            tableMapping.ColumnMappings.Add("PKNI020_IDORCAMENTO", "PKNI020_IDORCAMENTO");
+            tableMapping.ColumnMappings.Add("ATSF020_DESCRICAO", "ATSF020_DESCRICAO");
+            tableMapping.ColumnMappings.Add("ATDT020_DATA", "ATDT020_DATA");
+            tableMapping.ColumnMappings.Add("ATDT020_VENCIMENTO", "ATDT020_VENCIMENTO");
+            tableMapping.ColumnMappings.Add("FKNI020_IDPESSOA", "FKNI020_IDPESSOA");
+            tableMapping.ColumnMappings.Add("ATDC020_VALOR", "ATDC020_VALOR");
+            tableMapping.ColumnMappings.Add("ATSF020_STATUS", "ATSF020_STATUS");
+            tableMapping.ColumnMappings.Add("FKNI020_IDEMPRESA", "FKNI020_IDEMPRESA");
+            tableMapping.ColumnMappings.Add("FKNI022_IDPRODUTO", "FKNI022_IDPRODUTO");
             tableMapping.ColumnMappings.Add("ATSF003_DESCRICAO", "ATSF003_DESCRICAO");
-            tableMapping.ColumnMappings.Add("ATSF007_NOMEFANTASIA", "ATSF007_NOMEFANTASIA");
+            tableMapping.ColumnMappings.Add("ATDC022_VALOR", "ATDC022_VALOR");
+            tableMapping.ColumnMappings.Add("ATNI022_QUANTIDADE", "ATNI022_QUANTIDADE");
+            tableMapping.ColumnMappings.Add("ATDC022_QTDE_METRO_QUADRADO", "ATDC022_QTDE_METRO_QUADRADO");
             tableMapping.ColumnMappings.Add("ATNI002_CNPJ", "ATNI002_CNPJ");
             tableMapping.ColumnMappings.Add("ATSF002_NOMEFANTASIA", "ATSF002_NOMEFANTASIA");
             tableMapping.ColumnMappings.Add("ATSF002_RAZAOSOCIAL", "ATSF002_RAZAOSOCIAL");
             tableMapping.ColumnMappings.Add("ATSF002_EMAIL", "ATSF002_EMAIL");
+            tableMapping.ColumnMappings.Add("ATSF008_LOGRADOURO", "ATSF008_LOGRADOURO");
+            tableMapping.ColumnMappings.Add("ATNI008_NUMERO", "ATNI008_NUMERO");
+            tableMapping.ColumnMappings.Add("ATSF008_BAIRRO", "ATSF008_BAIRRO");
+            tableMapping.ColumnMappings.Add("ATSF008_CEP", "ATSF008_CEP");
+            tableMapping.ColumnMappings.Add("NOME_CIDADE", "NOME_CIDADE");
+            tableMapping.ColumnMappings.Add("ATSF013_SIGLA", "ATSF013_SIGLA");
+            tableMapping.ColumnMappings.Add("ATNI009_DDD", "ATNI009_DDD");
+            tableMapping.ColumnMappings.Add("TELEFONE", "TELEFONE");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1275,7 +1777,7 @@ namespace AlencarEstrutura.DataSets.DataSet1TableAdapters {
             this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT PKNI018_IDPRODUTO_PEDIDO, ATSD018_DATAPEDIDO, ATSF018_OBSERVACAO, ATDC018_QUANTIDADE, ATDC018_VALORPREVISTO, FKNI018_IDPRODUTO, FKNI018_IDPEDIDOCOMPRA, FKNI018_IDFORNECEDOR, PKNI003_IDEMPRESA, ATSF003_DESCRICAO, ATSF007_NOMEFANTASIA, ATNI002_CNPJ, ATSF002_NOMEFANTASIA, ATSF002_RAZAOSOCIAL, ATSF002_EMAIL FROM ALCDBDEV.BUSCA_PEDIDO_COMPRA";
+            this._commandCollection[0].CommandText = @"SELECT PKNI020_IDORCAMENTO, ATSF020_DESCRICAO, ATDT020_DATA, ATDT020_VENCIMENTO, FKNI020_IDPESSOA, ATDC020_VALOR, ATSF020_STATUS, FKNI020_IDEMPRESA, FKNI022_IDPRODUTO, ATSF003_DESCRICAO, ATDC022_VALOR, ATNI022_QUANTIDADE, ATDC022_QTDE_METRO_QUADRADO, ATNI002_CNPJ, ATSF002_NOMEFANTASIA, ATSF002_RAZAOSOCIAL, ATSF002_EMAIL, ATSF008_LOGRADOURO, ATNI008_NUMERO, ATSF008_BAIRRO, ATSF008_CEP, NOME_CIDADE, ATSF013_SIGLA, ATNI009_DDD, TELEFONE FROM ALCDBDEV.BUSCA_ORCAMENTO";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1283,7 +1785,7 @@ namespace AlencarEstrutura.DataSets.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.BUSCA_PEDIDO_COMPRADataTable dataTable) {
+        public virtual int Fill(LSN020_ORCAMENTO_ds.BUSCA_ORCAMENTODataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1296,9 +1798,9 @@ namespace AlencarEstrutura.DataSets.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.BUSCA_PEDIDO_COMPRADataTable GetData() {
+        public virtual LSN020_ORCAMENTO_ds.BUSCA_ORCAMENTODataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.BUSCA_PEDIDO_COMPRADataTable dataTable = new DataSet1.BUSCA_PEDIDO_COMPRADataTable();
+            LSN020_ORCAMENTO_ds.BUSCA_ORCAMENTODataTable dataTable = new LSN020_ORCAMENTO_ds.BUSCA_ORCAMENTODataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1372,7 +1874,7 @@ namespace AlencarEstrutura.DataSets.DataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(LSN020_ORCAMENTO_ds dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1382,7 +1884,7 @@ namespace AlencarEstrutura.DataSets.DataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(LSN020_ORCAMENTO_ds dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1392,7 +1894,7 @@ namespace AlencarEstrutura.DataSets.DataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(LSN020_ORCAMENTO_ds dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1426,7 +1928,7 @@ namespace AlencarEstrutura.DataSets.DataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(DataSet1 dataSet) {
+        public virtual int UpdateAll(LSN020_ORCAMENTO_ds dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

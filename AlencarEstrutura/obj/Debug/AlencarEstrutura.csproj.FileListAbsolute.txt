@@ -79,7 +79,6 @@ C:\Users\JoãoAlexandre\Documents\GitHub\AlencarEstrutura\AlencarEstrutura\bin\S
 C:\Users\JoãoAlexandre\Documents\GitHub\AlencarEstrutura\AlencarEstrutura\bin\Antlr3.Runtime.pdb
 C:\Users\JoãoAlexandre\Documents\GitHub\AlencarEstrutura\AlencarEstrutura\bin\Newtonsoft.Json.xml
 C:\Users\JoãoAlexandre\Documents\GitHub\AlencarEstrutura\AlencarEstrutura\bin\Microsoft.AspNet.FriendlyUrls.xml
-C:\Users\JoãoAlexandre\Documents\GitHub\AlencarEstrutura\AlencarEstrutura\obj\Debug\AlencarEstrutura.csprojResolveAssemblyReference.cache
 C:\Users\JoãoAlexandre\Documents\GitHub\AlencarEstrutura\AlencarEstrutura\obj\Debug\AlencarEstrutura.dll
 C:\Users\JoãoAlexandre\Documents\GitHub\AlencarEstrutura\AlencarEstrutura\obj\Debug\AlencarEstrutura.pdb
 C:\Users\JoãoAlexandre\Documents\GitHub\AlencarEstrutura\AlencarEstrutura\bin\CrystalDecisions.CrystalReports.Engine.dll
@@ -99,3 +98,4 @@ C:\Users\JoãoAlexandre\Documents\GitHub\AlencarEstrutura\AlencarEstrutura\bin\C
 C:\Users\JoãoAlexandre\Documents\GitHub\AlencarEstrutura\AlencarEstrutura\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 C:\Users\JoãoAlexandre\Documents\GitHub\AlencarEstrutura\AlencarEstrutura\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\JoãoAlexandre\Documents\GitHub\AlencarEstrutura\AlencarEstrutura\bin\stdole.dll
+C:\Users\JoãoAlexandre\Documents\GitHub\AlencarEstrutura\AlencarEstrutura\obj\Debug\AlencarEstrutura.csprojResolveAssemblyReference.cache

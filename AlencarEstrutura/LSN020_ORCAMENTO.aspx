@@ -57,7 +57,7 @@
                         <asp:Label ID="Label6" runat="server" Text="Metros²"></asp:Label>
                         <asp:TextBox ID="txtQtdeMetroQuadrado" runat="server" Columns="8" MaxLength="8"></asp:TextBox>
                         <asp:Label ID="lblValor" runat="server" Text="Valor Unit."></asp:Label>
-                        <asp:CheckBox ID="cbValorUnitario" runat="server" OnCheckedChanged="cbValorUnitario_CheckedChanged" AutoPostBack="true" Checked="true"/>
+                        <asp:CheckBox ID="cbValorUnitario" runat="server" OnCheckedChanged="cbValorUnitario_CheckedChanged" AutoPostBack="true" Checked="true" />
                         <asp:TextBox ID="txtValorPrevisto" runat="server" Columns="6" Enabled="False"></asp:TextBox>
                         <asp:Label ID="Label3" runat="server" Text="Valor por Metro²"></asp:Label>
                         <asp:CheckBox ID="cbValorPorMetro" runat="server" OnCheckedChanged="cbValorPorMetro_CheckedChanged" AutoPostBack="true" />
@@ -74,25 +74,29 @@
                 <tr>
                     <td style="width: 137px">&nbsp;</td>
                     <td>
-                        <asp:GridView ID="gvProdutos" runat="server" AutoGenerateColumns="false" Width="100%" DataKeyNames="PKNI022_IDPRODUTO_ORCAMENTO" OnSelectedIndexChanged="gvProdutos_SelectedIndexChanged">
-                            <Columns>
-                                <asp:BoundField HeaderText="Cod. Produto" DataField="FKNI022_IDPRODUTO" />
-                                <asp:BoundField HeaderText="Descrição" DataField="ATSF003_DESCRICAO" />
-                                <asp:BoundField HeaderText="Quantidade" DataField="ATNI022_QUANTIDADE" />
-                                <asp:BoundField HeaderText="Valor" DataField="ATDC022_VALOR" />
-                            </Columns>
-                        </asp:GridView>
+                        <asp:Panel ID="pnlGrid" runat="server" ScrollBars="Auto" Height="200">
+                            <asp:GridView ID="gvProdutos" runat="server" AutoGenerateColumns="false" Width="100%" DataKeyNames="PKNI022_IDPRODUTO_ORCAMENTO" OnSelectedIndexChanged="gvProdutos_SelectedIndexChanged">
+                                <Columns>
+                                    <asp:BoundField HeaderText="Cod. Produto" DataField="FKNI022_IDPRODUTO" />
+                                    <asp:BoundField HeaderText="Descrição" DataField="ATSF003_DESCRICAO" />
+                                    <asp:BoundField HeaderText="Quantidade" DataField="ATNI022_QUANTIDADE" />
+                                    <asp:BoundField HeaderText="Valor" DataField="ATDC022_VALOR" />
+                                </Columns>
+                            </asp:GridView>
+                        </asp:Panel>
                     </td>
                 </tr>
                 <tr>
                     <td style="width: 137px; height: 39px;">&nbsp;</td>
                     <td style="height: 39px" align="right">
+                        <asp:Label ID="lblDescTotal" Text="TOTAL: " runat="server"></asp:Label>
                         <asp:Label ID="lblTotal" runat="server"></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td style="width: 137px; height: 39px;"></td>
                     <td align="right" style="height: 39px">
+                        <asp:CheckBox ID="cbAprovado" runat="server" Text="Aprovado" />
                         <asp:Button ID="btnSalvar" runat="server" CssClass="btn btn-primary" OnClick="btnSalvar_Click" Text="Salvar" Width="80px" />
                         <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-info" OnClick="btnCancelar_Click" Text="Cancelar" Width="80px" />
                         <asp:Button ID="btnExcluir" runat="server" CssClass="btn btn-warning" OnClick="btnExcluir_Click" Text="Excluir" Width="80px" />

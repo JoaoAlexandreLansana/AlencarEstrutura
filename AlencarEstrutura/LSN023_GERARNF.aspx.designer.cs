@@ -10,7 +10,7 @@
 namespace AlencarEstrutura {
     
     
-    public partial class LSN020_ORCAMENTO {
+    public partial class LSN023_GERARNF {
         
         /// <summary>
         /// pnlTitulo control.
@@ -58,112 +58,13 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.TextBox txtCodigo;
         
         /// <summary>
-        /// btnBuscaPedidoCompra control.
+        /// btnNotaFiscal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscaPedidoCompra;
-        
-        /// <summary>
-        /// hfCodigoProdutoOrcamento control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfCodigoProdutoOrcamento;
-        
-        /// <summary>
-        /// Label5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
-        
-        /// <summary>
-        /// txtDescricao control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescricao;
-        
-        /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
-        /// txtCodCliente control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCodCliente;
-        
-        /// <summary>
-        /// btnBuscaPedidoCompra0 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscaPedidoCompra0;
-        
-        /// <summary>
-        /// txtNomeCliente control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNomeCliente;
-        
-        /// <summary>
-        /// lblProduto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblProduto;
-        
-        /// <summary>
-        /// ddlProduto control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlProduto;
-        
-        /// <summary>
-        /// lblQuantidade control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQuantidade;
-        
-        /// <summary>
-        /// txtQuantidade control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtQuantidade;
+        protected global::System.Web.UI.WebControls.Button btnNotaFiscal;
         
         /// <summary>
         /// Label6 control.
@@ -175,40 +76,40 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
-        /// txtQtdeMetroQuadrado control.
+        /// txtCodCliente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtQtdeMetroQuadrado;
+        protected global::System.Web.UI.WebControls.TextBox txtCodCliente;
         
         /// <summary>
-        /// lblValor control.
+        /// txtNomeCliente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblValor;
+        protected global::System.Web.UI.WebControls.TextBox txtNomeCliente;
         
         /// <summary>
-        /// cbValorUnitario control.
+        /// lblDescricao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbValorUnitario;
+        protected global::System.Web.UI.WebControls.Label lblDescricao;
         
         /// <summary>
-        /// txtValorPrevisto control.
+        /// txtDescricao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtValorPrevisto;
+        protected global::System.Web.UI.WebControls.TextBox txtDescricao;
         
         /// <summary>
         /// Label3 control.
@@ -220,94 +121,94 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// cbValorPorMetro control.
+        /// txtEmissao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbValorPorMetro;
+        protected global::System.Web.UI.WebControls.TextBox txtEmissao;
         
         /// <summary>
-        /// txtValorPorMetro control.
+        /// Label4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtValorPorMetro;
+        protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// btnAdicionar control.
+        /// txtVencimento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdicionar;
+        protected global::System.Web.UI.WebControls.TextBox txtVencimento;
         
         /// <summary>
-        /// btnRemover control.
+        /// txtDataInicial_CalendarExtender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRemover;
+        protected global::AjaxControlToolkit.CalendarExtender txtDataInicial_CalendarExtender;
         
         /// <summary>
-        /// pnlGrid control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlGrid;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// gvProdutos control.
+        /// txtValor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvProdutos;
+        protected global::System.Web.UI.WebControls.TextBox txtValor;
         
         /// <summary>
-        /// lblDescTotal control.
+        /// Label5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescTotal;
+        protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// lblTotal control.
+        /// ddlDesconto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTotal;
+        protected global::System.Web.UI.WebControls.DropDownList ddlDesconto;
         
         /// <summary>
-        /// cbAprovado control.
+        /// hfValorReal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbAprovado;
+        protected global::System.Web.UI.WebControls.HiddenField hfValorReal;
         
         /// <summary>
-        /// btnSalvar control.
+        /// btnImprimir control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSalvar;
+        protected global::System.Web.UI.WebControls.Button btnImprimir;
         
         /// <summary>
         /// btnCancelar control.
@@ -319,13 +220,22 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.Button btnCancelar;
         
         /// <summary>
-        /// btnExcluir control.
+        /// pnlImprimir control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnExcluir;
+        protected global::System.Web.UI.WebControls.Panel pnlImprimir;
+        
+        /// <summary>
+        /// CrystalReportViewer1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::CrystalDecisions.Web.CrystalReportViewer CrystalReportViewer1;
         
         /// <summary>
         /// lblBusca control.
@@ -355,6 +265,15 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.Button btnBusca;
         
         /// <summary>
+        /// pnlBusca control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlBusca;
+        
+        /// <summary>
         /// gvOrcamento control.
         /// </summary>
         /// <remarks>
@@ -362,41 +281,5 @@ namespace AlencarEstrutura {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvOrcamento;
-        
-        /// <summary>
-        /// Label4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
-        
-        /// <summary>
-        /// txtBuscaCliente control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBuscaCliente;
-        
-        /// <summary>
-        /// btnBuscaCliente control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscaCliente;
-        
-        /// <summary>
-        /// gvCliente control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvCliente;
     }
 }

@@ -21,5 +21,10 @@ namespace AlencarEstrutura
         {
             Response.Redirect("LSN019_CONTROLE_ESTOQUE.aspx");
         }
+
+        protected void btnOrcamento_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LSN020_ORCAMENTO.aspx");
+        }
     }
 }

@@ -57,7 +57,7 @@ namespace AlencarEstrutura
             objPedidoCompra.Observacao = txtObservacao.Text;
             objPedidoCompra.Status = 1;
             objPedidoCompra.Quantidade = Convert.ToDecimal(txtQuantidade.Text);
-            objPedidoCompra.ValorPrevisto = Convert.ToDecimal(txtValorPrevisto.Text);
+            objPedidoCompra.ValorPrevisto = Convert.ToDouble(txtValorPrevisto.Text);
             objPedidoCompra.IdFornecedor = (ddlFornecedor.SelectedValue == "Selecione") ? 0 : Convert.ToInt32(ddlFornecedor.SelectedValue);
             objPedidoCompra.IdUsuario = Convert.ToInt32(cookie.Value);
 

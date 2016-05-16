@@ -11,7 +11,7 @@ namespace AlencarEstrutura.DTO
         public int IdProduto { get; set; }
         public string Observacao { get; set; }
         public decimal Quantidade { get; set; }
-        public decimal ValorPrevisto { get; set; }
+        public double ValorPrevisto { get; set; }
         public int IdFornecedor { get; set; }
     }
 }

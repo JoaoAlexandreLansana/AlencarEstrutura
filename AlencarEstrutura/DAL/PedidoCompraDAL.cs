@@ -274,7 +274,7 @@ namespace AlencarEstrutura.DAL
                                 objProduto.IdProduto = Convert.ToInt32(reader["FKNI018_IDPRODUTO"]);
                                 objProduto.IdFornecedor = (reader["FKNI018_IDFORNECEDOR"] == DBNull.Value) ? 0 : Convert.ToInt32(reader["FKNI018_IDFORNECEDOR"]);
                                 objProduto.Observacao = reader["ATSF018_OBSERVACAO"].ToString();
-                                objProduto.ValorPrevisto = (reader["ATDC018_VALORPREVISTO"] == DBNull.Value) ? 0 : Convert.ToDecimal(reader["ATDC018_VALORPREVISTO"]);
+                                objProduto.ValorPrevisto = (reader["ATDC018_VALORPREVISTO"] == DBNull.Value) ? 0 : Convert.ToDouble(reader["ATDC018_VALORPREVISTO"]);
                                 objProduto.Quantidade = (reader["ATDC018_QUANTIDADE"] == DBNull.Value) ? 0 : Convert.ToDecimal(reader["ATDC018_QUANTIDADE"]);
 
                                 return objProduto;
@@ -406,8 +406,11 @@ namespace AlencarEstrutura.DAL
                                   FKNI018_IDPEDIDOCOMPRA,
                                   FKNI018_IDFORNECEDOR,
                                   ATSF003_DESCRICAO,
-                                  ATSF007_NOMEFANTASIA
-                                FROM BUSCA_PEDIDO_COMPRA
+                                  ATSF007_NOMEFANTASIA,
+                                  TB2.*
+                                FROM BUSCA_PEDIDO_COMPRA TB1
+                                INNER JOIN ALC002T_EMPRESA TB2
+                                ON TB1.PKNI003_IDEMPRESA = TB2.PKNI002_IDEMPRESA
                                 WHERE FKNI018_IDPEDIDOCOMPRA = :IDPEDIDOCOMPRA
                                     ";
 

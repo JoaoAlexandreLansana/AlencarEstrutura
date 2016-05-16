@@ -45,7 +45,7 @@ namespace AlencarEstrutura.DAL
                                 objProduto.Descricao = reader[1].ToString();
                                 objProduto.IdCategoria = Convert.ToInt32(reader[2]);
                                 objProduto.Observacao = reader[3].ToString();
-                                objProduto.Valor = (reader[4] == DBNull.Value) ? 0 : Convert.ToDecimal(reader[4]);
+                                objProduto.Valor = (reader[4] == DBNull.Value) ? 0 : Convert.ToDouble(reader[4]);
                                 objProduto.Peso = (reader[5] == DBNull.Value) ? 0 : Convert.ToDecimal(reader[5]);
                                 objProduto.Litros = (reader[6] == DBNull.Value) ? 0 : Convert.ToDecimal(reader[6]);
                                 objProduto.ValorPorMetro = (reader[7] == DBNull.Value) ? 0 : Convert.ToDecimal(reader[7]);
@@ -98,7 +98,7 @@ namespace AlencarEstrutura.DAL
                                 objProduto.Descricao = reader[1].ToString();
                                 objProduto.IdCategoria = (reader[2] == DBNull.Value) ? 0 : Convert.ToInt32(reader[2]);
                                 objProduto.Observacao = reader[3].ToString();
-                                objProduto.Valor = (reader[4] == DBNull.Value) ? 0 : Convert.ToDecimal(reader[4]);
+                                objProduto.Valor = (reader[4] == DBNull.Value) ? 0 : Convert.ToDouble(reader[4]);
                                 objProduto.Peso = (reader[5] == DBNull.Value) ? 0 : Convert.ToDecimal(reader[5]);
                                 objProduto.Litros = (reader[6] == DBNull.Value) ? 0 : Convert.ToDecimal(reader[6]);
                                 objProduto.ValorPorMetro = (reader[7] == DBNull.Value) ? 0 : Convert.ToDecimal(reader[7]);
@@ -133,7 +133,8 @@ namespace AlencarEstrutura.DAL
                                             ATDC003_VALOR,
                                             ATDC003_PESO,
                                             ATDC003_LITROS,
-                                            ATDC003_VALOR_METRO
+                                            ATDC003_VALOR_METRO,
+                                            FKNI003_IDEMPRESA
                                           )
                                           VALUES
                                           (
@@ -144,6 +145,7 @@ namespace AlencarEstrutura.DAL
                                             :PESO,
                                             :LITROS,
                                             :VALORMETRO
+                                            :IDEMPRESA
                                           )";
                     conn.Open();
 
@@ -158,6 +160,7 @@ namespace AlencarEstrutura.DAL
                         cmd.Parameters.Add(":PESO", produto.Peso);
                         cmd.Parameters.Add(":LITROS", produto.Litros);
                         cmd.Parameters.Add(":VALORMETRO", produto.ValorPorMetro);
+                        cmd.Parameters.Add(":IDEMPRESA", 1);
                         int reader = cmd.ExecuteNonQuery();
                         sucesso = Convert.ToBoolean(reader);
                     }

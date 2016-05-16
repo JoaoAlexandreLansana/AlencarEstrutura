@@ -11,7 +11,7 @@ namespace AlencarEstrutura.DTO
         public string Descricao { get; set; }
         public int IdCategoria { get; set; }
         public string Observacao { get; set; }
-        public decimal Valor { get; set; }
+        public double Valor { get; set; }
         public Decimal Peso { get; set; }
         public decimal Litros { get; set; }
 

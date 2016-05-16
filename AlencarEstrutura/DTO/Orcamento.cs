@@ -12,7 +12,9 @@ namespace AlencarEstrutura.DTO
         public DateTime Data { get; set; }
         public DateTime Vencimento { get; set; }
         public int IdPessoa { get; set; }
-        public decimal Valor { get; set; }
+        public string NomeCliente { get; set; }
+        public string EmailCliente { get; set; }
+        public double Valor { get; set; }
         public int Status { get; set; }
         public int IdProdutoOrcamento { get; set; }
         public int IdProduto { get; set; }

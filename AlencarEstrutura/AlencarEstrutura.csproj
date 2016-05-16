@@ -148,6 +148,28 @@
     <Content Include="DataSets\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Content>
+    <Content Include="DataSets\LSN020_ORCAMENTO_ds.xsc">
+      <DependentUpon>LSN020_ORCAMENTO_ds.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSets\LSN020_ORCAMENTO_ds.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LSN020_ORCAMENTO_ds.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSets\LSN020_ORCAMENTO_ds.xss">
+      <DependentUpon>LSN020_ORCAMENTO_ds.xsd</DependentUpon>
+    </Content>
+    <Content Include="DataSets\LSN023_NOTAFISCAL.xsc">
+      <DependentUpon>LSN023_NOTAFISCAL.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSets\LSN023_NOTAFISCAL.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LSN023_NOTAFISCAL.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSets\LSN023_NOTAFISCAL.xss">
+      <DependentUpon>LSN023_NOTAFISCAL.xsd</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="image\loading.gif" />
     <Content Include="image\login_button.png" />
@@ -163,6 +185,8 @@
     <Content Include="LSN019_CONTROLE_ESTOQUE.aspx" />
     <Content Include="LSN020_ORCAMENTO.aspx" />
     <Content Include="LSN021_IMPRIMIRPEDIDOCOMPRA.aspx" />
+    <Content Include="LSN022_IMPRIMIRORCAMENTO.aspx" />
+    <Content Include="LSN023_GERARNF.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -233,6 +257,7 @@
     <Compile Include="DAL\EstoqueDAL.cs" />
     <Compile Include="DAL\FornecedorDAL.cs" />
     <Compile Include="DAL\MunicipioDAL.cs" />
+    <Compile Include="DAL\NotaFiscalDAL.cs" />
     <Compile Include="DAL\OrcamentoDAL.cs" />
     <Compile Include="DAL\PedidoCompraDAL.cs" />
     <Compile Include="DAL\PessoaDAL.cs" />
@@ -243,6 +268,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\LSN023_NOTAFISCAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LSN023_NOTAFISCAL.xsd</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -257,6 +287,7 @@
     <Compile Include="DTO\Estado.cs" />
     <Compile Include="DTO\Estoque.cs" />
     <Compile Include="DTO\Municipio.cs" />
+    <Compile Include="DTO\NotaFiscal.cs" />
     <Compile Include="DTO\Orcamento.cs" />
     <Compile Include="DTO\PedidoCompra.cs" />
     <Compile Include="DTO\Pessoa.cs" />
@@ -352,12 +383,43 @@
     <Compile Include="LSN020_ORCAMENTO.aspx.designer.cs">
       <DependentUpon>LSN020_ORCAMENTO.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DataSets\LSN020_ORCAMENTO_ds.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LSN020_ORCAMENTO_ds.xsd</DependentUpon>
+    </Compile>
     <Compile Include="LSN021_IMPRIMIRPEDIDOCOMPRA.aspx.cs">
       <DependentUpon>LSN021_IMPRIMIRPEDIDOCOMPRA.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LSN021_IMPRIMIRPEDIDOCOMPRA.aspx.designer.cs">
       <DependentUpon>LSN021_IMPRIMIRPEDIDOCOMPRA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LSN022_IMPRIMIRORCAMENTO.aspx.cs">
+      <DependentUpon>LSN022_IMPRIMIRORCAMENTO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LSN022_IMPRIMIRORCAMENTO.aspx.designer.cs">
+      <DependentUpon>LSN022_IMPRIMIRORCAMENTO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LSN022_IMPRIMIRORCAMENTO_.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LSN022_IMPRIMIRORCAMENTO_.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LSN023_GERARNF.aspx.cs">
+      <DependentUpon>LSN023_GERARNF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LSN023_GERARNF.aspx.designer.cs">
+      <DependentUpon>LSN023_GERARNF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LSN023_GERARNF_.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LSN023_GERARNF_.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -383,10 +445,16 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>LSN006_PEDIDOCOMPRA_.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="LSN022_IMPRIMIRORCAMENTO_.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LSN022_IMPRIMIRORCAMENTO_.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LSN023_GERARNF_.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LSN023_GERARNF_.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="crystalreportviewers13\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

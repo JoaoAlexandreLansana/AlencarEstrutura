@@ -81,6 +81,15 @@ namespace AlencarEstrutura
         {
             Response.Redirect("LSN021_IMPRIMIRPEDIDOCOMPRA.aspx");
         }
-        
+
+        protected void lbImprimirOrcamento_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LSN022_IMPRIMIRORCAMENTO.aspx");
+        }
+
+        protected void lbGeraNF_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LSN023_GERARNF.aspx");
+        }
     }
 }

@@ -18,7 +18,7 @@
             <p>
                 Altere orçamentos criados</p>
             <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301948">Acessar &raquo;</a>
+                <asp:Button ID="btnOrcamento" runat="server" Text="Acessar >>" CssClass="btn btn-default" OnClick="btnOrcamento_Click"/>
             </p>
         </div>
         <div class="col-md-4">

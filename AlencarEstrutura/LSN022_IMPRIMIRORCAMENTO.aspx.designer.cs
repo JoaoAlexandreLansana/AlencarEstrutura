@@ -10,168 +10,141 @@
 namespace AlencarEstrutura {
     
     
-    public partial class SiteMaster {
+    public partial class LSN022_IMPRIMIRORCAMENTO {
         
         /// <summary>
-        /// lbCategoria control.
+        /// pnlTitulo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbCategoria;
+        protected global::System.Web.UI.WebControls.Panel pnlTitulo;
         
         /// <summary>
-        /// lbCliente control.
+        /// lbltitulo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbCliente;
+        protected global::System.Web.UI.WebControls.Label lbltitulo;
         
         /// <summary>
-        /// lbCadProduto control.
+        /// pnlManutencao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbCadProduto;
+        protected global::System.Web.UI.WebControls.Panel pnlManutencao;
         
         /// <summary>
-        /// lbCadUsuario control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbCadUsuario;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// lbPedidoCompra control.
+        /// txtCodigo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbPedidoCompra;
+        protected global::System.Web.UI.WebControls.TextBox txtCodigo;
         
         /// <summary>
-        /// lbOrcamento control.
+        /// btnOrcamento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbOrcamento;
+        protected global::System.Web.UI.WebControls.Button btnOrcamento;
         
         /// <summary>
-        /// LinkButton2 control.
+        /// lblDescricao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton2;
+        protected global::System.Web.UI.WebControls.Label lblDescricao;
         
         /// <summary>
-        /// lbControleEstoque control.
+        /// txtDescricao control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbControleEstoque;
+        protected global::System.Web.UI.WebControls.TextBox txtDescricao;
         
         /// <summary>
-        /// lbFornecedor control.
+        /// btnImprimir control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbFornecedor;
+        protected global::System.Web.UI.WebControls.Button btnImprimir;
         
         /// <summary>
-        /// lbEstoque control.
+        /// pnlImprimir control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbEstoque;
+        protected global::System.Web.UI.WebControls.Panel pnlImprimir;
         
         /// <summary>
-        /// lbCadEmpresa control.
+        /// CrystalReportViewer1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbCadEmpresa;
+        protected global::CrystalDecisions.Web.CrystalReportViewer CrystalReportViewer1;
         
         /// <summary>
-        /// lbGeraNF control.
+        /// lblBusca control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbGeraNF;
+        protected global::System.Web.UI.WebControls.Label lblBusca;
         
         /// <summary>
-        /// lbImprimirOrcamento control.
+        /// txtBusca control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbImprimirOrcamento;
+        protected global::System.Web.UI.WebControls.TextBox txtBusca;
         
         /// <summary>
-        /// LinkButton5 control.
+        /// btnBusca control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton5;
+        protected global::System.Web.UI.WebControls.Button btnBusca;
         
         /// <summary>
-        /// LinkButton6 control.
+        /// gvOrcamento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton6;
-        
-        /// <summary>
-        /// lbImprimirPedidoCompra control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbImprimirPedidoCompra;
-        
-        /// <summary>
-        /// linkButtonSair control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton linkButtonSair;
-        
-        /// <summary>
-        /// MainContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.GridView gvOrcamento;
     }
 }

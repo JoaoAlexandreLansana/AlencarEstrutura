@@ -23,7 +23,27 @@ namespace AlencarEstrutura
 
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
+            Orcamento objOrcamento = new Orcamento();
+            OrcamentoDAL dbOrcamento = new OrcamentoDAL();
 
+            if (!string.IsNullOrEmpty(txtCodigo.Text))
+            {
+                objOrcamento.IdOrcamento = Convert.ToInt32(txtCodigo.Text);
+                objOrcamento.Descricao = txtDescricao.Text;
+                objOrcamento.Data = Convert.ToDateTime(DateTime.Now);
+                objOrcamento.Status = Convert.ToInt32(cbAprovado.Checked);
+                objOrcamento.Valor = Convert.ToDouble(lblTotal.Text);
+
+                if (!dbOrcamento.AtualizarOrcamento(objOrcamento, ref erro))
+                {
+                    Session.Add("danger", "Não foi possível atualizar o Orçamento " + erro);
+                }
+                else
+                {
+                    Session.Add("success", "Orçamento atualizado com Sucesso! ");
+                    limpa();
+                }
+            }
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
@@ -140,7 +160,7 @@ namespace AlencarEstrutura
             gvProdutos.DataBind();
             if (dtOrcamento != null)
             {
-                lblTotal.Text = "TOTAL: " + dtOrcamento.Rows[0].ItemArray[6].ToString();
+                lblTotal.Text = dtOrcamento.Rows[0].ItemArray[6].ToString();
             }
         }
 
@@ -158,6 +178,7 @@ namespace AlencarEstrutura
         {
             txtCodigo.Text = orcamento.IdOrcamento.ToString();
             txtDescricao.Text = orcamento.Descricao;
+            cbAprovado.Checked = Convert.ToBoolean(orcamento.Status);
             carregaGvProduto();
         }
 
@@ -170,17 +191,18 @@ namespace AlencarEstrutura
 
             objOrcamento.Descricao = txtDescricao.Text;
             objOrcamento.IdPessoa = Convert.ToInt32(txtCodCliente.Text);
-            objOrcamento.IdProduto = Convert.ToInt32(ddlProduto.SelectedValue);
-            objOrcamento.Quantidade = Convert.ToDecimal(txtQuantidade.Text);
-            objOrcamento.Qdte_metro_quadrado = Convert.ToDecimal(txtQtdeMetroQuadrado.Text);
+            objOrcamento.IdProduto = (string.IsNullOrEmpty(ddlProduto.SelectedValue)) ? 0 : Convert.ToInt32(ddlProduto.SelectedValue);
+            objOrcamento.Quantidade = (string.IsNullOrEmpty(txtQuantidade.Text)) ? 0 : Convert.ToDecimal(txtQuantidade.Text);
+            objOrcamento.Qdte_metro_quadrado = (string.IsNullOrEmpty(txtQtdeMetroQuadrado.Text)) ? 0 : Convert.ToDecimal(txtQtdeMetroQuadrado.Text);
+            objOrcamento.Status = Convert.ToInt32(cbAprovado.Checked);
 
             if (cbValorUnitario.Checked)
             {
-                objOrcamento.Valor = Convert.ToDecimal(txtValorPrevisto.Text) * Convert.ToDecimal(txtQuantidade.Text);
+                objOrcamento.Valor = Convert.ToDouble(txtValorPrevisto.Text) * Convert.ToDouble(txtQuantidade.Text);
             }
             else
             {
-                objOrcamento.Valor = (Convert.ToDecimal(txtValorPorMetro.Text) * (Convert.ToDecimal(txtQtdeMetroQuadrado.Text))) * Convert.ToDecimal(txtQuantidade.Text);
+                objOrcamento.Valor = (Convert.ToDouble(txtValorPorMetro.Text) * (Convert.ToDouble(txtQtdeMetroQuadrado.Text))) * Convert.ToDouble(txtQuantidade.Text);
             }
 
             int idOrcamento = 0;
@@ -195,6 +217,8 @@ namespace AlencarEstrutura
                 }
 
                 txtCodigo.Text = idOrcamento.ToString();
+                txtQtdeMetroQuadrado.Text = string.Empty;
+                txtQuantidade.Text = string.Empty;
             }
 
             //objOrcamento.ValorUnitario =  (cbValorUnitario.Checked) ? 1 : 0 ;

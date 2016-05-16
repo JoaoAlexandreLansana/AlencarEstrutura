@@ -31,7 +31,7 @@ namespace AlencarEstrutura
             objProduto.Descricao = txtDescricao.Text;
             objProduto.IdCategoria = Convert.ToInt32(ddlCategoria.SelectedValue);
             objProduto.Observacao = txtObservacao.Text;
-            objProduto.Valor = (string.IsNullOrEmpty(txtValor.Text)) ? 0 : Convert.ToDecimal(txtValor.Text);
+            objProduto.Valor = (string.IsNullOrEmpty(txtValor.Text)) ? 0 : Convert.ToDouble(txtValor.Text);
             objProduto.Peso = (string.IsNullOrEmpty(txtPeso.Text)) ? 0 : Convert.ToDecimal(txtPeso.Text);
             objProduto.Litros = (string.IsNullOrEmpty(txtLitros.Text)) ? 0 : Convert.ToDecimal(txtLitros.Text);
             objProduto.ValorPorMetro = (string.IsNullOrEmpty(txtValorMetro.Text)) ? 0 : Convert.ToDecimal(txtValorMetro.Text);
