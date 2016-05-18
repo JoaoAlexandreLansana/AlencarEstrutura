@@ -91,5 +91,21 @@ namespace AlencarEstrutura
         {
             Response.Redirect("LSN023_GERARNF.aspx");
         }
+
+       
+        protected void lbSolicitarProduto_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LSN009_SOLICITAR_PRODUTO.aspx");
+        }
+
+        protected void lbArmazenarProduto_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LSN010_ARMAZENAR_PRODUTO.aspx");
+        }
+
+        protected void lbConsultaEstoque_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LSN012_CONSULTAR_ESTOQUE.aspx");
+        }
     }
 }

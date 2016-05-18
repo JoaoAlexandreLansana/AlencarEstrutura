@@ -5,7 +5,7 @@
     <div class="jumbotron">
         <h1>Alencar Estruturas</h1>
         <p class="lead"><asp:Label ID="lblboasVindas" Text="" runat="server" /></p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Detalhes &raquo;</a></p>
+        <p><a href="LSN008_NF_PENDENTES.aspx" class="btn btn-primary btn-lg">Detalhes &raquo;</a></p>
     </div>
 
     <div class="row">
@@ -24,11 +24,11 @@
         <div class="col-md-4">
             <h2>Notas Fiscais</h2>
             <p>
-                Visualize as Notas Fiscais por status, por data, por numero ou todas elas de uma vez.</p>
+                Visualize as Notas Fiscais por status, por data ou por numero.</p>
             <p>
                 Cadastre Notas Fiscais novas ou exclua as antigas.</p>
             <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301949">Acessar &raquo;</a>
+                <asp:Button ID="btnNotaFiscal" runat="server" Text="Acessar >>" CssClass="btn btn-default" OnClick="btnNotaFiscal_Click"/>
             </p>
         </div>
         <div class="col-md-4">

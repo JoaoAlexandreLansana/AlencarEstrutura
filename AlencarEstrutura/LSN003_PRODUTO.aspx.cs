@@ -15,8 +15,11 @@ namespace AlencarEstrutura
         public string erro = string.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
-            CarregaDDLCategoria();
-            CarregaGvProduto();
+            if (!IsPostBack)
+            {
+                CarregaDDLCategoria();
+                CarregaGvProduto();
+            }            
         }
 
         protected void btnSalvar_Click(object sender, EventArgs e)
@@ -133,7 +136,10 @@ namespace AlencarEstrutura
 
         protected void btnExcluir_Click(object sender, EventArgs e)
         {
-            Validacoes();
+            if (!Validacoes())
+            {
+                Session.Add("danger", "Preencha os campos obrigatórios! ");
+            }
 
             ProdutoDAL dbProduto = new ProdutoDAL();
             Produto objProduto = new Produto();
@@ -148,23 +154,30 @@ namespace AlencarEstrutura
             }
         }
 
-        private void Validacoes()
+        private bool Validacoes()
         {
             if(string.IsNullOrEmpty(txtCodigo.Text) || string.IsNullOrEmpty(txtDescricao.Text))
             {
-                Session.Add("danger", "Preencha os campos obrigatórios! ");
-                return;
+                return false;
             }
+            return true;
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            limpa();
         }
 
         private void limpa()
         {
             txtCodigo.Text = string.Empty;
+            txtDescricao.Text = string.Empty;
+            txtObservacao.Text = string.Empty;
+            txtPeso.Text = string.Empty;
+            txtValor.Text = string.Empty;
+            ddlCategoria.SelectedIndex = 0;
+            txtValorMetro.Text = string.Empty;
+            
         }
     }
 }

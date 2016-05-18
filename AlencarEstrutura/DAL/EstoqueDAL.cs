@@ -67,7 +67,8 @@ namespace AlencarEstrutura.DAL
                                       ATDT004_VALIDADE,
                                       ATSF004_QUANTIDADE,
                                       ATSF004_OBSERVACAO
-                                    FROM ALC004T_ESTOQUE";
+                                    FROM ALC004T_ESTOQUE
+                                      ORDER BY PKNI004_IDESTOQUE";
 
                     conn.Open();
 

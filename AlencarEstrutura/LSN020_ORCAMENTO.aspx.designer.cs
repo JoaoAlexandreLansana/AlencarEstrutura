@@ -247,13 +247,22 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.Button btnAdicionar;
         
         /// <summary>
-        /// btnRemover control.
+        /// btnLimpar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRemover;
+        protected global::System.Web.UI.WebControls.Button btnLimpar;
+        
+        /// <summary>
+        /// btnRemover0 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRemover0;
         
         /// <summary>
         /// pnlGrid control.
@@ -355,6 +364,15 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.Button btnBusca;
         
         /// <summary>
+        /// pnlModal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlModal;
+        
+        /// <summary>
         /// gvOrcamento control.
         /// </summary>
         /// <remarks>
@@ -389,6 +407,15 @@ namespace AlencarEstrutura {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnBuscaCliente;
+        
+        /// <summary>
+        /// pnlModal2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlModal2;
         
         /// <summary>
         /// gvCliente control.

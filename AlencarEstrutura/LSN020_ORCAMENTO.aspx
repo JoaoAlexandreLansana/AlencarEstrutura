@@ -65,10 +65,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 137px; height: 28px;">&nbsp;</td>
-                    <td style="margin-left: 40px; height: 28px;">
-                        <asp:Button ID="btnAdicionar" runat="server" CssClass="btn btn-info" Text="Listar" OnClick="btnAdicionar_Click" />
-                        <asp:Button ID="btnRemover" runat="server" CssClass="btn btn-warning" Text="Remover" Width="80px" OnClick="btnRemover_Click" />
+                    <td >&nbsp;</td>
+                    <td align="right">
+                        <asp:Button ID="btnAdicionar" runat="server" CssClass="btn btn-primary" Text="Adicionar" OnClick="btnAdicionar_Click" Width="80px" />
+                        <asp:Button ID="btnLimpar" runat="server" CssClass="btn btn-info" Text="Limpar" Width="80px" OnClick="btnLimpar_Click" />
+                        <asp:Button ID="btnRemover0" runat="server" CssClass="btn btn-warning" OnClick="btnRemover_Click" Text="Remover" Width="80px" />
                     </td>
                 </tr>
                 <tr>
@@ -125,12 +126,14 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:GridView ID="gvOrcamento" runat="server" Width="100%" DataKeyNames="PKNI020_IDORCAMENTO" AutoGenerateColumns="false" OnSelectedIndexChanged="gvOrcamento_SelectedIndexChanged">
+                                    <asp:Panel ID="pnlModal" runat="server" ScrollBars="Auto" Height="200">
+                                        <asp:GridView ID="gvOrcamento" runat="server" Width="100%" DataKeyNames="PKNI020_IDORCAMENTO" AutoGenerateColumns="false" OnSelectedIndexChanged="gvOrcamento_SelectedIndexChanged">
                                         <Columns>
                                             <asp:BoundField HeaderText="Codigo" DataField="PKNI020_IDORCAMENTO" />
                                             <asp:BoundField HeaderText="Descrição" DataField="ATSF020_DESCRICAO" />
                                         </Columns>
                                     </asp:GridView>
+                                    </asp:Panel>                                    
                                 </td>
                             </tr>
                         </table>
@@ -163,13 +166,15 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:GridView ID="gvCliente" runat="server" Width="100%" DataKeyNames="CODIGO" AutoGenerateColumns="false" OnSelectedIndexChanged="gvCliente_SelectedIndexChanged">
+                                    <asp:Panel ID="pnlModal2" runat="server" ScrollBars="Auto" Height="200">
+                                        <asp:GridView ID="gvCliente" runat="server" Width="100%" DataKeyNames="CODIGO" AutoGenerateColumns="false" OnSelectedIndexChanged="gvCliente_SelectedIndexChanged">
                                         <Columns>
                                             <asp:BoundField HeaderText="Código" DataField="CODIGO" />
                                             <asp:BoundField HeaderText="Nome" DataField="NOME" />
                                             <asp:BoundField HeaderText="Tipo Pessoa" DataField="TIPOPESSOA" />
                                         </Columns>
                                     </asp:GridView>
+                                    </asp:Panel>                                    
                                 </td>
                             </tr>
                         </table>

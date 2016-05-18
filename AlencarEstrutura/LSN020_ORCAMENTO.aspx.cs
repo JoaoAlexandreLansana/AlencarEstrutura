@@ -53,7 +53,21 @@ namespace AlencarEstrutura
 
         private void limpa()
         {
-
+            txtCodigo.Text = string.Empty;
+            txtDescricao.Text = string.Empty;
+            txtNomeCliente.Text = string.Empty;
+            txtQtdeMetroQuadrado.Text = string.Empty;
+            txtQuantidade.Text = string.Empty;
+            txtValorPorMetro.Text = string.Empty;
+            txtValorPrevisto.Text = string.Empty;
+            ddlProduto.SelectedIndex = 0;
+            cbAprovado.Checked = false;
+            cbValorUnitario.Checked = true;
+            cbValorPorMetro.Checked = false;
+            txtCodCliente.Text = string.Empty;
+            hfCodigoProdutoOrcamento.Value = string.Empty;
+            gvProdutos.DataSource = null;
+            gvProdutos.DataBind();
         }
 
         protected void btnExcluir_Click(object sender, EventArgs e)
@@ -158,7 +172,7 @@ namespace AlencarEstrutura
             gvProdutos.DataSource = dtOrcamento;
             gvProdutos.AutoGenerateSelectButton = true;
             gvProdutos.DataBind();
-            if (dtOrcamento != null)
+            if (dtOrcamento != null && dtOrcamento.Rows.Count > 0)
             {
                 lblTotal.Text = dtOrcamento.Rows[0].ItemArray[6].ToString();
             }
@@ -326,7 +340,6 @@ namespace AlencarEstrutura
         public void bindProduto(Orcamento orcamento, Produto produto, Pessoa pessoa)
         {
             txtCodCliente.Text = orcamento.IdPessoa.ToString();
-            txtDescricao.Text = orcamento.Descricao;
             txtQuantidade.Text = orcamento.Quantidade.ToString();
             txtQtdeMetroQuadrado.Text = orcamento.Qdte_metro_quadrado.ToString();
             ddlProduto.SelectedValue = orcamento.IdProduto.ToString();
@@ -354,7 +367,7 @@ namespace AlencarEstrutura
 
             if (!string.IsNullOrEmpty(hfCodigoProdutoOrcamento.Value))
             {
-                if (dbOrcamento.ExcluirProdutoPorIdOrcamento(Convert.ToInt32(txtCodigo.Text), ref erro))
+                if (dbOrcamento.ExcluirProdutoPorIdOrcamento(Convert.ToInt32(hfCodigoProdutoOrcamento.Value), ref erro))
                 {
                     Session.Add("success", "Produto Excluído com Sucesso! ");
                     carregaGvProduto();
@@ -364,6 +377,17 @@ namespace AlencarEstrutura
                     Session.Add("danger", "Não foi possível excluído o Produto " + erro);
                 }
             }
+        }
+
+        protected void btnLimpar_Click(object sender, EventArgs e)
+        {
+            
+            txtNomeCliente.Text = string.Empty;
+            txtQtdeMetroQuadrado.Text = string.Empty;
+            txtQuantidade.Text = string.Empty;
+            txtValorPorMetro.Text = string.Empty;
+            txtValorPrevisto.Text = string.Empty;
+            ddlProduto.SelectedIndex = 0;
         }
     }
 }

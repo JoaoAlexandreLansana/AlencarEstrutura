@@ -86,10 +86,15 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:GridView ID="gvEstoque" runat="server" Width="100%" DataKeyNames="IdEstoque" OnSelectedIndexChanged="gvEstoque_SelectedIndexChanged">
+                                    <asp:Panel ID="pnlGrid" runat="server" ScrollBars="Auto" Height="200">
+                                        <asp:GridView ID="gvEstoque" runat="server" Width="100%" DataKeyNames="IdEstoque" OnSelectedIndexChanged="gvEstoque_SelectedIndexChanged" AutoGenerateColumns="false">
                                         <Columns>
+                                            <asp:BoundField DataField="IdEstoque" HeaderText="Codigo" />
+                                            <asp:BoundField DataField="Descricao" HeaderText="Descrição" />
+                                            <asp:BoundField DataField="Quantidade" HeaderText="Quantidade" />
                                         </Columns>
                                     </asp:GridView>
+                                    </asp:Panel>                                    
                                 </td>
                             </tr>
                         </table>

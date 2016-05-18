@@ -128,7 +128,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -170,6 +169,7 @@
     <Content Include="DataSets\LSN023_NOTAFISCAL.xss">
       <DependentUpon>LSN023_NOTAFISCAL.xsd</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\AlencarPublish.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="image\loading.gif" />
     <Content Include="image\login_button.png" />
@@ -180,7 +180,11 @@
     <Content Include="LSN004_ESTOQUE.aspx" />
     <Content Include="LSN006_PEDIDOCOMPRA.aspx" />
     <Content Include="LSN007_FORNECEDOR.aspx" />
+    <Content Include="LSN008_NF_PENDENTES.aspx" />
+    <Content Include="LSN009_SOLICITAR_PRODUTO.aspx" />
+    <Content Include="LSN010_ARMAZENAR_PRODUTO.aspx" />
     <Content Include="LSN011_CATEGORIA.aspx" />
+    <Content Include="LSN012_CONSULTAR_ESTOQUE.aspx" />
     <Content Include="LSN014_CLIENTE.aspx" />
     <Content Include="LSN019_CONTROLE_ESTOQUE.aspx" />
     <Content Include="LSN020_ORCAMENTO.aspx" />
@@ -235,13 +239,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -355,12 +352,40 @@
     <Compile Include="LSN007_FORNECEDOR.aspx.designer.cs">
       <DependentUpon>LSN007_FORNECEDOR.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LSN008_NF_PENDENTES.aspx.cs">
+      <DependentUpon>LSN008_NF_PENDENTES.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LSN008_NF_PENDENTES.aspx.designer.cs">
+      <DependentUpon>LSN008_NF_PENDENTES.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LSN009_SOLICITAR_PRODUTO.aspx.cs">
+      <DependentUpon>LSN009_SOLICITAR_PRODUTO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LSN009_SOLICITAR_PRODUTO.aspx.designer.cs">
+      <DependentUpon>LSN009_SOLICITAR_PRODUTO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LSN010_ARMAZENAR_PRODUTO.aspx.cs">
+      <DependentUpon>LSN010_ARMAZENAR_PRODUTO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LSN010_ARMAZENAR_PRODUTO.aspx.designer.cs">
+      <DependentUpon>LSN010_ARMAZENAR_PRODUTO.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LSN011_CATEGORIA.aspx.cs">
       <DependentUpon>LSN011_CATEGORIA.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LSN011_CATEGORIA.aspx.designer.cs">
       <DependentUpon>LSN011_CATEGORIA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LSN012_CONSULTAR_ESTOQUE.aspx.cs">
+      <DependentUpon>LSN012_CONSULTAR_ESTOQUE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LSN012_CONSULTAR_ESTOQUE.aspx.designer.cs">
+      <DependentUpon>LSN012_CONSULTAR_ESTOQUE.aspx</DependentUpon>
     </Compile>
     <Compile Include="LSN014_CLIENTE.aspx.cs">
       <DependentUpon>LSN014_CLIENTE.aspx</DependentUpon>

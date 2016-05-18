@@ -76,7 +76,7 @@ namespace AlencarEstrutura.DAL
                                             FKNI020_IDPESSOA,
                                             TRUNC (ATDC020_VALOR, 2) AS ATDC020_VALOR,
                                             ATSF020_STATUS
-                                        FROM ALC020T_ORCAMENTO";
+                                        FROM ALC020T_ORCAMENTO  ORDER BY ATDT020_DATA DESC";
 
                     conn.Open();
 
@@ -481,7 +481,7 @@ namespace AlencarEstrutura.DAL
                 using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
                 {
                     string query = @"DELETE FROM ALC022T_PRODUTO_ORCAMENTO
-                                          WHERE FKNI022_IDORCAMENTO = :IDORCAMENTO";
+                                          WHERE PKNI022_IDPRODUTO_ORCAMENTO = :IDORCAMENTO";
 
                     conn.Open();
 
@@ -574,7 +574,132 @@ namespace AlencarEstrutura.DAL
                 erro = ex.Message;
                 return null;
             }
+        }
 
+        public int ObertOrcamentosPendentes(ref string erro)
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    string query = @"SELECT count(*)
+                                     FROM ALC020T_ORCAMENTO 
+                                     where ATSF020_STATUS = 0 
+                                     AND ATDT020_VENCIMENTO < :HOJE";
+
+                    conn.Open();
+
+                    using (OracleCommand cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = query;
+                        cmd.Parameters.Add(":HOJE", DateTime.Now);
+
+                        using (OracleDataReader reader = cmd.ExecuteReader())
+                        {
+                            Orcamento objOrcamento = new Orcamento();
+
+                            if (reader.Read())
+                            {
+                                return Convert.ToInt32(reader[0]);
+                            }
+                            else
+                            {
+                                return 0;
+                            }
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return 0;
+            }
+        }
+
+        public int ObertOrcamentosAVencer(ref string erro)
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    string query = @"SELECT count(*)
+                                     FROM ALC020T_ORCAMENTO 
+                                     where ATSF020_STATUS = 0 
+                                     AND ATDT020_VENCIMENTO < :HOJE
+                                     OR  ATDT020_VENCIMENTO < :AMANHA";
+
+                    conn.Open();
+
+                    using (OracleCommand cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = query;
+                        cmd.Parameters.Add(":HOJE", DateTime.Now);
+                        cmd.Parameters.Add(":AMANHA", DateTime.Now.AddDays(1));
+
+                        using (OracleDataReader reader = cmd.ExecuteReader())
+                        {
+                            Orcamento objOrcamento = new Orcamento();
+
+                            if (reader.Read())
+                            {
+                                return Convert.ToInt32(reader[0]);
+                            }
+                            else
+                            {
+                                return 0;
+                            }
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return 0;
+            }
+        }
+
+        public DataTable ObterListaOrcamentoPendentes(ref string erro)
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    string query = @"SELECT PKNI020_IDORCAMENTO,
+                                            ATSF020_DESCRICAO,
+                                            ATDT020_DATA,
+                                            ATDT020_VENCIMENTO,
+                                            FKNI020_IDPESSOA,
+                                            TRUNC (ATDC020_VALOR, 2) AS ATDC020_VALOR,
+                                            ATSF020_STATUS
+                                        FROM ALC020T_ORCAMENTO 
+                                        where ATSF020_STATUS = 0 
+                                     AND ATDT020_VENCIMENTO < :HOJE
+                                            ";
+
+                    conn.Open();
+
+                    using (OracleCommand cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = query;
+                        cmd.Parameters.Add(":HOJE", DateTime.Now);
+
+                        DataTable dt = new DataTable();
+                        OracleDataAdapter da = new OracleDataAdapter();
+                        da.SelectCommand = cmd;
+                        da.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return null;
+            }
         }
     }
 }

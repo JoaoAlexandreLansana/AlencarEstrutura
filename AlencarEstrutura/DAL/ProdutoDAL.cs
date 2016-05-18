@@ -134,7 +134,7 @@ namespace AlencarEstrutura.DAL
                                             ATDC003_PESO,
                                             ATDC003_LITROS,
                                             ATDC003_VALOR_METRO,
-                                            FKNI003_IDEMPRESA
+                                            PKNI003_IDEMPRESA
                                           )
                                           VALUES
                                           (
@@ -144,7 +144,7 @@ namespace AlencarEstrutura.DAL
                                             :VALOR,
                                             :PESO,
                                             :LITROS,
-                                            :VALORMETRO
+                                            :VALORMETRO,
                                             :IDEMPRESA
                                           )";
                     conn.Open();

@@ -206,7 +206,7 @@ namespace AlencarEstrutura.DAL
                                       TB1.ATSF014_TIPOPESSOA AS TIPOPESSOA
                                     FROM ALC014T_PESSOA TB1
                                     INNER JOIN ALC015T_PESSOAFISICA TB2
-                                    ON TB2.FKNI015_IDPESSOA = TB1.PKNI014_IDPESSOA"
+                                    ON TB2.FKNI015_IDPESSOA = TB1.PKNI014_IDPESSOA  ORDER BY NOME"
                                     ;
 
                     conn.Open();

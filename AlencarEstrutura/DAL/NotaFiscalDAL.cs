@@ -4,6 +4,7 @@ using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Web;
 
@@ -51,7 +52,7 @@ namespace AlencarEstrutura.DAL
                         cmd.Parameters.Add(":ATDT021_VENCIMENTO", notaFiscal.Vencimento);
                         cmd.Parameters.Add(":ATDT021_DATA", notaFiscal.DataEmissao);
                         cmd.Parameters.Add(":ATNI021_STATUS", notaFiscal.Status);
-                        cmd.Parameters.Add(":FKNI021_IDEMPRESA", 1);
+                        cmd.Parameters.Add(":FKNI021_IDEMPRESA", 0);
                         cmd.Parameters.Add(":VALOR", notaFiscal.Valor);
                         cmd.Parameters.Add(":PARCELAS", notaFiscal.Parcelas);
                         cmd.Parameters.Add(":IDPESSOA", notaFiscal.IdPessoa);
@@ -374,6 +375,129 @@ namespace AlencarEstrutura.DAL
                             da.Fill(dataSet, "BUSCA_NOTA_FISCAL");
                             return dataSet;
                         }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return null;
+            }
+
+        }
+
+        public int ObterNotasFiscaisPendentes(ref string erro)
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    string query = @"SELECT COUNT(*)
+                                     FROM ALC021T_NOTASFISCAIS 
+                                     WHERE ATNI021_STATUS = 0 
+                                     AND ATDT021_VENCIMENTO < :HOJE";
+
+                    conn.Open();
+
+                    using (OracleCommand cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = query;
+                        cmd.Parameters.Add(":HOJE", DateTime.Now);
+
+                        using (OracleDataReader reader = cmd.ExecuteReader())
+                        {
+                            NotaFiscal objNotaFiscal = new NotaFiscal();
+                            if (reader.Read())
+                            {
+                                return Convert.ToInt32(reader[0]);
+                            }
+                            else
+                            {
+                                return 0;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return 0;
+            }
+        }
+
+        public int ObterNotasFiscaisAVencer(ref string erro)
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    string query = @"SELECT COUNT(*)
+                                     FROM ALC021T_NOTASFISCAIS 
+                                     WHERE ATNI021_STATUS = 0 
+                                     AND ATDT021_VENCIMENTO = :HOJE
+                                     OR ATDT021_VENCIMENTO = :AMANHA";
+
+                    conn.Open();
+
+                    using (OracleCommand cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = query;
+                        cmd.Parameters.Add(":HOJE", DateTime.Now);
+                        cmd.Parameters.Add(":AMANHA", DateTime.Now.AddDays(1));
+
+                        using (OracleDataReader reader = cmd.ExecuteReader())
+                        {
+                            NotaFiscal objNotaFiscal = new NotaFiscal();
+                            if (reader.Read())
+                            {
+                                return Convert.ToInt32(reader[0]);
+                            }
+                            else
+                            {
+                                return 0;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return 0;
+            }
+        }
+
+        public DataTable ObterListaDeNotaFiscaisAVencidas(ref string erro)
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    string query = @"SELECT PKNI021_IDNOTASFISCAIS,
+                                      FKNI021_IDORCAMENTO,
+                                      ATDT021_VENCIMENTO,
+                                      ATDT021_DATA,
+                                      ATNI021_STATUS,
+                                      FKNI021_IDEMPRESA,
+                                      ATDC021_VALOR,
+                                      ATNI021_PARCELAS
+                                    FROM ALC021T_NOTASFISCAIS 
+                                    WHERE ATNI021_STATUS = 0 
+                                     AND ATDT021_VENCIMENTO < :HOJE";
+
+                    conn.Open();
+
+                    using (OracleCommand cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = query;
+                        cmd.Parameters.Add(":HOJE", DateTime.Now);
+
+                        DataTable dt = new DataTable();
+                        OracleDataAdapter da = new OracleDataAdapter();
+                        da.SelectCommand = cmd;
+                        da.Fill(dt);
+                        return dt;
                     }
                 }
             }

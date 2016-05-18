@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\JoãoAlexandre\Desktop\Deploy</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="About.aspx">
+      <publishTime>04/09/2016 15:11:17</publishTime>
+    </File>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>04/21/2016 11:50:22</publishTime>
+    </File>
+    <File Include="bin/AlencarEstrutura.dll">
+      <publishTime>05/17/2016 21:26:11</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>04/09/2016 15:11:36</publishTime>
+    </File>
+    <File Include="bin/AspNet.ScriptManager.bootstrap.dll">
+      <publishTime>04/09/2016 15:11:38</publishTime>
+    </File>
+    <File Include="bin/AspNet.ScriptManager.jQuery.dll">
+      <publishTime>04/09/2016 15:11:38</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.CrystalReports.Engine.dll">
+      <publishTime>01/24/2016 07:25:40</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.ClientDoc.dll">
+      <publishTime>01/24/2016 07:25:40</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.CommLayer.dll">
+      <publishTime>01/24/2016 07:25:40</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.CommonControls.dll">
+      <publishTime>01/24/2016 07:25:40</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.CommonObjectModel.dll">
+      <publishTime>01/24/2016 07:25:40</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.Controllers.dll">
+      <publishTime>01/24/2016 07:25:40</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.CubeDefModel.dll">
+      <publishTime>01/24/2016 07:25:40</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.DataDefModel.dll">
+      <publishTime>01/24/2016 07:25:40</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.DataSetConversion.dll">
+      <publishTime>01/24/2016 07:25:40</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.ObjectFactory.dll">
+      <publishTime>01/24/2016 07:25:40</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.Prompting.dll">
+      <publishTime>01/24/2016 07:25:42</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.ReportDefModel.dll">
+      <publishTime>01/24/2016 07:25:42</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.XmlSerialize.dll">
+      <publishTime>01/24/2016 07:25:42</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportSource.dll">
+      <publishTime>01/24/2016 07:25:42</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.Shared.dll">
+      <publishTime>01/24/2016 07:25:42</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.Web.dll">
+      <publishTime>01/24/2016 07:25:42</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>04/09/2016 15:20:59</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>04/09/2016 15:20:59</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.FriendlyUrls.dll">
+      <publishTime>04/09/2016 15:11:43</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Web.Optimization.WebForms.dll">
+      <publishTime>04/09/2016 15:11:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>04/09/2016 15:11:46</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ScriptManager.MSAjax.dll">
+      <publishTime>04/09/2016 15:11:39</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ScriptManager.WebForms.dll">
+      <publishTime>04/09/2016 15:11:41</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>04/09/2016 15:11:22</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>04/09/2016 15:11:36</publishTime>
+    </File>
+    <File Include="bin/Oracle.ManagedDataAccess.dll">
+      <publishTime>04/09/2016 15:21:11</publishTime>
+    </File>
+    <File Include="bin/Oracle.ManagedDataAccess.EntityFramework.dll">
+      <publishTime>04/09/2016 15:21:14</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>04/09/2016 15:11:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>04/09/2016 15:11:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>04/09/2016 15:11:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>04/09/2016 15:11:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>04/09/2016 15:11:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>04/09/2016 15:11:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>04/09/2016 15:11:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>04/09/2016 15:11:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>04/09/2016 15:11:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>04/09/2016 15:11:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>04/09/2016 15:11:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>04/09/2016 15:11:46</publishTime>
+    </File>
+    <File Include="bin/stdole.dll">
+      <publishTime>07/07/2015 00:51:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>04/09/2016 15:11:38</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>04/09/2016 15:11:36</publishTime>
+    </File>
+    <File Include="Bundle.config">
+      <publishTime>04/09/2016 15:11:17</publishTime>
+    </File>
+    <File Include="Contact.aspx">
+      <publishTime>04/09/2016 15:11:17</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>04/09/2016 15:11:35</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>04/09/2016 15:11:35</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>04/09/2016 15:11:17</publishTime>
+    </File>
+    <File Include="DataSets/DataSet1.xsc">
+      <publishTime>05/15/2016 11:19:22</publishTime>
+    </File>
+    <File Include="DataSets/DataSet1.xss">
+      <publishTime>05/15/2016 11:19:22</publishTime>
+    </File>
+    <File Include="DataSets/LSN020_ORCAMENTO_ds.xsc">
+      <publishTime>05/15/2016 12:32:30</publishTime>
+    </File>
+    <File Include="DataSets/LSN020_ORCAMENTO_ds.xss">
+      <publishTime>05/15/2016 12:32:30</publishTime>
+    </File>
+    <File Include="DataSets/LSN023_NOTAFISCAL.xsc">
+      <publishTime>05/15/2016 17:45:38</publishTime>
+    </File>
+    <File Include="DataSets/LSN023_NOTAFISCAL.xss">
+      <publishTime>05/15/2016 17:45:38</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>05/17/2016 00:18:52</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>04/09/2016 15:11:17</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>04/09/2016 15:11:35</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>04/09/2016 15:11:35</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>04/09/2016 15:11:35</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>04/09/2016 15:11:35</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>04/09/2016 15:11:17</publishTime>
+    </File>
+    <File Include="image/loading.gif">
+      <publishTime>03/27/2014 10:23:38</publishTime>
+    </File>
+    <File Include="image/login_button.png">
+      <publishTime>03/18/2016 22:13:24</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>04/09/2016 17:09:05</publishTime>
+    </File>
+    <File Include="LSN001_USUARIO.aspx">
+      <publishTime>04/30/2016 03:10:12</publishTime>
+    </File>
+    <File Include="LSN002_EMPRESA.aspx">
+      <publishTime>05/16/2016 21:45:57</publishTime>
+    </File>
+    <File Include="LSN003_PRODUTO.aspx">
+      <publishTime>05/17/2016 20:05:11</publishTime>
+    </File>
+    <File Include="LSN004_ESTOQUE.aspx">
+      <publishTime>05/17/2016 20:11:38</publishTime>
+    </File>
+    <File Include="LSN006_PEDIDOCOMPRA.aspx">
+      <publishTime>04/30/2016 23:51:08</publishTime>
+    </File>
+    <File Include="LSN007_FORNECEDOR.aspx">
+      <publishTime>04/25/2016 23:29:39</publishTime>
+    </File>
+    <File Include="LSN008_NF_PENDENTES.aspx">
+      <publishTime>05/17/2016 00:46:14</publishTime>
+    </File>
+    <File Include="LSN009_SOLICITAR_PRODUTO.aspx">
+      <publishTime>05/17/2016 20:39:39</publishTime>
+    </File>
+    <File Include="LSN010_ARMAZENAR_PRODUTO.aspx">
+      <publishTime>05/17/2016 21:03:51</publishTime>
+    </File>
+    <File Include="LSN011_CATEGORIA.aspx">
+      <publishTime>04/21/2016 11:05:54</publishTime>
+    </File>
+    <File Include="LSN012_CONSULTAR_ESTOQUE.aspx">
+      <publishTime>05/17/2016 21:09:10</publishTime>
+    </File>
+    <File Include="LSN014_CLIENTE.aspx">
+      <publishTime>02/05/2016 20:16:53</publishTime>
+    </File>
+    <File Include="LSN019_CONTROLE_ESTOQUE.aspx">
+      <publishTime>04/30/2016 20:14:54</publishTime>
+    </File>
+    <File Include="LSN020_ORCAMENTO.aspx">
+      <publishTime>05/17/2016 20:03:16</publishTime>
+    </File>
+    <File Include="LSN021_IMPRIMIRPEDIDOCOMPRA.aspx">
+      <publishTime>05/07/2016 12:35:16</publishTime>
+    </File>
+    <File Include="LSN022_IMPRIMIRORCAMENTO.aspx">
+      <publishTime>05/07/2016 20:45:01</publishTime>
+    </File>
+    <File Include="LSN023_GERARNF.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>04/21/2016 11:50:30</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>04/09/2016 15:11:35</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>04/09/2016 15:11:35</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>04/09/2016 15:11:31</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>04/09/2016 15:11:31</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>04/09/2016 15:11:31</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>04/09/2016 15:11:34</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>04/09/2016 15:11:34</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>04/09/2016 15:11:34</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/DetailsView.js">
+      <publishTime>04/09/2016 15:11:41</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/Focus.js">
+      <publishTime>04/09/2016 15:11:41</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/GridView.js">
+      <publishTime>04/09/2016 15:11:41</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/Menu.js">
+      <publishTime>04/09/2016 15:11:41</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MenuStandards.js">
+      <publishTime>04/09/2016 15:11:41</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjax.js">
+      <publishTime>04/09/2016 15:11:39</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxApplicationServices.js">
+      <publishTime>04/09/2016 15:11:39</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxComponentModel.js">
+      <publishTime>04/09/2016 15:11:39</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxCore.js">
+      <publishTime>04/09/2016 15:11:39</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxGlobalization.js">
+      <publishTime>04/09/2016 15:11:39</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxHistory.js">
+      <publishTime>04/09/2016 15:11:39</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxNetwork.js">
+      <publishTime>04/09/2016 15:11:39</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxSerialization.js">
+      <publishTime>04/09/2016 15:11:39</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxTimer.js">
+      <publishTime>04/09/2016 15:11:39</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxWebForms.js">
+      <publishTime>04/09/2016 15:11:39</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxWebServices.js">
+      <publishTime>04/09/2016 15:11:39</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/SmartNav.js">
+      <publishTime>04/09/2016 15:11:41</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/TreeView.js">
+      <publishTime>04/09/2016 15:11:41</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/WebForms.js">
+      <publishTime>04/09/2016 15:11:41</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/WebParts.js">
+      <publishTime>04/09/2016 15:11:41</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/WebUIValidation.js">
+      <publishTime>04/09/2016 15:11:41</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>04/09/2016 15:11:35</publishTime>
+    </File>
+    <File Include="Site.Master">
+      <publishTime>05/17/2016 21:08:47</publishTime>
+    </File>
+    <File Include="ViewSwitcher.ascx">
+      <publishTime>04/09/2016 15:11:43</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>05/15/2016 21:17:46</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -93,11 +93,15 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:GridView ID="gvProduto" runat="server" DataKeyNames="IdProduto" OnSelectedIndexChanged="gvProduto_SelectedIndexChanged">
+                                    <asp:Panel ID="pnlGrid" runat="server" ScrollBars="Auto" Height="200">
+                                        <asp:GridView ID="gvProduto" runat="server" DataKeyNames="IdProduto" OnSelectedIndexChanged="gvProduto_SelectedIndexChanged" AutoGenerateColumns="false">
                                         <Columns>
-                                            
+                                            <asp:BoundField HeaderText="Codigo" DataField="IdProduto" />
+                                            <asp:BoundField HeaderText="Descrição" DataField="Descricao" />
+                                            <asp:BoundField HeaderText="Valor" DataField="Valor" />
                                         </Columns>
                                     </asp:GridView>
+                                    </asp:Panel>                                    
                                 </td>
                             </tr>
                         </table>

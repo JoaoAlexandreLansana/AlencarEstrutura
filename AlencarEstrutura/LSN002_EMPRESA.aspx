@@ -18,10 +18,11 @@
             <table style="width: 100%">
                 <tr>
                     <td>
+                        <asp:HiddenField ID="hfCodigoEmpresa" runat="server" />
                         <asp:Label ID="lblNome" Text="Nome Fantasia" runat="server"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtNomeFantasia" runat="server" ></asp:TextBox>
+                        <asp:TextBox ID="txtNomeFantasia" runat="server" required="requided"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -29,15 +30,15 @@
                         <asp:Label ID="lblRazao" Text="Razão Social" runat="server"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtRazao" runat="server" ></asp:TextBox>
+                        <asp:TextBox ID="txtRazao" runat="server" required="requided"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="lblCNPJ" Text="CNPJ" runat="server" required="required"></asp:Label>
+                        <asp:Label ID="lblCNPJ" Text="CNPJ" runat="server" ></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtCNPJ" runat="server" ></asp:TextBox>
+                        <asp:TextBox ID="txtCNPJ" runat="server" required="requided"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
