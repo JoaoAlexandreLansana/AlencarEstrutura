@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LSN022_IMPRIMIRORCAMENTO.aspx.cs" Inherits="AlencarEstrutura.LSN022_IMPRIMIRORCAMENTO" %>
 
 <%@ Register Assembly="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" Namespace="CrystalDecisions.Web" TagPrefix="CR" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div>
         <asp:Panel ID="pnlTitulo" runat="server" HorizontalAlign="Center">
@@ -43,7 +45,7 @@
             </table>
         </asp:Panel>
         <asp:Panel ID="pnlImprimir" runat="server">
-            <cr:crystalreportviewer id="CrystalReportViewer1" runat="server" autodatabind="true" />
+            <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" AutoDataBind="true" />
         </asp:Panel>
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">

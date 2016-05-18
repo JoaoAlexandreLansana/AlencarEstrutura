@@ -13,9 +13,6 @@
             </table>
         </asp:Panel>
     </div>
-
-
-
     <div>
         <asp:Panel ID="pnlManutencao" runat="server" GroupingText="Dados">
             <table style="width: 100%">
@@ -120,7 +117,6 @@
                         <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
