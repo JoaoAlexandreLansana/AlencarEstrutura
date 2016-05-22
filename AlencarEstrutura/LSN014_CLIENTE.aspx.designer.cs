@@ -121,6 +121,15 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.TextBox txtCPF;
         
         /// <summary>
+        /// FilteredTextBoxExtender1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender FilteredTextBoxExtender1;
+        
+        /// <summary>
         /// Label5 control.
         /// </summary>
         /// <remarks>
@@ -157,6 +166,15 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.TextBox txtDDD;
         
         /// <summary>
+        /// ftbDDD control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender ftbDDD;
+        
+        /// <summary>
         /// txtTelefone control.
         /// </summary>
         /// <remarks>
@@ -164,6 +182,15 @@ namespace AlencarEstrutura {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTelefone;
+        
+        /// <summary>
+        /// ftbTelefone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender ftbTelefone;
         
         /// <summary>
         /// rbTipoTelefone control.
@@ -353,6 +380,15 @@ namespace AlencarEstrutura {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnBusca;
+        
+        /// <summary>
+        /// pblGrid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pblGrid;
         
         /// <summary>
         /// gvCliente control.

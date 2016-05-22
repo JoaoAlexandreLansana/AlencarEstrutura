@@ -112,6 +112,15 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.TextBox txtQuantidade;
         
         /// <summary>
+        /// ftbQuantidade control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender ftbQuantidade;
+        
+        /// <summary>
         /// lblFornecedor control.
         /// </summary>
         /// <remarks>
@@ -146,6 +155,15 @@ namespace AlencarEstrutura {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtValorPrevisto;
+        
+        /// <summary>
+        /// ftbValor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender ftbValor;
         
         /// <summary>
         /// lblObservacao control.

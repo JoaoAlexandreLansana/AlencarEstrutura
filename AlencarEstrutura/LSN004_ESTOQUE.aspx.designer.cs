@@ -121,6 +121,15 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.TextBox txtQuantidade;
         
         /// <summary>
+        /// ftbQUantidade control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender ftbQUantidade;
+        
+        /// <summary>
         /// lblValidade control.
         /// </summary>
         /// <remarks>

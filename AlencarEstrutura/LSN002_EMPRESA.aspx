@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LSN002_EMPRESA.aspx.cs" Inherits="AlencarEstrutura.LSN002_EMPRESA" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div>
         <asp:Panel ID="pnlTitulo" runat="server" HorizontalAlign="Center">
@@ -35,16 +36,18 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="lblCNPJ" Text="CNPJ" runat="server" ></asp:Label>
+                        <asp:Label ID="lblCNPJ" Text="CNPJ" runat="server"></asp:Label>
                     </td>
                     <td>
                         <asp:TextBox ID="txtCNPJ" runat="server" required="requided"></asp:TextBox>
+                        <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender1" runat="server" FilterType="Numbers"
+                            TargetControlID="txtCNPJ" />
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <asp:Label ID="lblEmail" Text="E-mail" runat="server"></asp:Label>
-                        
+
                     </td>
                     <td>
                         <asp:TextBox ID="txtEmail" runat="server" Columns="50" MaxLength="30"></asp:TextBox>
@@ -59,7 +62,7 @@
                         <asp:Label ID="lblEndereco" Text="Endereço" runat="server" required="required"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtEndereco" runat="server"  Columns="50" MaxLength="30"></asp:TextBox>
+                        <asp:TextBox ID="txtEndereco" runat="server" Columns="50" MaxLength="30"></asp:TextBox>
                         <asp:Label ID="Label1" runat="server" Text="No."></asp:Label>
                         <asp:TextBox ID="txtNumero" runat="server" Columns="4"></asp:TextBox>
                         &nbsp;<asp:Label ID="lblComplemento" runat="server" Text="Complemento"></asp:Label>
@@ -72,6 +75,8 @@
                     </td>
                     <td>
                         <asp:TextBox ID="txtCEP" runat="server"></asp:TextBox>
+                        <cc1:FilteredTextBoxExtender ID="ftbCep" runat="server" FilterType="Numbers"
+                            TargetControlID="txtCEP" />
                     </td>
                 </tr>
                 <tr>

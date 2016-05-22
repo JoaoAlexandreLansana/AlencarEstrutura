@@ -43,8 +43,4 @@
             </table>
         </asp:Panel>
     </div>
-    <div>
-        <asp:Panel ID="pnlManutencao" runat="server" GroupingText="Dados">
-        </asp:Panel>
-    </div>
 </asp:Content>

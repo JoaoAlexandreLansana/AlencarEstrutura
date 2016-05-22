@@ -18,7 +18,7 @@ namespace AlencarEstrutura
             UsuarioDAL dbUsuario = new UsuarioDAL();
             Usuario objUsuario = dbUsuario.ValidaUsuario(txtLogin.Text, txtSenha.Text);
             
-            if (objUsuario.idUsuario > 0)
+            if (objUsuario.idUsuario > 0 && objUsuario != null)
             {
                 HttpCookie cookie = new HttpCookie("Login");
                 cookie.Value = txtLogin.Text;

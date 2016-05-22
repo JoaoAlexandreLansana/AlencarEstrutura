@@ -1,6 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LSN014_CLIENTE.aspx.cs" Inherits="AlencarEstrutura.LSN014_CLIENTE" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <script type="text/javascript">
+        function openModal() {
+            $('#myModal').modal('show');
+        }
+    </script>
     <div>
         <asp:Panel ID="pnlTitulo" runat="server" HorizontalAlign="Center">
             <table style="width: 100%">
@@ -13,9 +19,6 @@
             </table>
         </asp:Panel>
     </div>
-
-
-
     <div>
         <asp:Panel ID="pnlManutencao" runat="server" GroupingText="Dados">
             <table style="width: 100%">
@@ -53,6 +56,8 @@
                     </td>
                     <td style="height: 51px">
                         <asp:TextBox ID="txtCPF" runat="server" MaxLength="14" Columns="14  "></asp:TextBox>
+                        <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender1" runat="server" FilterType="Numbers"
+                            TargetControlID="txtCPF" />
                     </td>
                 </tr>
                 <tr>
@@ -69,7 +74,11 @@
                     </td>
                     <td>
                         <asp:TextBox ID="txtDDD" runat="server" MaxLength="3" Columns="3"></asp:TextBox>
+                        <cc1:FilteredTextBoxExtender ID="ftbDDD" runat="server" FilterType="Numbers"
+                            TargetControlID="txtDDD" />
                         <asp:TextBox ID="txtTelefone" runat="server" MaxLength="10" Columns="10"></asp:TextBox>
+                        <cc1:FilteredTextBoxExtender ID="ftbTelefone" runat="server" FilterType="Numbers"
+                            TargetControlID="txtTelefone" />
                         <asp:RadioButtonList ID="rbTipoTelefone" runat="server" RepeatColumns="3">
                             <asp:ListItem Selected="True" Value="1">Residencial</asp:ListItem>
                             <asp:ListItem Value="2">Comercial</asp:ListItem>
@@ -142,19 +151,21 @@
                             <tr>
                                 <td>
                                     <asp:Label ID="lblBusca" runat="server" Text="Buscar"></asp:Label>
-                                    <asp:TextBox ID="txtBusca" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtBusca" runat="server" onBlur="openModal()" OnTextChanged="txtBusca_TextChanged" AutoPostBack="true"></asp:TextBox>
                                     <asp:Button ID="btnBusca" runat="server" Text="Buscar" CssClass="btn btn-info" />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:GridView ID="gvCliente" runat="server" Width="100%" DataKeyNames="CODIGO" AutoGenerateColumns="false" OnSelectedIndexChanged="gvCliente_SelectedIndexChanged">
-                                        <Columns>
-                                            <asp:BoundField HeaderText="Código" DataField="CODIGO" />
-                                            <asp:BoundField HeaderText="Nome" DataField="NOME" />
-                                            <asp:BoundField HeaderText="Tipo Pessoa" DataField="TIPOPESSOA" />
-                                        </Columns>
-                                    </asp:GridView>
+                                    <asp:Panel ID="pblGrid" runat="server" Height="200" ScrollBars="Auto">
+                                        <asp:GridView ID="gvCliente" runat="server" Width="100%" DataKeyNames="CODIGO" AutoGenerateColumns="false" OnSelectedIndexChanged="gvCliente_SelectedIndexChanged">
+                                            <Columns>
+                                                <asp:BoundField HeaderText="Código" DataField="CODIGO" />
+                                                <asp:BoundField HeaderText="Nome" DataField="NOME" />
+                                                <asp:BoundField HeaderText="Tipo Pessoa" DataField="TIPOPESSOA" />
+                                            </Columns>
+                                        </asp:GridView>
+                                    </asp:Panel>
                                 </td>
                             </tr>
                         </table>

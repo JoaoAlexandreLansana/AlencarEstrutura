@@ -272,5 +272,17 @@ namespace AlencarEstrutura
             ddlMunicipio.SelectedValue = cliente.endereco.IdMunicipio.ToString();
 
         }
+
+        protected void txtBusca_TextChanged(object sender, EventArgs e)
+        {
+            Pessoa objPessoa = new Pessoa();
+            PessoaDAL dbCliente = new PessoaDAL();
+            DataTable dtCliente = dbCliente.PesquisarListaPessoa(txtBusca.Text, ref erro);
+
+            gvCliente.DataSource = dtCliente;
+            gvCliente.AutoGenerateSelectButton = true;
+            gvCliente.DataBind();
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", "openModal();", true);
+        }
     }
 }

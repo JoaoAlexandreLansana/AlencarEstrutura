@@ -230,6 +230,45 @@ namespace AlencarEstrutura.DAL
             }
         }
 
+        public DataTable PesquisarListaPessoa(string pessoa, ref string erro)
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    string query = @"SELECT
+                                      TB1.PKNI014_IDPESSOA as CODIGO,
+                                      TB1.ATSF014_NOME AS NOME,
+                                      TB1.ATSF014_TIPOPESSOA AS TIPOPESSOA
+                                    FROM ALC014T_PESSOA TB1
+                                    INNER JOIN ALC015T_PESSOAFISICA TB2
+                                    ON TB2.FKNI015_IDPESSOA = TB1.PKNI014_IDPESSOA 
+                                    WHERE ATSF014_NOME LIKE '%'||:PESSOA||'%' OR PKNI014_IDPESSOA LIKE '%'||:PESSOA||'%'
+                                    ORDER BY NOME"
+                                    ;
+
+                    conn.Open();
+
+                    using (OracleCommand cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = query;
+
+                        cmd.Parameters.Add(":PESSOA", pessoa);
+
+                        DataTable dt = new DataTable();
+                        OracleDataAdapter da = new OracleDataAdapter();
+                        da.SelectCommand = cmd;
+                        da.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return null;
+            }
+        }
         public Pessoa ObterPessoaFisicaPorID(int idPessoa, ref string erro)
         {
             try

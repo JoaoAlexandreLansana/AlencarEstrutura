@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LSN020_ORCAMENTO.aspx.cs" Inherits="AlencarEstrutura.LSN020_ORCAMENTO" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div>
         <asp:Panel ID="pnlTitulo" runat="server" HorizontalAlign="Center">
@@ -54,8 +55,12 @@
                         </asp:DropDownList>
                         <asp:Label ID="lblQuantidade" runat="server" Text="Quantidade"></asp:Label>
                         <asp:TextBox ID="txtQuantidade" runat="server" Columns="8" MaxLength="8"></asp:TextBox>
+                        <cc1:filteredtextboxextender id="ftbTelefone" runat="server" filtertype="Numbers,Custom"
+                            targetcontrolid="txtQuantidade" ValidChars=".,"/>
                         <asp:Label ID="Label6" runat="server" Text="Metros²"></asp:Label>
                         <asp:TextBox ID="txtQtdeMetroQuadrado" runat="server" Columns="8" MaxLength="8"></asp:TextBox>
+                        <cc1:filteredtextboxextender id="ftbMetro" runat="server" filtertype="Numbers,Custom"
+                            targetcontrolid="txtQtdeMetroQuadrado" ValidChars=".,"/>
                         <asp:Label ID="lblValor" runat="server" Text="Valor Unit."></asp:Label>
                         <asp:CheckBox ID="cbValorUnitario" runat="server" OnCheckedChanged="cbValorUnitario_CheckedChanged" AutoPostBack="true" Checked="true" />
                         <asp:TextBox ID="txtValorPrevisto" runat="server" Columns="6" Enabled="False"></asp:TextBox>

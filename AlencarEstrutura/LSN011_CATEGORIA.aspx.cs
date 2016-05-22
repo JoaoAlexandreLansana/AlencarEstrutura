@@ -14,7 +14,11 @@ namespace AlencarEstrutura
         public string erro = string.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
-            CarregaGvCategoria();
+            if (!IsPostBack)
+            {
+                CarregaGvCategoria();                
+            }
+            
         }
 
         protected void btnSalvar_Click(object sender, EventArgs e)
@@ -31,7 +35,7 @@ namespace AlencarEstrutura
                 Categoria objCategoria = new Categoria();
                 CategoriaDAL dbCategoria = new CategoriaDAL();
 
-                objCategoria.IdCategoria = (string.IsNullOrEmpty(txtCodigo.Text))? 0 : Convert.ToInt32(txtCodigo.Text);
+                objCategoria.IdCategoria = (string.IsNullOrEmpty(txtCodigo.Text)) ? 0 : Convert.ToInt32(txtCodigo.Text);
                 objCategoria.Descricao = txtDescricao.Text;
                 objCategoria.Observacao = txtObservacao.Text;
 
@@ -84,7 +88,7 @@ namespace AlencarEstrutura
 
             if (!dbCategoria.ExcluirCategoria(objCategoria.IdCategoria, ref erro))
             {
-                Session.Add("danger", "Não foi possível excluir o Registro! "+ erro);
+                Session.Add("danger", "Não foi possível excluir o Registro! " + erro);
             }
             else
             {
@@ -127,6 +131,17 @@ namespace AlencarEstrutura
             txtCodigo.Text = string.Empty;
             txtDescricao.Text = string.Empty;
             txtObservacao.Text = string.Empty;
+        }
+        protected void txtBusca_TextChanged(object sender, EventArgs e)
+        {
+            Categoria objCategoria = new Categoria();
+            CategoriaDAL dbCategoria = new CategoriaDAL();
+            List<Categoria> lstProduto = dbCategoria.PesquisaListaDeCategoriaPorId(txtBusca.Text, ref erro);
+            
+            gvCategoria.DataSource = lstProduto;
+            gvCategoria.AutoGenerateSelectButton = true;
+            gvCategoria.DataBind();
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", "openModal();", true);
         }
     }
 }

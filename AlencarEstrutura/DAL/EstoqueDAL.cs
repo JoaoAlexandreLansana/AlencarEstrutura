@@ -104,6 +104,58 @@ namespace AlencarEstrutura.DAL
             }
         }
 
+        public List<Estoque> PesquisarListaEstoque(string estoque, ref string erro)
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    string query = @"SELECT PKNI004_IDESTOQUE,
+                                      ATSF004_DESCRICAO,
+                                      FKNI004_IDPRODUTO,
+                                      ATDT004_VALIDADE,
+                                      ATSF004_QUANTIDADE,
+                                      ATSF004_OBSERVACAO
+                                    FROM ALC004T_ESTOQUE
+                                    WHERE ATSF004_DESCRICAO LIKE '%'||:ESTOQUE||'%'
+                                     OR FKNI004_IDPRODUTO LIKE '%'||:ESTOQUE||'%'
+                                      ORDER BY PKNI004_IDESTOQUE";
+
+                    conn.Open();
+
+                    using (OracleCommand cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = query;
+
+                        cmd.Parameters.Add(":ESTOQUE", estoque);
+
+                        using (OracleDataReader reader = cmd.ExecuteReader())
+                        {
+                            List<Estoque> lstEstoque = new List<Estoque>();
+                            while (reader.Read())
+                            {
+                                Estoque objEstoque = new Estoque();
+
+                                objEstoque.IdEstoque = Convert.ToInt32(reader[0]);
+                                objEstoque.Descricao = reader[1].ToString();
+                                objEstoque.IdProduto = Convert.ToInt32(reader[2]);
+                                objEstoque.Validade = Convert.ToDateTime(reader[3]);
+                                objEstoque.Quantidade = Convert.ToDecimal(reader[4]);
+                                objEstoque.Observacao = reader[5].ToString();
+
+                                lstEstoque.Add(objEstoque);
+                            }
+                            return lstEstoque;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return null;
+            }
+        }
         public bool InserirEstoque(Estoque estoque, ref string erro)
         {
             bool sucesso = false;

@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LSN006_PEDIDOCOMPRA.aspx.cs" Inherits="AlencarEstrutura.LSN006_PEDIDOCOMPRA" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div>
         <asp:Panel ID="pnlTitulo" runat="server" HorizontalAlign="Center">
@@ -36,12 +37,16 @@
                         </asp:DropDownList>
                         <asp:Label ID="lblQuantidade" runat="server" Text="Quantidade"></asp:Label>
                         <asp:TextBox ID="txtQuantidade" runat="server" Columns="8" MaxLength="8"></asp:TextBox>
+                        <cc1:FilteredTextBoxExtender ID="ftbQuantidade" runat="server" FilterType="Numbers, Custom"
+                            ValidChars=".," TargetControlID="txtQuantidade" />
                         <asp:Label ID="lblFornecedor" runat="server" Text="Fornecedor"></asp:Label>
                         <asp:DropDownList ID="ddlFornecedor" runat="server">
                             <asp:ListItem>Selecione</asp:ListItem>
                         </asp:DropDownList>
                         <asp:Label ID="lblValor" runat="server" Text="Valor Previsto"></asp:Label>
                         <asp:TextBox ID="txtValorPrevisto" runat="server" Columns="6"></asp:TextBox>
+                        <cc1:FilteredTextBoxExtender ID="ftbValor" runat="server" FilterType="Numbers, Custom"
+                            ValidChars=".," TargetControlID="txtValorPrevisto" />
                     </td>
                 </tr>
                 <tr>

@@ -1,6 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LSN007_FORNECEDOR.aspx.cs" Inherits="AlencarEstrutura.LSN007_FORNECEDOR" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-        <div>
+    <script type="text/javascript">
+        function openModal() {
+            $('#myModal').modal('show');
+        }
+    </script>
+    <div>
         <asp:Panel ID="pnlTitulo" runat="server" HorizontalAlign="Center">
             <table style="width: 100%">
                 <tr>
@@ -21,8 +28,8 @@
                     </td>
                     <td>
                         <asp:TextBox ID="txtCodigo" runat="server" Columns="8" MaxLength="8" Enabled="false"></asp:TextBox>
-                        <asp:Button ID="btnBuscaEmpresa" runat="server" CssClass="btn btn-secundary" Text="..."  data-target="#myModal" data-toggle="modal"/>
-                        </td>
+                        <asp:Button ID="btnBuscaEmpresa" runat="server" CssClass="btn btn-secundary" Text="..." data-target="#myModal" data-toggle="modal" />
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -46,12 +53,14 @@
                     </td>
                     <td>
                         <asp:TextBox ID="txtCNPJ" runat="server" Columns="15" MaxLength="15"></asp:TextBox>
+                        <cc1:FilteredTextBoxExtender ID="ftbCNPJ" runat="server" FilterType="Numbers"
+                            TargetControlID="txtCNPJ" />
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <asp:Label ID="lblEmail" Text="E-mail" runat="server"></asp:Label>
-                        
+
                     </td>
                     <td>
                         <asp:TextBox ID="txtEmail" runat="server" Columns="50" MaxLength="30"></asp:TextBox>
@@ -62,8 +71,13 @@
                         <asp:Label ID="lblTelefone" runat="server" Text="Telefone"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtDd" runat="server" Columns="2" MaxLength="2"></asp:TextBox> - 
+                        <asp:TextBox ID="txtDd" runat="server" Columns="2" MaxLength="2"></asp:TextBox>
+                        <cc1:FilteredTextBoxExtender ID="ftbDDD" runat="server" FilterType="Numbers"
+                            TargetControlID="txtDd" />
+                        - 
                         <asp:TextBox ID="txtTelefone" runat="server" Columns="10" CssClass="" MaxLength="10"></asp:TextBox>
+                        <cc1:FilteredTextBoxExtender ID="ftbTelefone" runat="server" FilterType="Numbers"
+                            TargetControlID="txtTelefone" ValidChars="-" />
                         <asp:RadioButtonList ID="rbTipoTelefone" runat="server" RepeatColumns="3">
                             <asp:ListItem Selected="True" Value="1">Residencial</asp:ListItem>
                             <asp:ListItem Value="2">Comercial</asp:ListItem>
@@ -89,6 +103,8 @@
                     </td>
                     <td>
                         <asp:TextBox ID="txtCEP" runat="server"></asp:TextBox>
+                        <cc1:FilteredTextBoxExtender ID="ftbCEP" runat="server" FilterType="Numbers"
+                            TargetControlID="txtDd" ValidChars="-" />
                     </td>
                 </tr>
                 <tr>
@@ -112,12 +128,13 @@
                     <td>&nbsp;</td>
                     <td>
                         <asp:Button ID="btnSalvar" runat="server" Text="Salvar" CssClass="btn btn-primary" OnClick="btnSalvar_Click" />
-                        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-info" OnClick="btnCancelar_Click"/>
+                        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-info" OnClick="btnCancelar_Click" />
                         <asp:Button ID="btnExcluir" runat="server" CssClass="btn btn-warning" Text="Excluir" />
                     </td>
                 </tr>
             </table>
-        </asp:Panel><!-- Modal -->
+        </asp:Panel>
+        <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
 
@@ -132,7 +149,7 @@
                             <tr>
                                 <td>
                                     <asp:Label ID="lblBusca" runat="server" Text="Buscar"></asp:Label>
-                                    <asp:TextBox ID="txtBusca" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtBusca" runat="server" onBlur="openModal()" OnTextChanged="txtBusca_TextChanged" AutoPostBack="true"></asp:TextBox>
                                     <asp:Button ID="btnBusca" runat="server" Text="Buscar" CssClass="btn btn-info" />
                                 </td>
                             </tr>
@@ -140,7 +157,6 @@
                                 <td>
                                     <asp:GridView ID="gvFornecedor" runat="server" DataKeyNames="CODIGO" OnSelectedIndexChanged="gvFornecedor_SelectedIndexChanged">
                                         <Columns>
-                                            
                                         </Columns>
                                     </asp:GridView>
                                 </td>

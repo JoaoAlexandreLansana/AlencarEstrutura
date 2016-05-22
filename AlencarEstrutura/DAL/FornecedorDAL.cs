@@ -234,6 +234,45 @@ namespace AlencarEstrutura.DAL
             }
         }
 
+        public DataTable PesquisarListaNomeFornecedor(string fornecedor, ref string erro)
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    string query = @"SELECT
+                                      TB1.PKNI014_IDPESSOA as CODIGO,
+                                      TB2.ATSF007_NOMEFANTASIA AS NOME,
+                                      TB2.ATNI007_CNPJ AS CNPJ
+                                    FROM ALC014T_PESSOA TB1
+                                    INNER JOIN ALC007T_FORNECEDOR TB2
+                                    ON TB1.PKNI014_IDPESSOA = TB2.FKNI007_IDPESSOA
+                                    WHERE TB2.ATSF007_NOMEFANTASIA LIKE '%'||:FORNECEDOR||'%'
+                                    OR TB2.ATNI007_CNPJ LIKE '%'||:FORNECEDOR||'%'"
+                                    ;
+
+                    conn.Open();
+
+                    using (OracleCommand cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = query;
+                        cmd.Parameters.Add(":FORNECEDOR", fornecedor);
+
+                        DataTable dt = new DataTable();
+                        OracleDataAdapter da = new OracleDataAdapter();
+                        da.SelectCommand = cmd;
+                        da.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return null;
+            }
+        }
+
         public bool AtualizaFornecedor(Pessoa fornecedor, ref string erro)
         {
             try

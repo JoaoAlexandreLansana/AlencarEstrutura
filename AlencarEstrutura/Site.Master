@@ -11,7 +11,7 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-
+    <link href="crystalreportviewers13/style.css" rel="stylesheet" />
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
@@ -66,9 +66,6 @@
                                     <asp:LinkButton ID="lbCadEmpresa" runat="server" OnClick="lbCadEmpresa_Click">Empresa</asp:LinkButton></li>
                                 <li>
                                     <asp:LinkButton ID="lbFornecedor" runat="server" OnClick="lbFornecedor_Click">Fornecedor</asp:LinkButton></li>                                
-                                
-                                <li>
-                                    <asp:LinkButton ID="LinkButton2" runat="server">Notas Fiscais</asp:LinkButton></li>
                                 <li>
                                     <asp:LinkButton ID="lbOrcamento" runat="server" OnClick="lbOrcamento_Click">Orçamentos</asp:LinkButton></li>
                                 <li>

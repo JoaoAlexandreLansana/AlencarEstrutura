@@ -95,5 +95,17 @@ namespace AlencarEstrutura
             txtDescricao.Text = string.Empty;
             txtQuantidade.Text = string.Empty;
         }
+
+        protected void txtBusca_TextChanged(object sender, EventArgs e)
+        {
+            Estoque objEstoque = new Estoque();
+            EstoqueDAL dbEstoque = new EstoqueDAL();
+            List<Estoque> lstProduto = dbEstoque.PesquisarListaEstoque(txtBusca.Text, ref erro);
+
+            gvProduto.DataSource = lstProduto;
+            gvProduto.AutoGenerateSelectButton = true;
+            gvProduto.DataBind();
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", "openModal();", true);
+        }
     }
 }

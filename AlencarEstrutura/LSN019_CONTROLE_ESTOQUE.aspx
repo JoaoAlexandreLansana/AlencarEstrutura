@@ -1,5 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LSN019_CONTROLE_ESTOQUE.aspx.cs" Inherits="AlencarEstrutura.LSN019_CONTROLE_ESTOQUE" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <script type="text/javascript">
+        function openModal() {
+            $('#myModal').modal('show');
+        }
+    </script>
     <div>
         <asp:Panel ID="pnlTitulo" runat="server" HorizontalAlign="Center">
             <table style="width: 100%">
@@ -41,6 +48,8 @@
                     </td>
                     <td>
                         <asp:TextBox ID="txtQuantidade" runat="server" Columns="6"></asp:TextBox>
+                        <cc1:FilteredTextBoxExtender ID="ftbQUantidade" runat="server" FilterType="Numbers, Custom"
+                            ValidChars=".," TargetControlID="txtQuantidade" />
                         <asp:Label ID="lblDisponivel" runat="server" Text="Disponível: "></asp:Label>
                         <asp:Label ID="lblQuantidadeDisponivel" runat="server" Text=""></asp:Label>
                     </td>
@@ -66,14 +75,14 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Buscar Produtos</h4>
+                        <h4 class="modal-title">Buscar Estoque</h4>
                     </div>
                     <div class="modal-body">
                         <table>
                             <tr>
                                 <td>
                                     <asp:Label ID="lblBusca" runat="server" Text="Buscar"></asp:Label>
-                                    <asp:TextBox ID="txtBusca" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtBusca" runat="server" onBlur="openModal()" OnTextChanged="txtBusca_TextChanged" AutoPostBack="true"></asp:TextBox>
                                     <asp:Button ID="btnBusca" runat="server" Text="Buscar" CssClass="btn btn-info" />
                                 </td>
                             </tr>
@@ -81,7 +90,6 @@
                                 <td>
                                     <asp:GridView ID="gvProduto" runat="server" Width="100%" DataKeyNames="IdEstoque" AutoGenerateColumns="false" OnSelectedIndexChanged="gvProduto_SelectedIndexChanged">
                                         <Columns>
-                                            <asp:BoundField HeaderText="Codigo" DataField="IdProduto" />
                                             <asp:BoundField HeaderText="Descrição" DataField="Descricao" />
                                             <asp:BoundField HeaderText="Quantidade" DataField="Quantidade" />
                                         </Columns>

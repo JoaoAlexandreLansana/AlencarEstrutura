@@ -1,7 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LSN011_CATEGORIA.aspx.cs" Inherits="AlencarEstrutura.LSN011_CATEGORIA" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+    <script type="text/javascript">
+        function openModal() {
+            $('#myModal').modal('show');
+        }
+    </script>
     <div>
         <asp:Panel ID="pnlTitulo" runat="server" HorizontalAlign="Center">
             <table style="width: 100%">
@@ -54,8 +59,6 @@
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
-
-                <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -66,8 +69,8 @@
                             <tr>
                                 <td>
                                     <asp:Label ID="lblBusca" runat="server" Text="Buscar"></asp:Label>
-                                    <asp:TextBox ID="txtBusca" runat="server"></asp:TextBox>
-                                    <asp:Button ID="btnBusca" runat="server" Text="Buscar" CssClass="btn btn-info" />
+                                    <asp:TextBox ID="txtBusca" runat="server" OnTextChanged="txtBusca_TextChanged" AutoPostBack="true" onBlur="openModal()"></asp:TextBox>
+                                    <asp:Button ID="btnBusca" runat="server" Text="Buscar" CssClass="btn btn-info" data-target="#myModal" data-toggle="modal" OnClick="txtBusca_TextChanged"/>
                                 </td>
                             </tr>
                             <tr>
@@ -84,7 +87,6 @@
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

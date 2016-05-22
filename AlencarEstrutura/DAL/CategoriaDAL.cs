@@ -204,5 +204,52 @@ namespace AlencarEstrutura.DAL
             }
 
         }
+
+        public List<Categoria> PesquisaListaDeCategoriaPorId(String IdCategoria, ref string erro)
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    string query = @"SELECT PKNI017_IDCATEGORIA,
+                                        ATSF017_NOME,
+                                        ATSF017_OBSERVACAO
+                                      FROM ALC011T_CATEGORIA 
+                                      where ATSF017_NOME like :IDCATEGORIA||'%'
+                                      OR PKNI017_IDCATEGORIA LIKE :IDCATEGORIA||'%'
+                                      ORDER BY PKNI017_IDCATEGORIA";
+
+                    conn.Open();
+
+                    using (OracleCommand cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = query;
+
+                        cmd.Parameters.Add(":IDCATEGORIA", IdCategoria);
+
+                        using (OracleDataReader reader = cmd.ExecuteReader())
+                        {
+                            List<Categoria> lstCategoriao = new List<Categoria>();
+                            while (reader.Read())
+                            {
+                                Categoria objCategoria = new Categoria();
+
+                                objCategoria.IdCategoria = Convert.ToInt32(reader[0]);
+                                objCategoria.Descricao = reader[1].ToString();
+                                objCategoria.Observacao = reader[2].ToString();
+                                lstCategoriao.Add(objCategoria);
+                            }
+                            return lstCategoriao;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return null;
+            }
+
+        }
     }
 }

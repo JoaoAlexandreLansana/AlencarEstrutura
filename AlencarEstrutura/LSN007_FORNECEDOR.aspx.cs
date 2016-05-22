@@ -41,6 +41,8 @@ namespace AlencarEstrutura
             MunicipioDAL objEstado = new MunicipioDAL();
             List<Municipio> lstMunicipio = objEstado.ObterListaDeMunicipioPorID(idEstado);
 
+            if (lstMunicipio != null) ddlMunicipio.Items.Clear();
+
             foreach (Municipio lstSigla in lstMunicipio)
             {
                 ListItem lst = new ListItem();
@@ -215,6 +217,18 @@ namespace AlencarEstrutura
             txtCEP.Text = string.Empty;
             ddlMunicipio.Items.Clear();
             CarregaDDLEstado();
+        }
+
+        protected void txtBusca_TextChanged(object sender, EventArgs e)
+        {
+            Pessoa objProduto = new Pessoa();
+            FornecedorDAL dbFornecedor = new FornecedorDAL();
+            DataTable dtProduto = dbFornecedor.PesquisarListaNomeFornecedor(txtBusca.Text, ref erro);
+            
+            gvFornecedor.DataSource = dtProduto;
+            gvFornecedor.AutoGenerateSelectButton = true;
+            gvFornecedor.DataBind();
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", "openModal();", true);
         }
     }
 }

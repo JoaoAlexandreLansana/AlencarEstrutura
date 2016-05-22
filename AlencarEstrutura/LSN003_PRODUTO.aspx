@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LSN003_PRODUTO.aspx.cs" Inherits="AlencarEstrutura.LSN003_PRODUTO" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div>
         <asp:Panel ID="pnlTitulo" runat="server" HorizontalAlign="Center">
@@ -22,7 +23,7 @@
                     </td>
                     <td>
                         <asp:TextBox ID="txtCodigo" runat="server" required="required" Columns="8" OnTextChanged="txtCodigo_TextChanged" AutoPostBack="true" Enabled="False"></asp:TextBox>
-                        <asp:Button ID="btnBuscaProduto" runat="server" data-target="#myModal" data-toggle="modal" Text="..." CssClass="btn btn-secundary"/>
+                        <asp:Button ID="btnBuscaProduto" runat="server" data-target="#myModal" data-toggle="modal" Text="..." CssClass="btn btn-secundary" />
                     </td>
                 </tr>
                 <tr>
@@ -41,7 +42,12 @@
                         <asp:DropDownList ID="ddlCategoria" runat="server"></asp:DropDownList>
                         &nbsp;<asp:Label ID="Label5" runat="server" Text="Valor Unit."></asp:Label>
                         <asp:TextBox ID="txtValor" runat="server" MaxLength="8" Columns="8"></asp:TextBox>
-                        &nbsp;Valor Metro²<asp:TextBox ID="txtValorMetro" runat="server" MaxLength="8" Columns="8"></asp:TextBox>
+                        <cc1:FilteredTextBoxExtender ID="ftbValor" runat="server" FilterType="Numbers, Custom"
+                            ValidChars=".," TargetControlID="txtValor" />
+                        <asp:Label ID="lblMetroQuadrado" runat="server" Text="Valor Metro²"></asp:Label>
+                        <asp:TextBox ID="txtValorMetro" runat="server" MaxLength="8" Columns="8"></asp:TextBox>
+                        <cc1:FilteredTextBoxExtender ID="FilteredTextBoxExtender1" runat="server" FilterType="Numbers, Custom"
+                            ValidChars=".," TargetControlID="txtValorMetro" />
                     </td>
                 </tr>
                 <tr>
@@ -50,8 +56,12 @@
                     </td>
                     <td>
                         <asp:TextBox ID="txtPeso" runat="server" MaxLength="8" Columns="8"></asp:TextBox>
+                        <cc1:FilteredTextBoxExtender ID="ftbPeso" runat="server" FilterType="Numbers, Custom"
+                            ValidChars=".," TargetControlID="txtPeso" />
                         <asp:Label ID="Label7" runat="server" Text="Litros"></asp:Label>
                         <asp:TextBox ID="txtLitros" runat="server" MaxLength="8" Columns="8"></asp:TextBox>
+                        <cc1:FilteredTextBoxExtender ID="ftbLitros" runat="server" FilterType="Numbers, Custom"
+                            ValidChars=".," TargetControlID="txtLitros" />
                     </td>
                 </tr>
                 <tr>
@@ -65,9 +75,9 @@
                 <tr>
                     <td>&nbsp;</td>
                     <td>
-                        <asp:Button ID="btnSalvar" runat="server" Text="Salvar" CssClass="btn btn-primary" OnClick="btnSalvar_Click" Width="80"/>
+                        <asp:Button ID="btnSalvar" runat="server" Text="Salvar" CssClass="btn btn-primary" OnClick="btnSalvar_Click" Width="80" />
                         <asp:Button ID="btnCancelar" runat="server" CssClass="btn tbn-info" Text="Cancelar" OnClick="btnCancelar_Click" />
-                        <asp:Button ID="btnExcluir" runat="server" CssClass="btn btn-warning" Text="Excluir" Width="80" OnClick="btnExcluir_Click"/>
+                        <asp:Button ID="btnExcluir" runat="server" CssClass="btn btn-warning" Text="Excluir" Width="80" OnClick="btnExcluir_Click" />
                     </td>
                 </tr>
             </table>
@@ -95,13 +105,13 @@
                                 <td>
                                     <asp:Panel ID="pnlGrid" runat="server" ScrollBars="Auto" Height="200">
                                         <asp:GridView ID="gvProduto" runat="server" DataKeyNames="IdProduto" OnSelectedIndexChanged="gvProduto_SelectedIndexChanged" AutoGenerateColumns="false">
-                                        <Columns>
-                                            <asp:BoundField HeaderText="Codigo" DataField="IdProduto" />
-                                            <asp:BoundField HeaderText="Descrição" DataField="Descricao" />
-                                            <asp:BoundField HeaderText="Valor" DataField="Valor" />
-                                        </Columns>
-                                    </asp:GridView>
-                                    </asp:Panel>                                    
+                                            <Columns>
+                                                <asp:BoundField HeaderText="Codigo" DataField="IdProduto" />
+                                                <asp:BoundField HeaderText="Descrição" DataField="Descricao" />
+                                                <asp:BoundField HeaderText="Valor" DataField="Valor" />
+                                            </Columns>
+                                        </asp:GridView>
+                                    </asp:Panel>
                                 </td>
                             </tr>
                         </table>
