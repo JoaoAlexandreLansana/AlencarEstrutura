@@ -250,5 +250,18 @@ namespace AlencarEstrutura
             txtValorPrevisto.Text = objProduto.Valor.ToString();
 
         }
+
+        protected void txtBusca_TextChanged(object sender, EventArgs e)
+        {
+            PedidoCompra objPedidoCompra = new PedidoCompra();
+            PedidoCompraDAL dbPedidoCompra = new PedidoCompraDAL();
+
+            DataTable dt = dbPedidoCompra.PesquisaListaPedidos(txtBusca.Text, ref erro);
+
+            gvPedidos.DataSource = dt;
+            gvPedidos.AutoGenerateSelectButton = true;
+            gvPedidos.DataBind();
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", "openModal();", true);
+        }
     }
 }

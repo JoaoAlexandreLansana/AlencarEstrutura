@@ -99,6 +99,45 @@ namespace AlencarEstrutura.DAL
             }
         }
 
+        public DataTable PesquisaListaOrcamento(string orcamento, ref string erro)
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    string query = @"SELECT PKNI020_IDORCAMENTO,
+                                            ATSF020_DESCRICAO,
+                                            ATDT020_DATA,
+                                            ATDT020_VENCIMENTO,
+                                            FKNI020_IDPESSOA,
+                                            TRUNC (ATDC020_VALOR, 2) AS ATDC020_VALOR,
+                                            ATSF020_STATUS
+                                        FROM ALC020T_ORCAMENTO  
+                                        WHERE ATSF020_DESCRICAO LIKE '%'||:ORCAMENTO||'%'
+                                        OR ATDT020_VENCIMENTO LIKE '%'||:ORCAMENTO||'%'
+                                        ORDER BY ATDT020_DATA DESC";
+
+                    conn.Open();
+
+                    using (OracleCommand cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = query;
+                        cmd.Parameters.Add(":ORCAMENTO", orcamento);
+
+                        DataTable dt = new DataTable();
+                        OracleDataAdapter da = new OracleDataAdapter();
+                        da.SelectCommand = cmd;
+                        da.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return null;
+            }
+        }
         public DataTable ObterListaOrcamentoPorStatus(ref string erro)
         {
             try

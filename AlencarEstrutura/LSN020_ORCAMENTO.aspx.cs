@@ -389,5 +389,17 @@ namespace AlencarEstrutura
             txtValorPrevisto.Text = string.Empty;
             ddlProduto.SelectedIndex = 0;
         }
+
+        protected void txtBusca_TextChanged(object sender, EventArgs e)
+        {
+            Orcamento objOrcamento = new Orcamento();
+            OrcamentoDAL dbOrcamento = new OrcamentoDAL();
+            DataTable dtOrcamento = dbOrcamento.PesquisaListaOrcamento(txtBusca.Text, ref erro);
+
+            gvOrcamento.DataSource = dtOrcamento;
+            gvOrcamento.AutoGenerateSelectButton = true;
+            gvOrcamento.DataBind();
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", "openModal();", true);
+        }
     }
 }

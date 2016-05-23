@@ -125,7 +125,7 @@
                             <tr>
                                 <td>
                                     <asp:Label ID="lblBusca" runat="server" Text="Buscar"></asp:Label>
-                                    <asp:TextBox ID="txtBusca" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtBusca" runat="server" onBlur="openModal()" OnTextChanged="txtBusca_TextChanged" AutoPostBack="true"></asp:TextBox>
                                     <asp:Button ID="btnBusca" runat="server" Text="Buscar" CssClass="btn btn-info" />
                                 </td>
                             </tr>

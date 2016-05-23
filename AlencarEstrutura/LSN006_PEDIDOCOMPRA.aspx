@@ -102,18 +102,20 @@
                             <tr>
                                 <td>
                                     <asp:Label ID="lblBusca" runat="server" Text="Buscar"></asp:Label>
-                                    <asp:TextBox ID="txtBusca" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtBusca" runat="server" onBlur="openModal()" OnTextChanged="txtBusca_TextChanged" AutoPostBack="true"></asp:TextBox>
                                     <asp:Button ID="btnBusca" runat="server" Text="Buscar" CssClass="btn btn-info" />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:GridView ID="gvPedidos" runat="server" Width="100%" DataKeyNames="PKNI006_IDPEDIDOCOMPRA" AutoGenerateColumns="false" OnSelectedIndexChanged="gvPedidos_SelectedIndexChanged">
-                                        <Columns>
-                                            <asp:BoundField HeaderText="Codigo Pedido Compra" DataField="PKNI006_IDPEDIDOCOMPRA" />
-                                            <asp:BoundField HeaderText="Data" DataField="ATDT006_DATAPEDIDO" />
-                                        </Columns>
-                                    </asp:GridView>
+                                    <asp:Panel ID="pblGrid" runat="server" Height="200" ScrollBars="Auto">
+                                        <asp:GridView ID="gvPedidos" runat="server" Width="100%" DataKeyNames="PKNI006_IDPEDIDOCOMPRA" AutoGenerateColumns="false" OnSelectedIndexChanged="gvPedidos_SelectedIndexChanged">
+                                            <Columns>
+                                                <asp:BoundField HeaderText="Codigo Pedido Compra" DataField="PKNI006_IDPEDIDOCOMPRA" />
+                                                <asp:BoundField HeaderText="Data" DataField="ATDT006_DATAPEDIDO" />
+                                            </Columns>
+                                        </asp:GridView>
+                                    </asp:Panel>
                                 </td>
                             </tr>
                         </table>

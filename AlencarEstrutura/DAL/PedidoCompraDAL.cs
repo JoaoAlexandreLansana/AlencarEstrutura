@@ -237,6 +237,43 @@ namespace AlencarEstrutura.DAL
             }
         }
 
+        public DataTable PesquisaListaPedidos(string pedido, ref string erro)
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    string query = @"SELECT PKNI006_IDPEDIDOCOMPRA,
+                                      FKNI006_IDUSUARIO,
+                                      ATDT006_DATAPEDIDO,
+                                      ATNI006_STATUS
+                                    FROM ALC006T_PEDIDOCOMPRA
+                                    WHERE ATDT006_DATAPEDIDO LIKE '%'||:PEDIDO||'%'
+                                    OR PKNI006_IDPEDIDOCOMPRA LIKE '%'||:PEDIDO||'%'
+                                    ORDER BY PKNI006_IDPEDIDOCOMPRA DESC";
+
+                    conn.Open();
+
+                    using (OracleCommand cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = query;
+                        cmd.Parameters.Add(":PEDIDO", pedido);
+
+                        DataTable dt = new DataTable();
+                        OracleDataAdapter da = new OracleDataAdapter();
+                        da.SelectCommand = cmd;
+                        da.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return null;
+            }
+        }
+
         public Produto_Pedido CarregaProdutoporId(int idPedidoProduto, ref string erro)
         {
             try

@@ -14,6 +14,11 @@
     <link href="crystalreportviewers13/style.css" rel="stylesheet" />
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <script type="text/javascript">
+        function openModal() {
+            $('#myModal').modal('show');
+        }
+    </script>
 </head>
 <body>
 
