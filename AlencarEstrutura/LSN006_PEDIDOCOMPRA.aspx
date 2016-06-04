@@ -32,11 +32,11 @@
                         <asp:Label ID="lblProduto" runat="server" Text="Produto"></asp:Label>
                     </td>
                     <td>
-                        <asp:DropDownList ID="ddlProduto" runat="server" OnSelectedIndexChanged="ddlProduto_SelectedIndexChanged">
+                        <asp:DropDownList ID="ddlProduto" runat="server" OnSelectedIndexChanged="ddlProduto_SelectedIndexChanged" AutoPostBack="true">
                             <asp:ListItem>Selecione</asp:ListItem>
                         </asp:DropDownList>
                         <asp:Label ID="lblQuantidade" runat="server" Text="Quantidade"></asp:Label>
-                        <asp:TextBox ID="txtQuantidade" runat="server" Columns="8" MaxLength="8"></asp:TextBox>
+                        <asp:TextBox ID="txtQuantidade" runat="server" Columns="8" MaxLength="8" OnTextChanged="txtQuantidade_TextChanged" AutoPostBack="true"></asp:TextBox>
                         <cc1:FilteredTextBoxExtender ID="ftbQuantidade" runat="server" FilterType="Numbers, Custom"
                             ValidChars=".," TargetControlID="txtQuantidade" />
                         <asp:Label ID="lblFornecedor" runat="server" Text="Fornecedor"></asp:Label>
@@ -108,7 +108,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:Panel ID="pblGrid" runat="server" Height="200" ScrollBars="Auto">
+                                    <asp:Panel ID="pblGrid" runat="server" Height="300" ScrollBars="Auto" Width="400">
                                         <asp:GridView ID="gvPedidos" runat="server" Width="100%" DataKeyNames="PKNI006_IDPEDIDOCOMPRA" AutoGenerateColumns="false" OnSelectedIndexChanged="gvPedidos_SelectedIndexChanged">
                                             <Columns>
                                                 <asp:BoundField HeaderText="Codigo Pedido Compra" DataField="PKNI006_IDPEDIDOCOMPRA" />

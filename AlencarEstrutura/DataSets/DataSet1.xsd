@@ -77,7 +77,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ATNI002_CNPJ" msprop:Generator_ColumnVarNameInTable="columnATNI002_CNPJ" msprop:Generator_ColumnPropNameInRow="ATNI002_CNPJ" msprop:Generator_ColumnPropNameInTable="ATNI002_CNPJColumn" msprop:Generator_UserColumnName="ATNI002_CNPJ" type="xs:decimal" />
+              <xs:element name="ATNI002_CNPJ" msprop:Generator_ColumnVarNameInTable="columnATNI002_CNPJ" msprop:Generator_ColumnPropNameInRow="ATNI002_CNPJ" msprop:Generator_ColumnPropNameInTable="ATNI002_CNPJColumn" msprop:Generator_UserColumnName="ATNI002_CNPJ" type="xs:decimal" minOccurs="0" />
               <xs:element name="ATSF002_NOMEFANTASIA" msprop:Generator_ColumnVarNameInTable="columnATSF002_NOMEFANTASIA" msprop:Generator_ColumnPropNameInRow="ATSF002_NOMEFANTASIA" msprop:Generator_ColumnPropNameInTable="ATSF002_NOMEFANTASIAColumn" msprop:Generator_UserColumnName="ATSF002_NOMEFANTASIA" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">

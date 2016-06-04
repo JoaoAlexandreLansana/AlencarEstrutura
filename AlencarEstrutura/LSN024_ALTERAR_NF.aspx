@@ -1,31 +1,37 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LSN023_GERARNF.aspx.cs" Inherits="AlencarEstrutura.LSN023_GERARNF" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LSN024_ALTERAR_NF.aspx.cs" Inherits="AlencarEstrutura.LSN024_ALTERAR_NF" %>
 
 <%@ Register Assembly="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" Namespace="CrystalDecisions.Web" TagPrefix="CR" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div>
+        <div>
         <asp:Panel ID="pnlTitulo" runat="server" HorizontalAlign="Center">
             <table style="width: 100%">
                 <tr>
                     <td>
                         <h2>
-                            <asp:Label ID="lbltitulo" runat="server" Text="Gerar Nota Fiscal"></asp:Label></h2>
+                            <asp:Label ID="lbltitulo" runat="server" Text="Alterar Nota Fiscal"></asp:Label></h2>
                     </td>
                 </tr>
             </table>
         </asp:Panel>
     </div>
     <div>
-        <asp:Panel ID="pnlManutencao" runat="server" GroupingText="Dados" DefaultButton="btnImprimir">
+        <asp:Panel ID="pnlManutencao" runat="server" GroupingText="Dados" DefaultButton="btnSalvar">
             <table style="width: 100%">
                 <tr>
                     <td style="width: 137px">
-                        <asp:HiddenField ID="hdIdNF" runat="server" />
                         <asp:Label ID="Label1" runat="server" Text="Número"></asp:Label>
                     </td>
                     <td>
                         <asp:TextBox ID="txtCodigo" runat="server" Columns="8" MaxLength="10" Enabled="false"></asp:TextBox>
                         <asp:Button ID="btnNotaFiscal" runat="server" Text="..." CssClass="btn btn-secundary" data-target="#myModal" data-toggle="modal" />
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="width: 137px">
+                        <asp:Label ID="lblOrcamento" runat="server" Text="Orçamento"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtOrcamento" runat="server" Columns="8" Enabled="false" MaxLength="10"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -39,14 +45,12 @@
                 </tr>
                 <tr>
                     <td style="width: 137px">
-                        <asp:Label ID="lblDescricao" runat="server" Text="Descrição"></asp:Label>
+                        <asp:Label ID="Label3" runat="server" Text="Emissão"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtDescricao" runat="server" Enabled="False"></asp:TextBox>
-                        &nbsp;<asp:Label ID="Label3" runat="server" Text="Emissão"></asp:Label>
-                        &nbsp;<asp:TextBox ID="txtEmissao" runat="server" Columns="10" Enabled="False" MaxLength="10"></asp:TextBox>
+                        <asp:TextBox ID="txtEmissao" runat="server" Columns="10" Enabled="False" MaxLength="10"></asp:TextBox>
                         &nbsp;<asp:Label ID="Label4" runat="server" Text="Vencimento"></asp:Label>
-                        <asp:TextBox ID="txtVencimento" runat="server" Columns="10" MaxLength="10"></asp:TextBox>
+                        <asp:TextBox ID="txtVencimento" runat="server" Columns="10" MaxLength="10" Enabled="False"></asp:TextBox>
                         <ajaxToolkit:CalendarExtender ID="txtDataInicial_CalendarExtender" runat="server" TargetControlID="txtVencimento" DaysModeTitleFormat="dd/MM/yyyy" Format="dd/MM/yyyy" TodaysDateFormat="dd/MM/yyyy" />
                     </td>
                 </tr>
@@ -57,12 +61,17 @@
                     <td>
                         <asp:TextBox ID="txtValor" runat="server" Columns="10" MaxLength="10" Enabled="False"></asp:TextBox>
                         &nbsp;&nbsp;&nbsp;<asp:Label ID="Label5" runat="server" Text="Aplicar Desconto de "></asp:Label>
-                        <asp:DropDownList ID="ddlDesconto" runat="server" OnSelectedIndexChanged="ddlDesconto_SelectedIndexChanged" AutoPostBack="true">
+                        <asp:DropDownList ID="ddlDesconto" runat="server" OnSelectedIndexChanged="ddlDesconto_SelectedIndexChanged" AutoPostBack="true" Enabled="False">
                             <asp:ListItem Value="0">0%</asp:ListItem>
                             <asp:ListItem Value="5">5%</asp:ListItem>
                             <asp:ListItem Value="10">10%</asp:ListItem>
                             <asp:ListItem Value="15">15%</asp:ListItem>
                             <asp:ListItem Value="20">20%</asp:ListItem>
+                        </asp:DropDownList>
+                        &nbsp;<asp:Label ID="lblStatus" Text="Status" runat="server"></asp:Label> &nbsp;<asp:DropDownList ID="ddlStatus" runat="server">
+                            <asp:ListItem Value="0">Emitida</asp:ListItem>
+                            <asp:ListItem Value="1">Paga</asp:ListItem>
+                            <asp:ListItem Value="2">Cancelada</asp:ListItem>
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -75,17 +84,12 @@
                 <tr>
                     <td style="width: 137px; height: 39px;">&nbsp;</td>
                     <td style="height: 39px">
-                        <asp:Button ID="btnVisualizar" runat="server" CssClass="btn btn-default" OnClick="btnVisualizar_Click" Text="Visualizar" Width="80px" />
-                        <asp:Button ID="btnImprimir" runat="server" CssClass="btn btn-primary" Text="Imprimir" Width="80px" OnClick="btnImprimir_Click" />
-                        <asp:Button ID="btnCancelar" runat="server" CssClass="btn tbn-info" Text="Cancelar" OnClick="btnCancelar_Click" />
+                        <asp:Button ID="btnSalvar" runat="server" CssClass="btn btn-primary" Text="Salvar" Width="80px" OnClick="btnSalvar_Click" />
+                        <asp:Button ID="btnCancela" runat="server" CssClass="btn btn-info" OnClick="btnCancela_Click" Text="Cancelar" Width="80px" />
                     </td>
                 </tr>
             </table>
         </asp:Panel>
-        <asp:Panel ID="pnlImprimir" runat="server">
-            <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" AutoDataBind="true" />
-        </asp:Panel>
-
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
@@ -108,12 +112,12 @@
                             <tr>
                                 <td>
                                     <asp:Panel ID="pnlBusca" runat="server" Height="200">
-                                        <asp:GridView ID="gvOrcamento" runat="server" Width="100%" DataKeyNames="PKNI020_IDORCAMENTO" AllowPaging="True"
-                                            EnableModelValidation="True" AutoGenerateColumns="false" OnSelectedIndexChanged="gvOrcamento_SelectedIndexChanged" OnPageIndexChanging="gvOrcamento_PageIndexChanging">
+                                        <asp:GridView ID="gvNF" runat="server" Width="100%" DataKeyNames="IdNotaFiscal" AllowPaging="True"
+                                            EnableModelValidation="True" AutoGenerateColumns="false" OnSelectedIndexChanged="gvNF_SelectedIndexChanged">
                                             <Columns>
-                                                <asp:BoundField HeaderText="Codigo" DataField="PKNI020_IDORCAMENTO" />
-                                                <asp:BoundField HeaderText="Descrição" DataField="ATSF020_DESCRICAO" />
-                                                <asp:BoundField HeaderText="Valor" DataField="ATDC020_VALOR" />
+                                                <asp:BoundField HeaderText="Codigo" DataField="IdNotaFiscal" />
+                                                <asp:BoundField HeaderText="No. Orçamento" DataField="IdOrcamento" />
+                                                <asp:BoundField HeaderText="Valor" DataField="Valor" />
                                             </Columns>
                                             <PagerSettings Position="Bottom" Mode="NextPreviousFirstLast"
                                                 PreviousPageText="<"

@@ -435,20 +435,32 @@ namespace AlencarEstrutura.DAL
                 using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
                 {
                     string query = @"SELECT PKNI018_IDPRODUTO_PEDIDO,
-                                  ATSD018_DATAPEDIDO,
-                                  ATSF018_OBSERVACAO,
-                                  ATDC018_QUANTIDADE,
-                                  ATDC018_VALORPREVISTO,
-                                  FKNI018_IDPRODUTO,
-                                  FKNI018_IDPEDIDOCOMPRA,
-                                  FKNI018_IDFORNECEDOR,
-                                  ATSF003_DESCRICAO,
-                                  ATSF007_NOMEFANTASIA,
-                                  TB2.*
-                                FROM BUSCA_PEDIDO_COMPRA TB1
-                                INNER JOIN ALC002T_EMPRESA TB2
-                                ON TB1.PKNI003_IDEMPRESA = TB2.PKNI002_IDEMPRESA
-                                WHERE FKNI018_IDPEDIDOCOMPRA = :IDPEDIDOCOMPRA
+                                              TB1.ATSD018_DATAPEDIDO,
+                                              TB1.ATSF018_OBSERVACAO,
+                                              TB1.ATDC018_QUANTIDADE,
+                                              TB1.ATDC018_VALORPREVISTO,
+                                              TB1.FKNI018_IDPRODUTO,
+                                              TB1.FKNI018_IDPEDIDOCOMPRA,
+                                              TB1.FKNI018_IDFORNECEDOR,
+                                              TB2.PKNI003_IDEMPRESA,
+                                              TB2.ATSF003_DESCRICAO,
+                                              TB3.ATSF007_NOMEFANTASIA,
+                                              TB4.ATNI002_CNPJ,
+                                              TB4.ATSF002_NOMEFANTASIA,
+                                              TB4.ATSF002_RAZAOSOCIAL,
+                                              TB4.ATSF002_EMAIL
+                                            FROM ALC018T_PRODUTO_PEDIDO TB1
+                                            INNER JOIN ALC003T_PRODUTO TB2
+                                            ON TB1.FKNI018_IDPRODUTO = TB2.PKNI003_IDPRODUTO
+                                            LEFT JOIN ALC007T_FORNECEDOR TB3
+                                            ON TB1.FKNI018_IDFORNECEDOR = TB3.PKNI007_IDFORNECEDOR
+                                            LEFT JOIN ALC006T_PEDIDOCOMPRA TB5
+                                            ON TB1.FKNI018_IDPEDIDOCOMPRA = TB5.PKNI006_IDPEDIDOCOMPRA
+                                            LEFT JOIN ALC002T_EMPRESA TB4
+                                            ON TB2.PKNI003_IDEMPRESA = TB4.PKNI002_IDEMPRESA
+                                            LEFT JOIN ALC006T_PEDIDOCOMPRA TB5
+                                            ON TB1.FKNI018_IDPEDIDOCOMPRA = TB5.PKNI006_IDPEDIDOCOMPRA
+                                            WHERE FKNI018_IDPEDIDOCOMPRA = :IDPEDIDOCOMPRA
                                     ";
 
                     conn.Open();

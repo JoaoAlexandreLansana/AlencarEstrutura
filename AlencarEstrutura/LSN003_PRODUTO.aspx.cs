@@ -118,7 +118,7 @@ namespace AlencarEstrutura
             txtPeso.Text = objProduto.Peso.ToString();
             txtLitros.Text = objProduto.Litros.ToString();
             txtValorMetro.Text = objProduto.ValorPorMetro.ToString();
-            ddlCategoria.SelectedIndex = objProduto.IdCategoria;
+            ddlCategoria.SelectedValue = objProduto.IdCategoria.ToString();
         }
 
         protected void txtCodigo_TextChanged(object sender, EventArgs e)
@@ -178,6 +178,17 @@ namespace AlencarEstrutura
             ddlCategoria.SelectedIndex = 0;
             txtValorMetro.Text = string.Empty;
             
+        }
+
+        protected void txtBusca_TextChanged(object sender, EventArgs e)
+        {
+            ProdutoDAL dbProduto = new ProdutoDAL();
+            List<Produto> lstProduto = dbProduto.PesquisarListadeProduto(txtBusca.Text, ref erro);
+            
+            gvProduto.DataSource = lstProduto;
+            gvProduto.AutoGenerateSelectButton = true;
+            gvProduto.DataBind();
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", "openModal();", true);
         }
     }
 }

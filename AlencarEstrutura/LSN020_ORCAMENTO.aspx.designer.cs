@@ -58,15 +58,6 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.TextBox txtCodigo;
         
         /// <summary>
-        /// btnBuscaPedidoCompra control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscaPedidoCompra;
-        
-        /// <summary>
         /// hfCodigoProdutoOrcamento control.
         /// </summary>
         /// <remarks>
@@ -94,6 +85,33 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.TextBox txtDescricao;
         
         /// <summary>
+        /// txtVencimento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtVencimento;
+        
+        /// <summary>
+        /// txtDataInicial_CalendarExtender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CalendarExtender txtDataInicial_CalendarExtender;
+        
+        /// <summary>
+        /// ftbVencimento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.FilteredTextBoxExtender ftbVencimento;
+        
+        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -110,15 +128,6 @@ namespace AlencarEstrutura {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCodCliente;
-        
-        /// <summary>
-        /// btnBuscaPedidoCompra0 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscaPedidoCompra0;
         
         /// <summary>
         /// txtNomeCliente control.

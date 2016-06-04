@@ -13,7 +13,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Panel ID="pnlGridOrcamento" runat="server" ScrollBars="Auto" Height="200" GroupingText="Orçamentos">
+                        <asp:Panel ID="pnlGridOrcamento" runat="server" ScrollBars="Auto" Height="200" GroupingText="Orçamentos Pendentes">
                             <asp:GridView ID="gvOrcamentos" runat="server" AutoGenerateColumns="false" Width="100%">
                                 <Columns>
                                     <asp:BoundField HeaderText="Codigo" DataField="PKNI020_IDORCAMENTO"/>
@@ -28,7 +28,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Panel ID="pnlGridNotas" runat="server" ScrollBars="Auto" Height="200" GroupingText="Notas Fiscais">
+                        <asp:Panel ID="pnlGridNotas" runat="server" ScrollBars="Auto" Height="200" GroupingText="Notas Fiscais Pendentes">
                             <asp:GridView ID="gvNotas" runat="server" AutoGenerateColumns="false" Width="100%">
                                 <Columns>
                                     <asp:BoundField HeaderText="Codigo" DataField="FKNI021_IDORCAMENTO" />

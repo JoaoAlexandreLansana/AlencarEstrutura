@@ -2,8 +2,9 @@
 <xs:schema id="LSN020_ORCAMENTO_ds" targetNamespace="http://tempuri.org/LSN020_ORCAMENTO_ds.xsd" xmlns:mstns="http://tempuri.org/LSN020_ORCAMENTO_ds.xsd" xmlns="http://tempuri.org/LSN020_ORCAMENTO_ds.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Web.config)" ParameterPrefix=":" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ConnectionString.ConnectionString" Provider="Oracle.ManagedDataAccess.Client" />
           <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Web.config)" ParameterPrefix=":" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ConnectionString.ConnectionString" Provider="Oracle.ManagedDataAccess.Client" />
         </Connections>
         <Tables>
@@ -12,7 +13,7 @@
               <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="ALCDBDEV.BUSCA_ORCAMENTO" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT PKNI020_IDORCAMENTO, ATSF020_DESCRICAO, ATDT020_DATA, ATDT020_VENCIMENTO, FKNI020_IDPESSOA, ATDC020_VALOR, ATSF020_STATUS, FKNI020_IDEMPRESA, FKNI022_IDPRODUTO, ATSF003_DESCRICAO, ATDC022_VALOR, ATNI022_QUANTIDADE, ATDC022_QTDE_METRO_QUADRADO, ATNI002_CNPJ, ATSF002_NOMEFANTASIA, ATSF002_RAZAOSOCIAL, ATSF002_EMAIL, ATSF008_LOGRADOURO, ATNI008_NUMERO, ATSF008_BAIRRO, ATSF008_CEP, NOME_CIDADE, ATSF013_SIGLA, ATNI009_DDD, TELEFONE FROM ALCDBDEV.BUSCA_ORCAMENTO</CommandText>
+                    <CommandText>SELECT PKNI020_IDORCAMENTO, ATSF020_DESCRICAO, ATDT020_DATA, ATDT020_VENCIMENTO, FKNI020_IDPESSOA, ATDC020_VALOR, ATSF020_STATUS, FKNI020_IDEMPRESA, FKNI022_IDPRODUTO, ATSF003_DESCRICAO, ATDC022_VALOR, ATNI022_QUANTIDADE, ATDC022_QTDE_METRO_QUADRADO, ATNI002_CNPJ, ATSF002_NOMEFANTASIA, ATSF002_RAZAOSOCIAL, ATSF002_EMAIL, ATSF008_LOGRADOURO, ATNI008_NUMERO, ATSF008_BAIRRO, ATSF008_CEP, NOME_CIDADE, ATSF013_SIGLA, ATNI009_DDD, TELEFONE, ATSF014_NOME, ATSF014_EMAIL FROM ALCDBDEV.BUSCA_ORCAMENTO</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -44,6 +45,8 @@
               <Mapping SourceColumn="ATSF013_SIGLA" DataSetColumn="ATSF013_SIGLA" />
               <Mapping SourceColumn="ATNI009_DDD" DataSetColumn="ATNI009_DDD" />
               <Mapping SourceColumn="TELEFONE" DataSetColumn="TELEFONE" />
+              <Mapping SourceColumn="ATSF014_NOME" DataSetColumn="ATSF014_NOME" />
+              <Mapping SourceColumn="ATSF014_EMAIL" DataSetColumn="ATSF014_EMAIL" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -68,11 +71,11 @@
               </xs:element>
               <xs:element name="ATDT020_DATA" msprop:Generator_ColumnVarNameInTable="columnATDT020_DATA" msprop:Generator_ColumnPropNameInRow="ATDT020_DATA" msprop:Generator_ColumnPropNameInTable="ATDT020_DATAColumn" msprop:Generator_UserColumnName="ATDT020_DATA" type="xs:dateTime" minOccurs="0" />
               <xs:element name="ATDT020_VENCIMENTO" msprop:Generator_ColumnVarNameInTable="columnATDT020_VENCIMENTO" msprop:Generator_ColumnPropNameInRow="ATDT020_VENCIMENTO" msprop:Generator_ColumnPropNameInTable="ATDT020_VENCIMENTOColumn" msprop:Generator_UserColumnName="ATDT020_VENCIMENTO" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="FKNI020_IDPESSOA" msprop:Generator_ColumnVarNameInTable="columnFKNI020_IDPESSOA" msprop:Generator_ColumnPropNameInRow="FKNI020_IDPESSOA" msprop:Generator_ColumnPropNameInTable="FKNI020_IDPESSOAColumn" msprop:Generator_UserColumnName="FKNI020_IDPESSOA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FKNI020_IDPESSOA" msprop:Generator_ColumnVarNameInTable="columnFKNI020_IDPESSOA" msprop:Generator_ColumnPropNameInRow="FKNI020_IDPESSOA" msprop:Generator_ColumnPropNameInTable="FKNI020_IDPESSOAColumn" msprop:Generator_UserColumnName="FKNI020_IDPESSOA" type="xs:decimal" />
               <xs:element name="ATDC020_VALOR" msprop:Generator_ColumnVarNameInTable="columnATDC020_VALOR" msprop:Generator_ColumnPropNameInRow="ATDC020_VALOR" msprop:Generator_ColumnPropNameInTable="ATDC020_VALORColumn" msprop:Generator_UserColumnName="ATDC020_VALOR" type="xs:decimal" minOccurs="0" />
               <xs:element name="ATSF020_STATUS" msprop:Generator_ColumnVarNameInTable="columnATSF020_STATUS" msprop:Generator_ColumnPropNameInRow="ATSF020_STATUS" msprop:Generator_ColumnPropNameInTable="ATSF020_STATUSColumn" msprop:Generator_UserColumnName="ATSF020_STATUS" type="xs:decimal" minOccurs="0" />
               <xs:element name="FKNI020_IDEMPRESA" msprop:Generator_ColumnVarNameInTable="columnFKNI020_IDEMPRESA" msprop:Generator_ColumnPropNameInRow="FKNI020_IDEMPRESA" msprop:Generator_ColumnPropNameInTable="FKNI020_IDEMPRESAColumn" msprop:Generator_UserColumnName="FKNI020_IDEMPRESA" type="xs:decimal" minOccurs="0" />
-              <xs:element name="FKNI022_IDPRODUTO" msprop:Generator_ColumnVarNameInTable="columnFKNI022_IDPRODUTO" msprop:Generator_ColumnPropNameInRow="FKNI022_IDPRODUTO" msprop:Generator_ColumnPropNameInTable="FKNI022_IDPRODUTOColumn" msprop:Generator_UserColumnName="FKNI022_IDPRODUTO" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FKNI022_IDPRODUTO" msprop:Generator_ColumnVarNameInTable="columnFKNI022_IDPRODUTO" msprop:Generator_ColumnPropNameInRow="FKNI022_IDPRODUTO" msprop:Generator_ColumnPropNameInTable="FKNI022_IDPRODUTOColumn" msprop:Generator_UserColumnName="FKNI022_IDPRODUTO" type="xs:decimal" />
               <xs:element name="ATSF003_DESCRICAO" msprop:Generator_ColumnVarNameInTable="columnATSF003_DESCRICAO" msprop:Generator_ColumnPropNameInRow="ATSF003_DESCRICAO" msprop:Generator_ColumnPropNameInTable="ATSF003_DESCRICAOColumn" msprop:Generator_UserColumnName="ATSF003_DESCRICAO" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -152,6 +155,20 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="9" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ATSF014_NOME" msprop:Generator_ColumnVarNameInTable="columnATSF014_NOME" msprop:Generator_ColumnPropNameInRow="ATSF014_NOME" msprop:Generator_ColumnPropNameInTable="ATSF014_NOMEColumn" msprop:Generator_UserColumnName="ATSF014_NOME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ATSF014_EMAIL" msprop:Generator_ColumnVarNameInTable="columnATSF014_EMAIL" msprop:Generator_ColumnPropNameInRow="ATSF014_EMAIL" msprop:Generator_ColumnPropNameInTable="ATSF014_EMAILColumn" msprop:Generator_UserColumnName="ATSF014_EMAIL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

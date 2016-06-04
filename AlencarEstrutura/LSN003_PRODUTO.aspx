@@ -90,20 +90,20 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Modal Header</h4>
+                        <h4 class="modal-title">Buscar Produtos</h4>
                     </div>
                     <div class="modal-body">
                         <table>
                             <tr>
                                 <td>
                                     <asp:Label ID="lblBusca" runat="server" Text="Buscar"></asp:Label>
-                                    <asp:TextBox ID="txtBusca" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="txtBusca" runat="server" onBlur="openModal()" OnTextChanged="txtBusca_TextChanged" AutoPostBack="true"></asp:TextBox>
                                     <asp:Button ID="btnBusca" runat="server" Text="Buscar" CssClass="btn btn-info" />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:Panel ID="pnlGrid" runat="server" ScrollBars="Auto" Height="200">
+                                    <asp:Panel ID="pnlGrid" runat="server" ScrollBars="Auto" Height="200" Width="400">
                                         <asp:GridView ID="gvProduto" runat="server" DataKeyNames="IdProduto" OnSelectedIndexChanged="gvProduto_SelectedIndexChanged" AutoGenerateColumns="false">
                                             <Columns>
                                                 <asp:BoundField HeaderText="Codigo" DataField="IdProduto" />

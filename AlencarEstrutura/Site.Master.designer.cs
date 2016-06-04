@@ -31,15 +31,6 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.LinkButton lbCliente;
         
         /// <summary>
-        /// lbControleEstoque control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbControleEstoque;
-        
-        /// <summary>
         /// lbEstoque control.
         /// </summary>
         /// <remarks>
@@ -112,15 +103,6 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.LinkButton lbImprimirOrcamento;
         
         /// <summary>
-        /// lbGeraNF control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbGeraNF;
-        
-        /// <summary>
         /// lbImprimirPedidoCompra control.
         /// </summary>
         /// <remarks>
@@ -130,13 +112,22 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.LinkButton lbImprimirPedidoCompra;
         
         /// <summary>
-        /// lbSolicitarProduto control.
+        /// lbGeraNF control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbSolicitarProduto;
+        protected global::System.Web.UI.WebControls.LinkButton lbGeraNF;
+        
+        /// <summary>
+        /// lbAlteraNF control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbAlteraNF;
         
         /// <summary>
         /// lbArmazenarProduto control.
@@ -146,6 +137,15 @@ namespace AlencarEstrutura {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbArmazenarProduto;
+        
+        /// <summary>
+        /// lbControleEstoque control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbControleEstoque;
         
         /// <summary>
         /// lbConsultaEstoque control.

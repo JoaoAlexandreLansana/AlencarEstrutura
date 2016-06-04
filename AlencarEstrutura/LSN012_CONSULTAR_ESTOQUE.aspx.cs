@@ -25,7 +25,7 @@ namespace AlencarEstrutura
 
 
             gvEstoque.DataSource = lstEstoque;
-            gvEstoque.AutoGenerateSelectButton = true;
+            gvEstoque.AutoGenerateSelectButton = false;
             gvEstoque.DataBind();
 
         }

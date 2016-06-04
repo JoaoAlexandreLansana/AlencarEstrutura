@@ -107,5 +107,10 @@ namespace AlencarEstrutura
         {
             Response.Redirect("LSN012_CONSULTAR_ESTOQUE.aspx");
         }
+
+        protected void lbAlteraNF_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LSN024_ALTERAR_NF.aspx");
+        }
     }
 }

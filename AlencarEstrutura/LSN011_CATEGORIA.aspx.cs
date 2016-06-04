@@ -143,5 +143,12 @@ namespace AlencarEstrutura
             gvCategoria.DataBind();
             ClientScript.RegisterStartupScript(this.GetType(), "alert", "openModal();", true);
         }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            txtCodigo.Text = string.Empty;
+            txtDescricao.Text = string.Empty;
+            txtObservacao.Text = string.Empty;
+        }
     }
 }

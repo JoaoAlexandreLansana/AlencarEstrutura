@@ -16,6 +16,7 @@ namespace AlencarEstrutura.DTO
         public Decimal Valor { get; set; }
         public int Parcelas { get; set; }
         public int IdPessoa { get; set; }
-
+        public int Desconto { get; set; }
+        public string NomeCliente { get; set; }
     }
 }

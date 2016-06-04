@@ -85,13 +85,31 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.TextBox txtDescricao;
         
         /// <summary>
-        /// btnImprimir control.
+        /// btnVisualizar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnImprimir;
+        protected global::System.Web.UI.WebControls.Button btnVisualizar;
+        
+        /// <summary>
+        /// btnImprimir0 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnImprimir0;
+        
+        /// <summary>
+        /// btnCancelar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
         
         /// <summary>
         /// pnlImprimir control.

@@ -29,7 +29,8 @@ namespace AlencarEstrutura.DAL
                                             FKNI021_IDEMPRESA,
                                             ATDC021_VALOR,
                                             ATNI021_PARCELAS,
-                                            FKNI021_IDPESSOA
+                                            FKNI021_IDPESSOA,
+                                            ATNI021_DESCONTO
                                           )
                                           VALUES
                                           (
@@ -40,7 +41,8 @@ namespace AlencarEstrutura.DAL
                                             :FKNI021_IDEMPRESA,
                                             :VALOR,
                                             :PARCELAS,
-                                            :IDPESSOA
+                                            :IDPESSOA,
+                                            :DESCONTO
                                           )";
                     conn.Open();
 
@@ -52,10 +54,11 @@ namespace AlencarEstrutura.DAL
                         cmd.Parameters.Add(":ATDT021_VENCIMENTO", notaFiscal.Vencimento);
                         cmd.Parameters.Add(":ATDT021_DATA", notaFiscal.DataEmissao);
                         cmd.Parameters.Add(":ATNI021_STATUS", notaFiscal.Status);
-                        cmd.Parameters.Add(":FKNI021_IDEMPRESA", 0);
+                        cmd.Parameters.Add(":FKNI021_IDEMPRESA", 1);
                         cmd.Parameters.Add(":VALOR", notaFiscal.Valor);
                         cmd.Parameters.Add(":PARCELAS", notaFiscal.Parcelas);
                         cmd.Parameters.Add(":IDPESSOA", notaFiscal.IdPessoa);
+                        cmd.Parameters.Add(":DESCONTO", notaFiscal.Desconto);
 
                         int reader = cmd.ExecuteNonQuery();
                         sucesso = Convert.ToBoolean(reader);
@@ -86,7 +89,8 @@ namespace AlencarEstrutura.DAL
                                       ATNI021_STATUS,
                                       FKNI021_IDEMPRESA,
                                       ATDC021_VALOR,
-                                      ATNI021_PARCELAS
+                                      ATNI021_PARCELAS,
+                                      ATNI021_DESCONTO
                                     FROM ALC021T_NOTASFISCAIS ";
 
                     conn.Open();
@@ -110,6 +114,7 @@ namespace AlencarEstrutura.DAL
                                 objNotaFiscal.IdEmpresa = Convert.ToInt32(reader[5]);
                                 objNotaFiscal.Valor = Convert.ToDecimal(reader[6]);
                                 objNotaFiscal.Parcelas = Convert.ToInt32(reader[7]);
+                                objNotaFiscal.Desconto = (reader[8] == DBNull.Value) ? 0 : Convert.ToInt16(reader[8]);
 
                                 lstNotaFiscal.Add(objNotaFiscal);
                             }
@@ -140,7 +145,8 @@ namespace AlencarEstrutura.DAL
                                     ATNI021_STATUS           = :STATUS,
                                     FKNI021_IDEMPRESA        = :IDEMPRESA,
                                     ATDC021_VALOR            = :VALOR,
-                                    ATNI021_PARCELAS         = :PARCELAS
+                                    ATNI021_PARCELAS         = :PARCELAS,
+                                    ATNI021_DESCONTO         = :DESCONTO
                                     WHERE PKNI021_IDNOTASFISCAIS = :IDNOTASFISCAIS
                                     ";
 
@@ -157,8 +163,9 @@ namespace AlencarEstrutura.DAL
                         cmd.Parameters.Add(":IDEMPRESA", notaFiscal.IdEmpresa);
                         cmd.Parameters.Add(":VALOR", notaFiscal.Valor);
                         cmd.Parameters.Add(":PARCELAS", notaFiscal.Parcelas);
-                        cmd.Parameters.Add(":IDNOTASFISCAIS", notaFiscal.IdEmpresa);
-
+                        cmd.Parameters.Add(":DESCONTO", notaFiscal.Desconto);
+                        cmd.Parameters.Add(":IDNOTASFISCAIS", notaFiscal.IdNotaFiscal);
+                        
                         return Convert.ToBoolean(cmd.ExecuteNonQuery());
                     }
                 }
@@ -183,8 +190,12 @@ namespace AlencarEstrutura.DAL
                                       ATNI021_STATUS,
                                       FKNI021_IDEMPRESA,
                                       ATDC021_VALOR,
-                                      ATNI021_PARCELAS
-                                    FROM ALC021T_NOTASFISCAIS
+                                      ATNI021_PARCELAS,
+                                      TB2.ATSF014_NOME,
+                                      ATNI021_DESCONTO
+                                    FROM ALC021T_NOTASFISCAIS TB1
+                                    INNER JOIN ALC014T_PESSOA TB2
+                                    ON TB1.FKNI021_IDPESSOA = TB2.PKNI014_IDPESSOA
                                     WHERE PKNI021_IDNOTASFISCAIS = :IDNOTASFISCAIS";
 
                     conn.Open();
@@ -207,6 +218,8 @@ namespace AlencarEstrutura.DAL
                                 objNotaFiscal.IdEmpresa = Convert.ToInt32(reader[5]);
                                 objNotaFiscal.Valor = Convert.ToDecimal(reader[6]);
                                 objNotaFiscal.Parcelas = Convert.ToInt32(reader[7]);
+                                objNotaFiscal.NomeCliente = reader[8].ToString();
+                                objNotaFiscal.Desconto = (reader[9] == DBNull.Value) ? 0 : Convert.ToInt16(reader[9]);
                             }
                             return objNotaFiscal;
                         }
@@ -234,7 +247,8 @@ namespace AlencarEstrutura.DAL
                                       ATNI021_STATUS,
                                       FKNI021_IDEMPRESA,
                                       ATDC021_VALOR,
-                                      ATNI021_PARCELAS
+                                      ATNI021_PARCELAS,
+                                      ATNI021_DESCONTO
                                     FROM ALC021T_NOTASFISCAIS
                                     WHERE FKNI021_IDORCAMENTO = :IDORCAMENTO";
 
@@ -258,6 +272,7 @@ namespace AlencarEstrutura.DAL
                                 objNotaFiscal.IdEmpresa = Convert.ToInt32(reader[5]);
                                 objNotaFiscal.Valor = Convert.ToDecimal(reader[6]);
                                 objNotaFiscal.Parcelas = Convert.ToInt32(reader[7]);
+                                objNotaFiscal.Desconto = (reader[8] == DBNull.Value) ? 0 : Convert.ToInt16(reader[8]);
                             }
                             return objNotaFiscal;
                         }

@@ -127,9 +127,9 @@
                 <tr>
                     <td>&nbsp;</td>
                     <td>
-                        <asp:Button ID="btnSalvar" runat="server" Text="Salvar" CssClass="btn btn-primary" OnClick="btnSalvar_Click" />
-                        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-info" OnClick="btnCancelar_Click" />
-                        <asp:Button ID="btnExcluir" runat="server" CssClass="btn btn-warning" Text="Excluir" />
+                        <asp:Button ID="btnSalvar" runat="server" Text="Salvar" CssClass="btn btn-primary" OnClick="btnSalvar_Click" Width="80"/>
+                        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-info" OnClick="btnCancelar_Click" Width="80"/>
+                        <asp:Button ID="btnExcluir" runat="server" CssClass="btn btn-warning" Text="Excluir" Width="80"/>
                     </td>
                 </tr>
             </table>
@@ -142,10 +142,10 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Modal Header</h4>
+                        <h4 class="modal-title">Buscar Fornecedor</h4>
                     </div>
                     <div class="modal-body">
-                        <table>
+                        <table style="width: 100%">
                             <tr>
                                 <td>
                                     <asp:Label ID="lblBusca" runat="server" Text="Buscar"></asp:Label>
@@ -155,10 +155,12 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:GridView ID="gvFornecedor" runat="server" DataKeyNames="CODIGO" OnSelectedIndexChanged="gvFornecedor_SelectedIndexChanged">
-                                        <Columns>
-                                        </Columns>
-                                    </asp:GridView>
+                                    <asp:Panel ID="pnlGrid" runat="server" Width="400" Height="300">
+                                        <asp:GridView ID="gvFornecedor" runat="server" DataKeyNames="CODIGO" OnSelectedIndexChanged="gvFornecedor_SelectedIndexChanged" Width="100%">
+                                            <Columns>
+                                            </Columns>
+                                        </asp:GridView>
+                                    </asp:Panel>
                                 </td>
                             </tr>
                         </table>

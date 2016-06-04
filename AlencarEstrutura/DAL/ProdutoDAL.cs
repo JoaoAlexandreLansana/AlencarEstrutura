@@ -117,6 +117,60 @@ namespace AlencarEstrutura.DAL
             }
         }
 
+        public List<Produto> PesquisarListadeProduto(string produto, ref string erro)
+        {
+            try
+            {
+                using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
+                {
+                    string query = @" SELECT PKNI003_IDPRODUTO,
+                                      ATSF003_DESCRICAO,
+                                      FKNI003_IDCATEGORIA,
+                                      ATSF003_OBSERVACAO,
+                                      to_char(ATDC003_VALOR,'999G999G999G999D99') as ATDC003_VALOR,
+                                      ATDC003_PESO,
+                                      ATDC003_LITROS,
+                                      to_char(ATDC003_VALOR_METRO,'999G999G999G999D99') as ATDC003_VALOR_METRO
+                                    FROM ALC003T_PRODUTO
+                                    WHERE ATSF003_DESCRICAO LIKE '%'||:PRODUTO||'%'";
+
+                    conn.Open();
+
+                    using (OracleCommand cmd = conn.CreateCommand())
+                    {
+                        cmd.CommandText = query;
+                        cmd.Parameters.Add(":PRODUTO", produto);
+                        
+                        using (OracleDataReader reader = cmd.ExecuteReader())
+                        {
+                            List<Produto> lstProduto = new List<Produto>();
+
+                            while (reader.Read())
+                            {
+                                Produto objProduto = new Produto();
+
+                                objProduto.IdProduto = Convert.ToInt32(reader[0]);
+                                objProduto.Descricao = reader[1].ToString();
+                                objProduto.IdCategoria = (reader[2] == DBNull.Value) ? 0 : Convert.ToInt32(reader[2]);
+                                objProduto.Observacao = reader[3].ToString();
+                                objProduto.Valor = (reader[4] == DBNull.Value) ? 0 : Convert.ToDouble(reader[4]);
+                                objProduto.Peso = (reader[5] == DBNull.Value) ? 0 : Convert.ToDecimal(reader[5]);
+                                objProduto.Litros = (reader[6] == DBNull.Value) ? 0 : Convert.ToDecimal(reader[6]);
+                                objProduto.ValorPorMetro = (reader[7] == DBNull.Value) ? 0 : Convert.ToDecimal(reader[7]);
+
+                                lstProduto.Add(objProduto);
+                            }
+                            return lstProduto;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex.Message;
+                return null;
+            }
+        }
         public bool InserirProduto(Produto produto, ref string erro)
         {
             bool sucesso = false;
@@ -185,17 +239,14 @@ namespace AlencarEstrutura.DAL
                 using (OracleConnection conn = new OracleConnection(ConfigurationManager.ConnectionStrings["OracleConnection"].ConnectionString))
                 {
                     string query = @"UPDATE ALC003T_PRODUTO
-                                    SET ";
-
-                    query += (string.IsNullOrEmpty(produto.Descricao)) ? "" : "ATSF003_DESCRICAO   = :DESCRICAO ";
-                    query += (produto.IdCategoria == 0) ? "" : ",FKNI003_IDCATEGORIA = :IDCATEGORIA ";
-                    query += (string.IsNullOrEmpty(produto.Observacao)) ? "" : ",ATSF003_OBSERVACAO = :OBSERVACAO ";
-                    query += (produto.Valor == 0) ? "" : ",ATDC003_VALOR = :VALOR ";
-                    query += (produto.Peso == 0) ? "" : ",ATDC003_PESO = :PESO ";
-                    query += (produto.Peso == 0) ? "" : ",ATDC003_LITROS = :LITROS ";
-                    query += (produto.Peso == 0) ? "" : ",ATDC003_VALOR_METRO = :VALORMETRO ";
-
-                    query += "WHERE PKNI003_IDPRODUTO = :IDPRODUTO";
+                                    SET ATSF003_DESCRICAO   = :DESCRICAO 
+                                        ,FKNI003_IDCATEGORIA = :IDCATEGORIA 
+                                        ,ATSF003_OBSERVACAO = :OBSERVACAO 
+                                        ,ATDC003_VALOR = :VALOR 
+                                        ,ATDC003_PESO = :PESO 
+                                        ,ATDC003_LITROS = :LITROS 
+                                        ,ATDC003_VALOR_METRO = :VALORMETRO 
+                                        WHERE PKNI003_IDPRODUTO = :IDPRODUTO";
                     conn.Open();
 
                     using (OracleCommand cmd = conn.CreateCommand())

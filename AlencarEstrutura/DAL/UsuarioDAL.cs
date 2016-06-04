@@ -115,11 +115,12 @@ namespace WebApplication2.DAL
                     using (OracleCommand cmd = conn.CreateCommand())
                     {
                         cmd.CommandText = query;
-
-                        cmd.Parameters.Add(":LOGIN", usuario.Login);
-                        cmd.Parameters.Add(":SENHA", usuario.Senha);
-                        cmd.Parameters.Add("EMAIL", usuario.Email);
                         cmd.Parameters.Add(":NOME", usuario.Nome);
+                        cmd.Parameters.Add(":LOGIN", usuario.Login);
+                        cmd.Parameters.Add(":EMAIL", usuario.Email);
+                        cmd.Parameters.Add(":SENHA", usuario.Senha);
+                        
+                        
                         int reader = cmd.ExecuteNonQuery();
                         sucesso = Convert.ToBoolean(reader);
                     }

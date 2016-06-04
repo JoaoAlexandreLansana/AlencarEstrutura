@@ -23,7 +23,7 @@
                     </td>
                     <td>
                         <asp:TextBox ID="txtCodigo" runat="server" Columns="8" MaxLength="10" Enabled="false"></asp:TextBox>
-                        <asp:Button ID="btnBuscaPedidoCompra" runat="server" Text="..." CssClass="btn btn-secundary" data-target="#myModal" data-toggle="modal" />
+                        <button type="button" Class="btn btn-secundary" data-target="#myModal" data-toggle="modal">...</button>
                         <asp:HiddenField ID="hfCodigoProdutoOrcamento" runat="server" />
                     </td>
                 </tr>
@@ -33,6 +33,10 @@
                     </td>
                     <td>
                         <asp:TextBox ID="txtDescricao" runat="server" Columns="50" MaxLength="50"></asp:TextBox>
+                        <asp:TextBox ID="txtVencimento" runat="server" Columns="10" MaxLength="10"></asp:TextBox>
+                        <ajaxToolkit:CalendarExtender ID="txtDataInicial_CalendarExtender" runat="server" TargetControlID="txtVencimento" DaysModeTitleFormat="dd/MM/yyyy" Format="dd/MM/yyyy" TodaysDateFormat="dd/MM/yyyy" />
+                        <cc1:filteredtextboxextender id="ftbVencimento" runat="server" filtertype="Numbers,Custom"
+                            targetcontrolid="txtVencimento" ValidChars="/"/>
                     </td>
                 </tr>
                 <tr>
@@ -41,7 +45,7 @@
                     </td>
                     <td>
                         <asp:TextBox ID="txtCodCliente" runat="server" Columns="8" Enabled="False" MaxLength="8"></asp:TextBox>
-                        <asp:Button ID="btnBuscaPedidoCompra0" runat="server" CssClass="btn btn-secundary" data-target="#myModalCliente" data-toggle="modal" Text="..." />
+                        <Button runat="server" Class="btn btn-secundary" data-target="#myModalCliente" data-toggle="modal">...</Button>
                         <asp:TextBox ID="txtNomeCliente" runat="server" Columns="50" Enabled="False" MaxLength="50"></asp:TextBox>
                     </td>
                 </tr>

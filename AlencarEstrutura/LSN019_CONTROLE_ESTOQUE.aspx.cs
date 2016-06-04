@@ -11,7 +11,15 @@ namespace AlencarEstrutura
         private string erro = string.Empty;
         protected void Page_Load(object sender, EventArgs e)
         {
-            CarregaGvProduto();
+            if (!IsPostBack)
+            {
+                CarregaGvProduto();
+                if (!string.IsNullOrEmpty(lblQuantidadeDisponivel.Text))
+                    if (Convert.ToInt16(lblQuantidadeDisponivel.Text) < 1)
+                    {
+                        txtQuantidade.Enabled = false;
+                    }
+            }
         }
 
         protected void btnSalvar_Click(object sender, EventArgs e)
@@ -94,6 +102,7 @@ namespace AlencarEstrutura
             txtCodigo.Text = string.Empty;
             txtDescricao.Text = string.Empty;
             txtQuantidade.Text = string.Empty;
+            lblQuantidadeDisponivel.Text = string.Empty;
         }
 
         protected void txtBusca_TextChanged(object sender, EventArgs e)

@@ -33,6 +33,7 @@ namespace AlencarEstrutura
                 objOrcamento.Data = Convert.ToDateTime(DateTime.Now);
                 objOrcamento.Status = Convert.ToInt32(cbAprovado.Checked);
                 objOrcamento.Valor = Convert.ToDouble(lblTotal.Text);
+                objOrcamento.IdPessoa = Convert.ToInt32(txtCodCliente.Text);
 
                 if (!dbOrcamento.AtualizarOrcamento(objOrcamento, ref erro))
                 {
@@ -192,6 +193,8 @@ namespace AlencarEstrutura
         {
             txtCodigo.Text = orcamento.IdOrcamento.ToString();
             txtDescricao.Text = orcamento.Descricao;
+            txtCodCliente.Text = orcamento.IdPessoa.ToString();
+            txtNomeCliente.Text = orcamento.NomeCliente;
             cbAprovado.Checked = Convert.ToBoolean(orcamento.Status);
             carregaGvProduto();
         }
@@ -381,7 +384,6 @@ namespace AlencarEstrutura
 
         protected void btnLimpar_Click(object sender, EventArgs e)
         {
-            
             txtNomeCliente.Text = string.Empty;
             txtQtdeMetroQuadrado.Text = string.Empty;
             txtQuantidade.Text = string.Empty;

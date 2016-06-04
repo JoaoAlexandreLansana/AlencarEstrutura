@@ -241,7 +241,7 @@ namespace AlencarEstrutura
             }
             else if (objPessoa != null && objPessoa.TipoPessoa == "J")
             {
-                objPessoaPorTipo = dbPessoa.ObterPessoaJuridicaPorID(Convert.ToInt32(gvCliente.SelectedDataKey.Values), ref erro);
+                objPessoaPorTipo = dbPessoa.ObterPessoaJuridicaPorID(Convert.ToInt32(gvCliente.SelectedDataKey.Value), ref erro);
                 if (erro != "")
                 {
                     Session.Add("danger", "Não foi possível Carregar o Cliente selecionado!" + erro);

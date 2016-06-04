@@ -263,5 +263,21 @@ namespace AlencarEstrutura
             gvPedidos.DataBind();
             ClientScript.RegisterStartupScript(this.GetType(), "alert", "openModal();", true);
         }
+
+        protected void txtQuantidade_TextChanged(object sender, EventArgs e)
+        {
+            Produto objProduto = new Produto();
+            ProdutoDAL dbProduto = new ProdutoDAL();
+
+            objProduto = dbProduto.ObterProdutoPorID(Convert.ToInt32(ddlProduto.SelectedValue), ref erro);
+
+            txtValorPrevisto.Text = objProduto.Valor.ToString();
+
+            double valor = (string.IsNullOrEmpty(txtValorPrevisto.Text)) ? 0 : objProduto.Valor;
+
+            double total = valor * Convert.ToDouble(txtQuantidade.Text);
+
+            txtValorPrevisto.Text = total.ToString();
+        }
     }
 }

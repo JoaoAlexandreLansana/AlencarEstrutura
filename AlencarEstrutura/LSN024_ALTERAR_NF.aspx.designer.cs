@@ -10,7 +10,7 @@
 namespace AlencarEstrutura {
     
     
-    public partial class LSN023_GERARNF {
+    public partial class LSN024_ALTERAR_NF {
         
         /// <summary>
         /// pnlTitulo control.
@@ -40,15 +40,6 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.Panel pnlManutencao;
         
         /// <summary>
-        /// hdIdNF control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdIdNF;
-        
-        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>
@@ -76,6 +67,24 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.Button btnNotaFiscal;
         
         /// <summary>
+        /// lblOrcamento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOrcamento;
+        
+        /// <summary>
+        /// txtOrcamento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtOrcamento;
+        
+        /// <summary>
         /// Label6 control.
         /// </summary>
         /// <remarks>
@@ -101,24 +110,6 @@ namespace AlencarEstrutura {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNomeCliente;
-        
-        /// <summary>
-        /// lblDescricao control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescricao;
-        
-        /// <summary>
-        /// txtDescricao control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescricao;
         
         /// <summary>
         /// Label3 control.
@@ -202,6 +193,24 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.DropDownList ddlDesconto;
         
         /// <summary>
+        /// lblStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStatus;
+        
+        /// <summary>
+        /// ddlStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlStatus;
+        
+        /// <summary>
         /// hfValorReal control.
         /// </summary>
         /// <remarks>
@@ -211,49 +220,22 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.HiddenField hfValorReal;
         
         /// <summary>
-        /// btnVisualizar control.
+        /// btnSalvar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVisualizar;
+        protected global::System.Web.UI.WebControls.Button btnSalvar;
         
         /// <summary>
-        /// btnImprimir control.
+        /// btnCancela control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnImprimir;
-        
-        /// <summary>
-        /// btnCancelar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancelar;
-        
-        /// <summary>
-        /// pnlImprimir control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlImprimir;
-        
-        /// <summary>
-        /// CrystalReportViewer1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::CrystalDecisions.Web.CrystalReportViewer CrystalReportViewer1;
+        protected global::System.Web.UI.WebControls.Button btnCancela;
         
         /// <summary>
         /// lblBusca control.
@@ -292,12 +274,12 @@ namespace AlencarEstrutura {
         protected global::System.Web.UI.WebControls.Panel pnlBusca;
         
         /// <summary>
-        /// gvOrcamento control.
+        /// gvNF control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvOrcamento;
+        protected global::System.Web.UI.WebControls.GridView gvNF;
     }
 }

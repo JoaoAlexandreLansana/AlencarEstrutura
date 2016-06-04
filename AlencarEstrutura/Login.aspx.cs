@@ -18,20 +18,27 @@ namespace AlencarEstrutura
             UsuarioDAL dbUsuario = new UsuarioDAL();
             Usuario objUsuario = dbUsuario.ValidaUsuario(txtLogin.Text, txtSenha.Text);
             
-            if (objUsuario.idUsuario > 0 && objUsuario != null)
+            if(objUsuario !=null)
             {
-                HttpCookie cookie = new HttpCookie("Login");
-                cookie.Value = txtLogin.Text;
-                Response.Cookies.Add(cookie);
 
-                HttpCookie cookieId = new HttpCookie("IdUsuario");
-                cookieId.Value = objUsuario.idUsuario.ToString();
-                Response.Cookies.Add(cookieId);
-                FormsAuthentication.RedirectFromLoginPage(txtLogin.Text, true);
-            }
-            else
+                if (objUsuario.idUsuario > 0 && objUsuario != null)
+                {
+                    HttpCookie cookie = new HttpCookie("Login");
+                    cookie.Value = txtLogin.Text;
+                    Response.Cookies.Add(cookie);
+
+                    HttpCookie cookieId = new HttpCookie("IdUsuario");
+                    cookieId.Value = objUsuario.idUsuario.ToString();
+                    Response.Cookies.Add(cookieId);
+                    FormsAuthentication.RedirectFromLoginPage(txtLogin.Text, true);
+                }
+                else
+                {
+                    this.Session.Add("danger", "Usuário ou senha inválidos");
+                }
+            }else
             {
-                this.Session.Add("danger", "Usuário ou senha inválidos");
+                this.Session.Add("danger", "Usuário Inválido");
             }
         }
     }

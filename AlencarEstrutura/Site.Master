@@ -63,8 +63,7 @@
                                     <asp:LinkButton ID="lbCategoria" runat="server" OnClick="lbCategoria_Click">Categoria</asp:LinkButton></li>
                                 <li>
                                     <asp:LinkButton ID="lbCliente" runat="server" OnClick="lbCliente_Click">Cliente</asp:LinkButton></li>
-                                <li>
-                                    <asp:LinkButton ID="lbControleEstoque" runat="server" OnClick="lbControleEstoque_Click">Controle de Estoque</asp:LinkButton></li>
+                                
                                 <li>
                                     <asp:LinkButton ID="lbEstoque" runat="server" OnClick="lbEstoque_Click">Estoque</asp:LinkButton></li>
                                 <li>
@@ -72,7 +71,7 @@
                                 <li>
                                     <asp:LinkButton ID="lbFornecedor" runat="server" OnClick="lbFornecedor_Click">Fornecedor</asp:LinkButton></li>                                
                                 <li>
-                                    <asp:LinkButton ID="lbOrcamento" runat="server" OnClick="lbOrcamento_Click">Orçamentos</asp:LinkButton></li>
+                                    <asp:LinkButton ID="lbOrcamento" runat="server" OnClick="lbOrcamento_Click">Orçamento</asp:LinkButton></li>
                                 <li>
                                     <asp:LinkButton ID="lbPedidoCompra" runat="server" OnClick="lbPedidoCompra_Click">Pedido de Compra</asp:LinkButton></li>
                                 <li>
@@ -86,19 +85,22 @@
                             <ul class="dropdown-menu">
                                 <li>
                                     <asp:LinkButton ID="lbImprimirOrcamento" runat="server" OnClick="lbImprimirOrcamento_Click">Orçamentos</asp:LinkButton></li>
+                                
+                                <li>
+                                    <asp:LinkButton ID="lbImprimirPedidoCompra" runat="server" OnClick="lbImprimirPedidoCompra_Click">Pedido de Compra</asp:LinkButton></li>
                                 <li>
                                     <asp:LinkButton ID="lbGeraNF" runat="server" OnClick="lbGeraNF_Click">Gerar Nota Fiscal</asp:LinkButton></li>
                                 <li>
-                                    <asp:LinkButton ID="lbImprimirPedidoCompra" runat="server" OnClick="lbImprimirPedidoCompra_Click">Pedido de Compra</asp:LinkButton></li>
+                                    <asp:LinkButton ID="lbAlteraNF" runat="server" OnClick="lbAlteraNF_Click">Alterar Nota Fiscal</asp:LinkButton></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Estoque <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <asp:LinkButton ID="lbSolicitarProduto" runat="server" OnClick="lbSolicitarProduto_Click">Solicitar Produtos</asp:LinkButton></li>
-                                <li>
                                     <asp:LinkButton ID="lbArmazenarProduto" runat="server" OnClick="lbArmazenarProduto_Click">Armazenar Produtos</asp:LinkButton></li>
+                                <li>
+                                    <asp:LinkButton ID="lbControleEstoque" runat="server" OnClick="lbControleEstoque_Click">Solicitar Produtos</asp:LinkButton></li>
                                 <li>
                                     <asp:LinkButton ID="lbConsultaEstoque" runat="server" OnClick="lbConsultaEstoque_Click">Consultar Estoque</asp:LinkButton></li>
                             </ul>

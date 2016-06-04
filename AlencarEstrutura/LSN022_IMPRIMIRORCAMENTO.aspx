@@ -39,7 +39,9 @@
                 <tr>
                     <td style="width: 137px; height: 39px;"></td>
                     <td style="height: 39px">
-                        <asp:Button ID="btnImprimir" runat="server" CssClass="btn btn-primary" Text="Imprimir" Width="80px" OnClick="btnImprimir_Click" />
+                        <asp:Button ID="btnVisualizar" runat="server" CssClass="btn btn-default" Text="Visualizar" Width="80px" OnClick="btnVisualizar_Click" />
+                        <asp:Button ID="btnImprimir0" runat="server" CssClass="btn btn-primary" OnClick="btnImprimir_Click" Text="Imprimir" Width="80px" />
+                        <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-info" OnClick="btnCancelar_Click" Text="Cancelar" Width="80px" />
                     </td>
                 </tr>
             </table>

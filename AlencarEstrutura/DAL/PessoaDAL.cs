@@ -394,7 +394,7 @@ namespace AlencarEstrutura.DAL
                                       TB6.ATSF013_SIGLA
                                     FROM ALC014T_PESSOA TB1
                                     INNER JOIN ALC016T_PESSOAJURIDICA TB2
-                                    ON TB1.PKNI014_IDPESSOA = TB2.FKNI015_IDPESSOA
+                                    ON TB1.PKNI014_IDPESSOA = TB2.FKNI016_IDPESSOA
                                     INNER JOIN ALC008T_ENDERECO TB3
                                     ON TB1.PKNI014_IDPESSOA = TB3.FKNI008_IDPESSOA
                                     INNER JOIN ALC009T_TELEFONE TB4

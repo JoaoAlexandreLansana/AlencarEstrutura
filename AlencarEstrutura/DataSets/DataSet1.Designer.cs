@@ -596,7 +596,6 @@ namespace AlencarEstrutura.DataSets {
                 this.columnFKNI018_IDPEDIDOCOMPRA.AllowDBNull = false;
                 this.columnATSF003_DESCRICAO.MaxLength = 20;
                 this.columnATSF007_NOMEFANTASIA.MaxLength = 40;
-                this.columnATNI002_CNPJ.AllowDBNull = false;
                 this.columnATSF002_NOMEFANTASIA.MaxLength = 40;
                 this.columnATSF002_RAZAOSOCIAL.MaxLength = 40;
                 this.columnATSF002_EMAIL.MaxLength = 100;
@@ -907,7 +906,12 @@ namespace AlencarEstrutura.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal ATNI002_CNPJ {
                 get {
-                    return ((decimal)(this[this.tableBUSCA_PEDIDO_COMPRA.ATNI002_CNPJColumn]));
+                    try {
+                        return ((decimal)(this[this.tableBUSCA_PEDIDO_COMPRA.ATNI002_CNPJColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ATNI002_CNPJ\' in table \'BUSCA_PEDIDO_COMPRA\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableBUSCA_PEDIDO_COMPRA.ATNI002_CNPJColumn] = value;
@@ -1046,6 +1050,18 @@ namespace AlencarEstrutura.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetATSF007_NOMEFANTASIANull() {
                 this[this.tableBUSCA_PEDIDO_COMPRA.ATSF007_NOMEFANTASIAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsATNI002_CNPJNull() {
+                return this.IsNull(this.tableBUSCA_PEDIDO_COMPRA.ATNI002_CNPJColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetATNI002_CNPJNull() {
+                this[this.tableBUSCA_PEDIDO_COMPRA.ATNI002_CNPJColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
