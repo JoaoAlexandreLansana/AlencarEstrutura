@@ -105,6 +105,8 @@
                                 <td>
                                     <asp:Panel ID="pnlGrid" runat="server" ScrollBars="Auto" Height="200" Width="400">
                                         <asp:GridView ID="gvProduto" runat="server" DataKeyNames="IdProduto" OnSelectedIndexChanged="gvProduto_SelectedIndexChanged" AutoGenerateColumns="false">
+                                            <HeaderStyle BackColor="#8181F7"
+                                                ForeColor="black" />
                                             <Columns>
                                                 <asp:BoundField HeaderText="Codigo" DataField="IdProduto" />
                                                 <asp:BoundField HeaderText="Descrição" DataField="Descricao" />

@@ -20,6 +20,8 @@
                     <td style="width: 137px">
                         <asp:Panel ID="pnlGrid" runat="server" ScrollBars="Auto" Height="400">
                             <asp:GridView ID="gvEstoque" runat="server" Width="100%" DataKeyNames="IdEstoque" AutoGenerateColumns="false" >
+                                <HeaderStyle BackColor="#8181F7"
+                                    ForeColor="black" />
                                         <Columns>
                                             <asp:BoundField DataField="IdEstoque" HeaderText="Codigo" />
                                             <asp:BoundField DataField="Descricao" HeaderText="Descrição" />

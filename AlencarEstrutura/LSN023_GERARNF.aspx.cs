@@ -19,6 +19,7 @@ namespace AlencarEstrutura
         }
         public void carregaGvOrcamento()
         {
+            btnCancelar_Click(this, null);
             Orcamento objOrcamento = new Orcamento();
             OrcamentoDAL dbOrcamento = new OrcamentoDAL();
             DataTable dtOrcamento = dbOrcamento.ObterListaOrcamentoPorStatus(ref erro);

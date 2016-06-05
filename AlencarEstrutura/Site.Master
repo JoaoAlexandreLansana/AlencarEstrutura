@@ -19,6 +19,19 @@
             $('#myModal').modal('show');
         }
     </script>
+     <script src="Scripts/jquery-2.1.1.min.js"></script>
+     <script src="Scripts/jquery.maskedinput.min.js"></script>
+     <script type="text/javascript">
+         jQuery(function ($) {
+             $("#txtData").mask("99/99/9999");
+             $("#txtTelefone").mask("(099) 9999-9999");
+             $("#txtCep").mask("99999-999");
+             $("#txtCPF").mask("999.999.999-99");
+             $("#txtCNPJ").mask("99.999.999/9999-99");
+             $("#txtPlacaVeiculo").mask("aaa - 9999");
+             $("#txtIP").mask('099.099.099.099');
+         });
+    </script>
 </head>
 <body>
 
@@ -63,13 +76,13 @@
                                     <asp:LinkButton ID="lbCategoria" runat="server" OnClick="lbCategoria_Click">Categoria</asp:LinkButton></li>
                                 <li>
                                     <asp:LinkButton ID="lbCliente" runat="server" OnClick="lbCliente_Click">Cliente</asp:LinkButton></li>
-                                
+
                                 <li>
                                     <asp:LinkButton ID="lbEstoque" runat="server" OnClick="lbEstoque_Click">Estoque</asp:LinkButton></li>
                                 <li>
                                     <asp:LinkButton ID="lbCadEmpresa" runat="server" OnClick="lbCadEmpresa_Click">Empresa</asp:LinkButton></li>
                                 <li>
-                                    <asp:LinkButton ID="lbFornecedor" runat="server" OnClick="lbFornecedor_Click">Fornecedor</asp:LinkButton></li>                                
+                                    <asp:LinkButton ID="lbFornecedor" runat="server" OnClick="lbFornecedor_Click">Fornecedor</asp:LinkButton></li>
                                 <li>
                                     <asp:LinkButton ID="lbOrcamento" runat="server" OnClick="lbOrcamento_Click">Orçamento</asp:LinkButton></li>
                                 <li>
@@ -85,7 +98,7 @@
                             <ul class="dropdown-menu">
                                 <li>
                                     <asp:LinkButton ID="lbImprimirOrcamento" runat="server" OnClick="lbImprimirOrcamento_Click">Orçamentos</asp:LinkButton></li>
-                                
+
                                 <li>
                                     <asp:LinkButton ID="lbImprimirPedidoCompra" runat="server" OnClick="lbImprimirPedidoCompra_Click">Pedido de Compra</asp:LinkButton></li>
                                 <li>
@@ -144,11 +157,11 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - João Alexandre</p>
-            </footer>
-        </div>
 
+        </div>
+        <div class="footer navbar-inverse" align="center" style="color:silver">
+            <p>&copy; <%: DateTime.Now.Year %> - João Alexandre</p>
+        </div>
     </form>
 </body>
 </html>

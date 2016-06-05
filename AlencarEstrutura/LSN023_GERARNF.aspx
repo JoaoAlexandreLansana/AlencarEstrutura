@@ -110,6 +110,8 @@
                                     <asp:Panel ID="pnlBusca" runat="server" Height="200">
                                         <asp:GridView ID="gvOrcamento" runat="server" Width="100%" DataKeyNames="PKNI020_IDORCAMENTO" AllowPaging="True"
                                             EnableModelValidation="True" AutoGenerateColumns="false" OnSelectedIndexChanged="gvOrcamento_SelectedIndexChanged" OnPageIndexChanging="gvOrcamento_PageIndexChanging">
+                                            <HeaderStyle BackColor="#8181F7"
+                                                ForeColor="black" />
                                             <Columns>
                                                 <asp:BoundField HeaderText="Codigo" DataField="PKNI020_IDORCAMENTO" />
                                                 <asp:BoundField HeaderText="Descrição" DataField="ATSF020_DESCRICAO" />

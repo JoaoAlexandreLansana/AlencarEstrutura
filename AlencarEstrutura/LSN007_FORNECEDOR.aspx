@@ -127,9 +127,9 @@
                 <tr>
                     <td>&nbsp;</td>
                     <td>
-                        <asp:Button ID="btnSalvar" runat="server" Text="Salvar" CssClass="btn btn-primary" OnClick="btnSalvar_Click" Width="80"/>
-                        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-info" OnClick="btnCancelar_Click" Width="80"/>
-                        <asp:Button ID="btnExcluir" runat="server" CssClass="btn btn-warning" Text="Excluir" Width="80"/>
+                        <asp:Button ID="btnSalvar" runat="server" Text="Salvar" CssClass="btn btn-primary" OnClick="btnSalvar_Click" Width="80" />
+                        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-info" OnClick="btnCancelar_Click" Width="80" />
+                        <asp:Button ID="btnExcluir" runat="server" CssClass="btn btn-warning" Text="Excluir" Width="80" />
                     </td>
                 </tr>
             </table>
@@ -157,6 +157,8 @@
                                 <td>
                                     <asp:Panel ID="pnlGrid" runat="server" Width="400" Height="300">
                                         <asp:GridView ID="gvFornecedor" runat="server" DataKeyNames="CODIGO" OnSelectedIndexChanged="gvFornecedor_SelectedIndexChanged" Width="100%">
+                                            <HeaderStyle BackColor="#8181F7"
+                                                ForeColor="black" />
                                             <Columns>
                                             </Columns>
                                         </asp:GridView>

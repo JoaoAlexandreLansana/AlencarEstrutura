@@ -2,7 +2,7 @@
 
 <%@ Register Assembly="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" Namespace="CrystalDecisions.Web" TagPrefix="CR" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-        <div>
+    <div>
         <asp:Panel ID="pnlTitulo" runat="server" HorizontalAlign="Center">
             <table style="width: 100%">
                 <tr>
@@ -68,7 +68,8 @@
                             <asp:ListItem Value="15">15%</asp:ListItem>
                             <asp:ListItem Value="20">20%</asp:ListItem>
                         </asp:DropDownList>
-                        &nbsp;<asp:Label ID="lblStatus" Text="Status" runat="server"></asp:Label> &nbsp;<asp:DropDownList ID="ddlStatus" runat="server">
+                        &nbsp;<asp:Label ID="lblStatus" Text="Status" runat="server"></asp:Label>
+                        &nbsp;<asp:DropDownList ID="ddlStatus" runat="server">
                             <asp:ListItem Value="0">Emitida</asp:ListItem>
                             <asp:ListItem Value="1">Paga</asp:ListItem>
                             <asp:ListItem Value="2">Cancelada</asp:ListItem>
@@ -114,6 +115,8 @@
                                     <asp:Panel ID="pnlBusca" runat="server" Height="200">
                                         <asp:GridView ID="gvNF" runat="server" Width="100%" DataKeyNames="IdNotaFiscal" AllowPaging="True"
                                             EnableModelValidation="True" AutoGenerateColumns="false" OnSelectedIndexChanged="gvNF_SelectedIndexChanged">
+                                            <HeaderStyle BackColor="#8181F7"
+                                                ForeColor="black" />
                                             <Columns>
                                                 <asp:BoundField HeaderText="Codigo" DataField="IdNotaFiscal" />
                                                 <asp:BoundField HeaderText="No. Orçamento" DataField="IdOrcamento" />

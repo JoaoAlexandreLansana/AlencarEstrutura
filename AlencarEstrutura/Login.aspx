@@ -52,6 +52,7 @@
         </div>
         <div id="img-logo">
             <table style="width: 100%">
+                <tr><td> &nbsp; &nbsp;</td></tr>
                 <tr>
                     <td align="center">
                         <img src="image/login_button.png" style="height: 186px; width: 190px" /></td>
@@ -59,7 +60,7 @@
             </table>
         </div>
         <div align="center">
-            <asp:Panel ID="pblLogin" GroupingText="Alencar Estruturas" runat="server" Width="50%">
+            <asp:Panel ID="pblLogin" GroupingText="Bem Vindo!" runat="server" Width="50%">
                 <table style="width: 50%">
                     <tr>
                         <td>
@@ -84,5 +85,6 @@
             </asp:Panel>
         </div>
     </form>
+    <div id="footer" class="footer" align="left">Developed by - João Alexandre</div>
 </body>
 </html>

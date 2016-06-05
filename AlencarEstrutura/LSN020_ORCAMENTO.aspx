@@ -22,8 +22,8 @@
                         <asp:Label ID="Label1" runat="server" Text="Código"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtCodigo" runat="server" Columns="8" MaxLength="10" Enabled="false"></asp:TextBox>
-                        <button type="button" Class="btn btn-secundary" data-target="#myModal" data-toggle="modal">...</button>
+                        <asp:TextBox ID="txtCodigo" runat="server" Columns="8" MaxLength="10" Enabled="false" required="required"></asp:TextBox>
+                        <button type="button" class="btn btn-secundary" data-target="#myModal" data-toggle="modal">...</button>
                         <asp:HiddenField ID="hfCodigoProdutoOrcamento" runat="server" />
                     </td>
                 </tr>
@@ -32,11 +32,11 @@
                         <asp:Label ID="Label5" runat="server" Text="Descrição"></asp:Label>
                     </td>
                     <td>
-                        <asp:TextBox ID="txtDescricao" runat="server" Columns="50" MaxLength="50"></asp:TextBox>
-                        <asp:TextBox ID="txtVencimento" runat="server" Columns="10" MaxLength="10"></asp:TextBox>
+                        <asp:TextBox ID="txtDescricao" runat="server" Columns="50" MaxLength="50" required="required"></asp:TextBox>
+                        <asp:TextBox ID="txtVencimento" runat="server" Columns="10" MaxLength="10" required="required" data-mask="00/00/0000"></asp:TextBox>
                         <ajaxToolkit:CalendarExtender ID="txtDataInicial_CalendarExtender" runat="server" TargetControlID="txtVencimento" DaysModeTitleFormat="dd/MM/yyyy" Format="dd/MM/yyyy" TodaysDateFormat="dd/MM/yyyy" />
-                        <cc1:filteredtextboxextender id="ftbVencimento" runat="server" filtertype="Numbers,Custom"
-                            targetcontrolid="txtVencimento" ValidChars="/"/>
+                        <cc1:FilteredTextBoxExtender ID="ftbVencimento" runat="server" FilterType="Numbers,Custom"
+                            TargetControlID="txtVencimento" ValidChars="/" />
                     </td>
                 </tr>
                 <tr>
@@ -45,7 +45,7 @@
                     </td>
                     <td>
                         <asp:TextBox ID="txtCodCliente" runat="server" Columns="8" Enabled="False" MaxLength="8"></asp:TextBox>
-                        <Button runat="server" Class="btn btn-secundary" data-target="#myModalCliente" data-toggle="modal">...</Button>
+                        <button runat="server" class="btn btn-secundary" data-target="#myModalCliente" data-toggle="modal">...</button>
                         <asp:TextBox ID="txtNomeCliente" runat="server" Columns="50" Enabled="False" MaxLength="50"></asp:TextBox>
                     </td>
                 </tr>
@@ -59,12 +59,12 @@
                         </asp:DropDownList>
                         <asp:Label ID="lblQuantidade" runat="server" Text="Quantidade"></asp:Label>
                         <asp:TextBox ID="txtQuantidade" runat="server" Columns="8" MaxLength="8"></asp:TextBox>
-                        <cc1:filteredtextboxextender id="ftbTelefone" runat="server" filtertype="Numbers,Custom"
-                            targetcontrolid="txtQuantidade" ValidChars=".,"/>
+                        <cc1:FilteredTextBoxExtender ID="ftbTelefone" runat="server" FilterType="Numbers,Custom"
+                            TargetControlID="txtQuantidade" ValidChars=".," />
                         <asp:Label ID="Label6" runat="server" Text="Metros²"></asp:Label>
                         <asp:TextBox ID="txtQtdeMetroQuadrado" runat="server" Columns="8" MaxLength="8"></asp:TextBox>
-                        <cc1:filteredtextboxextender id="ftbMetro" runat="server" filtertype="Numbers,Custom"
-                            targetcontrolid="txtQtdeMetroQuadrado" ValidChars=".,"/>
+                        <cc1:FilteredTextBoxExtender ID="ftbMetro" runat="server" FilterType="Numbers,Custom"
+                            TargetControlID="txtQtdeMetroQuadrado" ValidChars=".," />
                         <asp:Label ID="lblValor" runat="server" Text="Valor Unit."></asp:Label>
                         <asp:CheckBox ID="cbValorUnitario" runat="server" OnCheckedChanged="cbValorUnitario_CheckedChanged" AutoPostBack="true" Checked="true" />
                         <asp:TextBox ID="txtValorPrevisto" runat="server" Columns="6" Enabled="False"></asp:TextBox>
@@ -74,7 +74,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td >&nbsp;</td>
+                    <td>&nbsp;</td>
                     <td align="right">
                         <asp:Button ID="btnAdicionar" runat="server" CssClass="btn btn-primary" Text="Adicionar" OnClick="btnAdicionar_Click" Width="80px" />
                         <asp:Button ID="btnLimpar" runat="server" CssClass="btn btn-info" Text="Limpar" Width="80px" OnClick="btnLimpar_Click" />
@@ -86,6 +86,8 @@
                     <td>
                         <asp:Panel ID="pnlGrid" runat="server" ScrollBars="Auto" Height="200">
                             <asp:GridView ID="gvProdutos" runat="server" AutoGenerateColumns="false" Width="100%" DataKeyNames="PKNI022_IDPRODUTO_ORCAMENTO" OnSelectedIndexChanged="gvProdutos_SelectedIndexChanged">
+                                <HeaderStyle BackColor="#8181F7"
+                                    ForeColor="black" />
                                 <Columns>
                                     <asp:BoundField HeaderText="Cod. Produto" DataField="FKNI022_IDPRODUTO" />
                                     <asp:BoundField HeaderText="Descrição" DataField="ATSF003_DESCRICAO" />
@@ -137,12 +139,14 @@
                                 <td>
                                     <asp:Panel ID="pnlModal" runat="server" ScrollBars="Auto" Height="200">
                                         <asp:GridView ID="gvOrcamento" runat="server" Width="100%" DataKeyNames="PKNI020_IDORCAMENTO" AutoGenerateColumns="false" OnSelectedIndexChanged="gvOrcamento_SelectedIndexChanged">
-                                        <Columns>
-                                            <asp:BoundField HeaderText="Codigo" DataField="PKNI020_IDORCAMENTO" />
-                                            <asp:BoundField HeaderText="Descrição" DataField="ATSF020_DESCRICAO" />
-                                        </Columns>
-                                    </asp:GridView>
-                                    </asp:Panel>                                    
+                                            <HeaderStyle BackColor="#8181F7"
+                                                ForeColor="black" />
+                                            <Columns>
+                                                <asp:BoundField HeaderText="Codigo" DataField="PKNI020_IDORCAMENTO" />
+                                                <asp:BoundField HeaderText="Descrição" DataField="ATSF020_DESCRICAO" />
+                                            </Columns>
+                                        </asp:GridView>
+                                    </asp:Panel>
                                 </td>
                             </tr>
                         </table>
@@ -177,13 +181,15 @@
                                 <td>
                                     <asp:Panel ID="pnlModal2" runat="server" ScrollBars="Auto" Height="200">
                                         <asp:GridView ID="gvCliente" runat="server" Width="100%" DataKeyNames="CODIGO" AutoGenerateColumns="false" OnSelectedIndexChanged="gvCliente_SelectedIndexChanged">
-                                        <Columns>
-                                            <asp:BoundField HeaderText="Código" DataField="CODIGO" />
-                                            <asp:BoundField HeaderText="Nome" DataField="NOME" />
-                                            <asp:BoundField HeaderText="Tipo Pessoa" DataField="TIPOPESSOA" />
-                                        </Columns>
-                                    </asp:GridView>
-                                    </asp:Panel>                                    
+                                            <HeaderStyle BackColor="#8181F7"
+                                                ForeColor="black" />
+                                            <Columns>
+                                                <asp:BoundField HeaderText="Código" DataField="CODIGO" />
+                                                <asp:BoundField HeaderText="Nome" DataField="NOME" />
+                                                <asp:BoundField HeaderText="Tipo Pessoa" DataField="TIPOPESSOA" />
+                                            </Columns>
+                                        </asp:GridView>
+                                    </asp:Panel>
                                 </td>
                             </tr>
                         </table>

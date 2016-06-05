@@ -68,6 +68,8 @@
                     <td style="width: 137px">&nbsp;</td>
                     <td>
                         <asp:GridView ID="gvProdutos" runat="server" AutoGenerateColumns="false" Width="100%" DataKeyNames="PKNI018_IDPRODUTO_PEDIDO" OnSelectedIndexChanged="gvProdutos_SelectedIndexChanged">
+                            <HeaderStyle BackColor="#8181F7"
+                                ForeColor="black" />
                             <Columns>
                                 <asp:BoundField HeaderText="Cod. Produto" DataField="FKNI018_IDPRODUTO" />
                                 <asp:BoundField HeaderText="Descrição" DataField="ATSF003_DESCRICAO" />
@@ -110,6 +112,8 @@
                                 <td>
                                     <asp:Panel ID="pblGrid" runat="server" Height="300" ScrollBars="Auto" Width="400">
                                         <asp:GridView ID="gvPedidos" runat="server" Width="100%" DataKeyNames="PKNI006_IDPEDIDOCOMPRA" AutoGenerateColumns="false" OnSelectedIndexChanged="gvPedidos_SelectedIndexChanged">
+                                            <HeaderStyle BackColor="#8181F7"
+                                                ForeColor="black" />
                                             <Columns>
                                                 <asp:BoundField HeaderText="Codigo Pedido Compra" DataField="PKNI006_IDPEDIDOCOMPRA" />
                                                 <asp:BoundField HeaderText="Data" DataField="ATDT006_DATAPEDIDO" />

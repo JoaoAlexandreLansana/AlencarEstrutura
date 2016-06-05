@@ -71,6 +71,8 @@
                             <tr>
                                 <td>
                                     <asp:GridView ID="gvOrcamento" runat="server" Width="100%" DataKeyNames="PKNI020_IDORCAMENTO" AutoGenerateColumns="false" OnSelectedIndexChanged="gvOrcamento_SelectedIndexChanged">
+                                        <HeaderStyle BackColor="#8181F7"
+                                            ForeColor="black" />
                                         <Columns>
                                             <asp:BoundField HeaderText="Codigo" DataField="PKNI020_IDORCAMENTO" />
                                             <asp:BoundField HeaderText="Descrição" DataField="ATSF020_DESCRICAO" />

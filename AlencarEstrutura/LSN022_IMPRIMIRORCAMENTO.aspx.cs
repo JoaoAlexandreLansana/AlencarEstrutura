@@ -24,6 +24,7 @@ namespace AlencarEstrutura
 
         protected void gvOrcamento_SelectedIndexChanged(object sender, EventArgs e)
         {
+            btnCancelar_Click(this, null);
             Orcamento objOrcamento = new Orcamento();
             OrcamentoDAL dbOrcamento = new OrcamentoDAL();
 

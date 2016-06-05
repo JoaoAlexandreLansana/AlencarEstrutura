@@ -36,6 +36,12 @@ summary {
   display: block;
 }
 
+.footer{
+    position:absolute;
+	bottom:0;
+	width:100%;
+}
+
 audio,
 canvas,
 video {
@@ -5410,6 +5416,7 @@ a.list-group-item:focus {
   border-top: 1px solid #dddddd;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
+  bottom:0;
 }
 
 .panel-group .panel {

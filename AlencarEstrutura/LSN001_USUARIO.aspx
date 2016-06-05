@@ -100,6 +100,8 @@
                         <tr>
                             <td>
                                 <asp:GridView ID="gvUsuario" runat="server" DataKeyNames="PKNI001_IDUSUARIO" OnSelectedIndexChanged="gvUsuario_SelectedIndexChanged" AutoGenerateColumns="false">
+                                    <HeaderStyle BackColor="#8181F7"
+                                    ForeColor="black" />
                                     <Columns>
                                         <asp:BoundField HeaderText =" Cod. Usuario" DataField ="PKNI001_IDUSUARIO" />
                                         <asp:BoundField HeaderText =" Nome "        DataField ="ATSF001_NOME" />

@@ -89,6 +89,8 @@
                             <tr>
                                 <td>
                                     <asp:GridView ID="gvProduto" runat="server" Width="100%" DataKeyNames="IdEstoque" AutoGenerateColumns="false" OnSelectedIndexChanged="gvProduto_SelectedIndexChanged">
+                                        <HeaderStyle BackColor="#8181F7"
+                                            ForeColor="black" />
                                         <Columns>
                                             <asp:BoundField HeaderText="Descrição" DataField="Descricao" />
                                             <asp:BoundField HeaderText="Quantidade" DataField="Quantidade" />

@@ -34,6 +34,7 @@ namespace AlencarEstrutura
                 objOrcamento.Status = Convert.ToInt32(cbAprovado.Checked);
                 objOrcamento.Valor = Convert.ToDouble(lblTotal.Text);
                 objOrcamento.IdPessoa = Convert.ToInt32(txtCodCliente.Text);
+                objOrcamento.Vencimento = Convert.ToDateTime(txtVencimento.Text);
 
                 if (!dbOrcamento.AtualizarOrcamento(objOrcamento, ref erro))
                 {
@@ -56,6 +57,7 @@ namespace AlencarEstrutura
         {
             txtCodigo.Text = string.Empty;
             txtDescricao.Text = string.Empty;
+            txtVencimento.Text = string.Empty;
             txtNomeCliente.Text = string.Empty;
             txtQtdeMetroQuadrado.Text = string.Empty;
             txtQuantidade.Text = string.Empty;
@@ -195,18 +197,26 @@ namespace AlencarEstrutura
             txtDescricao.Text = orcamento.Descricao;
             txtCodCliente.Text = orcamento.IdPessoa.ToString();
             txtNomeCliente.Text = orcamento.NomeCliente;
+            txtVencimento.Text = orcamento.Vencimento.ToString("dd/MM/yyyy");
             cbAprovado.Checked = Convert.ToBoolean(orcamento.Status);
             carregaGvProduto();
         }
 
         protected void btnAdicionar_Click(object sender, EventArgs e)
         {
+            if (!validacoes())
+            {
+                Session.Add("danger", "Preencha os campos corretamente!");
+                return;
+            }
+
             Orcamento objOrcamento = new Orcamento();
             OrcamentoDAL dbOrcamento = new OrcamentoDAL();
 
             objOrcamento.IdOrcamento = (string.IsNullOrEmpty(txtCodigo.Text)) ? 0 : Convert.ToInt32(txtCodigo.Text);
 
             objOrcamento.Descricao = txtDescricao.Text;
+            objOrcamento.Vencimento = Convert.ToDateTime(txtVencimento.Text);
             objOrcamento.IdPessoa = Convert.ToInt32(txtCodCliente.Text);
             objOrcamento.IdProduto = (string.IsNullOrEmpty(ddlProduto.SelectedValue)) ? 0 : Convert.ToInt32(ddlProduto.SelectedValue);
             objOrcamento.Quantidade = (string.IsNullOrEmpty(txtQuantidade.Text)) ? 0 : Convert.ToDecimal(txtQuantidade.Text);
@@ -402,6 +412,18 @@ namespace AlencarEstrutura
             gvOrcamento.AutoGenerateSelectButton = true;
             gvOrcamento.DataBind();
             ClientScript.RegisterStartupScript(this.GetType(), "alert", "openModal();", true);
+        }
+
+        private bool Validacoes()
+        {
+            if (string.IsNullOrEmpty(txtDescricao.Text) || string.IsNullOrEmpty(txtVencimento.Text) || ddlProduto.SelectedValue == "" || string.IsNullOrEmpty(txtQuantidade.Text))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

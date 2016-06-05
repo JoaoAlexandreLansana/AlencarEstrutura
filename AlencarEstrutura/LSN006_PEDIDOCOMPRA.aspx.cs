@@ -40,6 +40,7 @@ namespace AlencarEstrutura
 
         protected void gvPedidos_SelectedIndexChanged(object sender, EventArgs e)
         {
+            btnCancelar_Click(this, null);
             CarregaGVProdutos(Convert.ToInt32(gvPedidos.SelectedDataKey.Value));
             txtCodigo.Text = gvPedidos.SelectedDataKey.Value.ToString();
         }

@@ -735,9 +735,12 @@
       <DependentUpon>LSN023_NOTAFISCAL.xsd</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\AlencarPublish.pubxml" />
+    <Content Include="Scripts\.gitignore" />
+    <Content Include="Scripts\Jakefile" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="image\loading.gif" />
     <Content Include="image\login_button.png" />
+    <Content Include="image\soldadura.png" />
     <Content Include="Login.aspx" />
     <Content Include="LSN001_USUARIO.aspx" />
     <Content Include="LSN002_EMPRESA.aspx" />
@@ -796,6 +799,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Scripts\jquery.maskedinput" />
+    <Content Include="Scripts\maskedinput.jquery.json" />
+    <Content Include="Scripts\plugin.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1052,7 +1058,14 @@
       <LastGenOutput>LSN023_GERARNF_.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Scripts\demo\" />
+    <Folder Include="Scripts\dist\" />
+    <Folder Include="Scripts\lib\" />
+    <Folder Include="Scripts\spec\" />
+    <Folder Include="Scripts\src\" />
+    <Folder Include="Scripts\templates\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

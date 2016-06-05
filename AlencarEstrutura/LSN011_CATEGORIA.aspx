@@ -52,7 +52,7 @@
                     <td style="height: 39px">
                         <asp:Button ID="btnSalvar" runat="server" CssClass="btn btn-primary" OnClick="btnSalvar_Click" Text="Salvar" Width="80px" />
                         <asp:Button ID="btnCancelar" runat="server" CssClass="btn btn-info" OnClick="btnCancelar_Click" Text="Cancelar" Width="80px" />
-                        <asp:Button ID="btnExcluir" runat="server" CssClass="btn btn-warning" OnClick="btnExcluir_Click" Text="Excluir" Width="80px" />                        
+                        <asp:Button ID="btnExcluir" runat="server" CssClass="btn btn-warning" OnClick="btnExcluir_Click" Text="Excluir" Width="80px" />
                     </td>
                 </tr>
             </table>
@@ -71,12 +71,14 @@
                                 <td>
                                     <asp:Label ID="lblBusca" runat="server" Text="Buscar"></asp:Label>
                                     <asp:TextBox ID="txtBusca" runat="server" OnTextChanged="txtBusca_TextChanged" AutoPostBack="true" onBlur="openModal()"></asp:TextBox>
-                                    <asp:Button ID="btnBusca" runat="server" Text="Buscar" CssClass="btn btn-info" data-target="#myModal" data-toggle="modal" OnClick="txtBusca_TextChanged"/>
+                                    <asp:Button ID="btnBusca" runat="server" Text="Buscar" CssClass="btn btn-info" data-target="#myModal" data-toggle="modal" OnClick="txtBusca_TextChanged" />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <asp:GridView ID="gvCategoria" runat="server" DataKeyNames="IdCategoria" OnSelectedIndexChanged="gvCategoria_SelectedIndexChanged">
+                                        <HeaderStyle BackColor="#8181F7"
+                                            ForeColor="black" />
                                         <Columns>
                                         </Columns>
                                     </asp:GridView>

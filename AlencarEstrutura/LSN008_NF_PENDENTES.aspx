@@ -13,14 +13,17 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Panel ID="pnlGridOrcamento" runat="server" ScrollBars="Auto" Height="200" GroupingText="Orçamentos Pendentes">
-                            <asp:GridView ID="gvOrcamentos" runat="server" AutoGenerateColumns="false" Width="100%">
+                        <asp:Panel ID="pnlGridOrcamento" runat="server" ScrollBars="Auto" Height="200">
+                            <button class="btn btn-warning-outline btn-lg btn-block">Orçamentos Pendentes</button>
+                            <asp:GridView ID="gvOrcamentos" runat="server" AutoGenerateColumns="false" Width="100%" emptydatatext="Não há dados" >
+                                <HeaderStyle BackColor="#8181F7"
+                                    ForeColor="black" />
                                 <Columns>
-                                    <asp:BoundField HeaderText="Codigo" DataField="PKNI020_IDORCAMENTO"/>
-                                    <asp:BoundField HeaderText="Descrição" DataField="ATSF020_DESCRICAO"/>
-                                    <asp:BoundField HeaderText="Data Criação" DataField="ATDT020_DATA"/>
-                                    <asp:BoundField HeaderText="Vencimento" DataField="ATDT020_VENCIMENTO"/>
-                                    <asp:BoundField HeaderText="Valor" DataField="ATDC020_VALOR"/>
+                                    <asp:BoundField HeaderText="Codigo" DataField="PKNI020_IDORCAMENTO" />
+                                    <asp:BoundField HeaderText="Descrição" DataField="ATSF020_DESCRICAO" />
+                                    <asp:BoundField HeaderText="Data Criação" DataField="ATDT020_DATA" />
+                                    <asp:BoundField HeaderText="Vencimento" DataField="ATDT020_VENCIMENTO" />
+                                    <asp:BoundField HeaderText="Valor" DataField="ATDC020_VALOR" />
                                 </Columns>
                             </asp:GridView>
                         </asp:Panel>
@@ -28,8 +31,11 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Panel ID="pnlGridNotas" runat="server" ScrollBars="Auto" Height="200" GroupingText="Notas Fiscais Pendentes">
-                            <asp:GridView ID="gvNotas" runat="server" AutoGenerateColumns="false" Width="100%">
+                        <asp:Panel ID="pnlGridNotas" runat="server" ScrollBars="Auto" Height="200">
+                            <button class="btn btn-warning-outline btn-lg btn-block">Notas Fiscais Pendentes</button>
+                            <asp:GridView ID="gvNotas" runat="server" AutoGenerateColumns="false" Width="100%" emptydatatext="Não há dados">
+                                <HeaderStyle BackColor="#8181F7"
+                                    ForeColor="black" />
                                 <Columns>
                                     <asp:BoundField HeaderText="Codigo" DataField="FKNI021_IDORCAMENTO" />
                                     <asp:BoundField HeaderText="Vencimento" DataField="ATDT021_VENCIMENTO" />

@@ -74,6 +74,8 @@
                                 <asp:Panel ID="pnlGrid" runat="server" Height="300" Width="500" ScrollBars="Auto">
                                     <asp:GridView ID="gvPedidos" runat="server" Width="100%" DataKeyNames="PKNI006_IDPEDIDOCOMPRA" AllowPaging="True"
                                         EnableModelValidation="True" OnSelectedIndexChanged="gvPedidos_SelectedIndexChanged" AutoGenerateColumns="false">
+                                        <HeaderStyle BackColor="#8181F7"
+                                            ForeColor="black" />
                                         <Columns>
                                             <asp:BoundField HeaderText="Codigo Pedido Compra" DataField="PKNI006_IDPEDIDOCOMPRA" />
                                             <asp:BoundField HeaderText="Data" DataField="ATDT006_DATAPEDIDO" />

@@ -159,6 +159,8 @@
                                 <td>
                                     <asp:Panel ID="pblGrid" runat="server" Height="200" ScrollBars="Auto">
                                         <asp:GridView ID="gvCliente" runat="server" Width="100%" DataKeyNames="CODIGO" AutoGenerateColumns="false" OnSelectedIndexChanged="gvCliente_SelectedIndexChanged">
+                                            <HeaderStyle BackColor="#8181F7"
+                                                ForeColor="black" />
                                             <Columns>
                                                 <asp:BoundField HeaderText="Código" DataField="CODIGO" />
                                                 <asp:BoundField HeaderText="Nome" DataField="NOME" />

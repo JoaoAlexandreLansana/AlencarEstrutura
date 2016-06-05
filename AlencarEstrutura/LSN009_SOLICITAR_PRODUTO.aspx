@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LSN009_SOLICITAR_PRODUTO.aspx.cs" Inherits="AlencarEstrutura.LSN009_SOLICITAR_PRODUTO" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-        <div>
+    <div>
         <asp:Panel ID="pnlTitulo" runat="server" HorizontalAlign="Center">
             <table style="width: 100%">
                 <tr>
@@ -21,7 +22,7 @@
                     </td>
                     <td>
                         <asp:TextBox ID="txtCodigo" runat="server" Columns="8" MaxLength="10" Enabled="false"></asp:TextBox>
-                        <asp:Button ID="btnBuscaEstoque" runat="server" Text="..." CssClass="btn btn-secundary" data-target="#myModal" data-toggle="modal"  />
+                        <asp:Button ID="btnBuscaEstoque" runat="server" Text="..." CssClass="btn btn-secundary" data-target="#myModal" data-toggle="modal" />
                     </td>
                 </tr>
                 <tr>
@@ -41,10 +42,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 137px">
-                        &nbsp;</td>
-                    <td>
-                        &nbsp;</td>
+                    <td style="width: 137px">&nbsp;</td>
+                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td style="width: 137px; height: 39px;"></td>
@@ -78,13 +77,15 @@
                                 <td>
                                     <asp:Panel ID="pnlGrid" runat="server" ScrollBars="Auto" Height="200">
                                         <asp:GridView ID="gvEstoque" runat="server" Width="100%" DataKeyNames="IdEstoque" OnSelectedIndexChanged="gvEstoque_SelectedIndexChanged" AutoGenerateColumns="false">
-                                        <Columns>
-                                            <asp:BoundField DataField="IdEstoque" HeaderText="Codigo" />
-                                            <asp:BoundField DataField="Descricao" HeaderText="Descrição" />
-                                            <asp:BoundField DataField="Quantidade" HeaderText="Quantidade" />
-                                        </Columns>
-                                    </asp:GridView>
-                                    </asp:Panel>                                    
+                                            <HeaderStyle BackColor="#8181F7"
+                                                ForeColor="black" />
+                                            <Columns>
+                                                <asp:BoundField DataField="IdEstoque" HeaderText="Codigo" />
+                                                <asp:BoundField DataField="Descricao" HeaderText="Descrição" />
+                                                <asp:BoundField DataField="Quantidade" HeaderText="Quantidade" />
+                                            </Columns>
+                                        </asp:GridView>
+                                    </asp:Panel>
                                 </td>
                             </tr>
                         </table>
